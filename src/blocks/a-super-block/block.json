@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "gb-superset/a-super-block",
+	"version": "0.1.0",
+	"title": "A Super Block",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example block scaffolded with Gutenberg Superset.",
+	"textdomain": "gb-superset",
+	"editorScript": "file:./index.js",
+	"attributes": {
+		"content": {
+			"type": "string"
+		},
+		"align": {
+			"type": "string",
+			"default": "none"
+		},
+		"backgroundColor": {
+			"type": "string"
+		},	 
+		"textColor": {
+			"type": "string"
+		}
+	}
+}
