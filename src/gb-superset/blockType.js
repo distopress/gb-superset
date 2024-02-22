@@ -2,22 +2,11 @@ import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { 
 	useBlockProps, 
-	AlignmentControl, 
 	BlockControls,
 	InspectorControls,
-	PanelColorSettings
 } from '@wordpress/block-editor';
 
-import {
-	CheckboxControl,
-	RadioControl,
-	ToggleControl,
-	SelectControl,
-	PanelBody,
-} from '@wordpress/components';
-
-import BlockContext from '@gb-superset/BlockContext';
-import TextControl from '@gb-superset/TextControl';
+import BlockContext from '@gb-superset/supports/BlockContext';
 
 export default class blockType {
 
@@ -25,41 +14,40 @@ export default class blockType {
 
     blockName = null;
 
+    EditContent = null;
+    
     SaveContent = () => {
         throw new Error('You have to implement the method saveContent!');
     };
-    
+
     InspectorControls = () => {
         throw new Error('You have to implement the method InspectorControls!');
     };
     
-    BlockControls = () => ( <></> );
+    EditorControls = () => ( <></> );
 
     edit = ( { attributes, setAttributes } ) => {
         const changeHandler = (name, value) => {
             setAttributes({[name]: value});
         }
         const blockProps = useBlockProps();
-        const SaveContent = this.SaveContent;
+        const SaveContent = this.EditContent ?? this.SaveContent;
 
         return (
             <>
                 <InspectorControls>
-                    <h2>foo bar</h2>
                     <BlockContext.Provider value={{attributes, setAttributes, changeHandler}}>
                         {this.InspectorControls({ attributes, changeHandler})}
                     </BlockContext.Provider>
                 </InspectorControls>
 
                 <BlockControls>
-                    {this.BlockControls({ attributes, changeHandler})}
+                    {this.EditorControls({ attributes, changeHandler})}
                 </BlockControls>
 
                 <SaveContent { ...{ attributes, blockProps } } />
             </>
-
         );
-
     };
 
     register = () => {
@@ -68,7 +56,6 @@ export default class blockType {
         }
 
         const SaveContent = this.SaveContent;
-        // const SaveContent = null;
 
         registerBlockType( this.blockName, {
             edit: this.edit, 

@@ -18,16 +18,17 @@ var test = {
 // console.log(test.name); // new test
 
 
-class MyClass {
+class MyClass { 
     constructor() {
       this._data = {
-        property1: 'value1',
-        property2: 'value2',
-        property3: 'value3',
+        desktop: 'desktop',
+        tablet: 'tablet',
+        mobile: 'mobile',
       };
       return new Proxy(this, {
         get(target, prop) {
           if (prop in target._data) {
+            console.log('getter', prop, target);
             return target._data[prop];
           }
           return target[prop];
@@ -36,5 +37,5 @@ class MyClass {
     }
   }
   
-  const myObject = new MyClass();
-  console.log(myObject.property1); // Outputs: 'value1'
+  const attributes = (new MyClass()).attributes;
+  console.log(attributes.desktop); // Outputs: 'value1'
