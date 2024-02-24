@@ -1,11 +1,15 @@
 import { __ } from '@wordpress/i18n';
 
-export default function content( { attributes, blockProps } ) {
-	const { content, align, backgroundColor, textColor } = attributes;
+export default function content( { get, attributes, blockProps } ) {
+	// useEffect(() => {
+	// 	console.log('content', attributes);
+	// }, [attributes]);
+
 	return (
-		<div { ...blockProps } style={ { textAlign: align, backgroundColor: backgroundColor, color: textColor } }>
+		<>
 			{ __( 'I am super Block #A!', 'gb-superset' ) }
-			<pre>{JSON.stringify({content}, null, 2)}</pre>
-		</div>
+			<p>content: {get('content')}</p>
+			<pre>{JSON.stringify({attributes}, null, 2)}</pre>
+		</>
 	);
 }

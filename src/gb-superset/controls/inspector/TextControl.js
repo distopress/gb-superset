@@ -1,27 +1,13 @@
-import {
-    TextControl,
-} from '@wordpress/components';
-import React, { useContext } from 'react';
+import { TextControl } from '@wordpress/components';
 
-import BlockContext from '../../supports/BlockContext';
-import ControlContainer from '../../supports/ControlContainer';
+import {ControlContainer} from '@gb-superset/supports/control';
 
 export default (props) => {
 
-    const context = useContext(BlockContext);
-
-    const changeHandler = (value) => {
-        context.changeHandler(props.name, newValue);
-        // context.setAttributes({[props.name]: newValue});
-    }
-
     return (
-        <ControlContainer>
+        <ControlContainer { ...props } valueProp={'value'} changeProp={'onChange'}>
             <TextControl 
-                {...props}
-                // label={props.foo}
-                value={ context.attributes[props.name] }
-                onChange={ changeHandler }
+                { ...props }
             />
         </ControlContainer>
     );

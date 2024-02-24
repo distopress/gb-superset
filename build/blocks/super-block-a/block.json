@@ -12,6 +12,9 @@
   "attributes": {
     "content": {
       "type": "object"
+    },
+    "align": {
+      "type": "string"
     }
   }
 }

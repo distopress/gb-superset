@@ -1,12 +1,12 @@
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
-import { 
-	useBlockProps, 
-	BlockControls,
-	InspectorControls,
+import {
+    useBlockProps,
+    BlockControls,
+    InspectorControls,
 } from '@wordpress/block-editor';
 
-import BlockContext from '@gb-superset/supports/BlockContext';
+import {ControlContext, getAttribute, setAttribute} from '@gb-superset/supports/control';
 
 export default class blockType {
 
@@ -15,7 +15,7 @@ export default class blockType {
     blockName = null;
 
     EditContent = null;
-    
+
     SaveContent = () => {
         throw new Error('You have to implement the method saveContent!');
     };
@@ -23,50 +23,85 @@ export default class blockType {
     InspectorControls = () => {
         throw new Error('You have to implement the method InspectorControls!');
     };
-    
-    EditorControls = () => ( <></> );
 
-    edit = ( { attributes, setAttributes } ) => {
-        const changeHandler = (name, value) => {
-            setAttributes({[name]: value});
+    EditorControls = () => (<></>);
+
+
+    edit = ({ attributes, setAttributes }) => {
+
+        const set = (name, scope, value) => {
+            setAttribute(attributes, setAttributes, name, scope, value);
         }
+
+        const get = (name, scope) => {
+            return getAttribute(attributes, name, scope);
+        }
+
+        this.ctx = {
+            attributes,
+            setAttributes,
+            set,
+            get
+        }
+
         const blockProps = useBlockProps();
-        const SaveContent = this.EditContent ?? this.SaveContent;
+        const RenderContent = this.EditContent ?? this.SaveContent;
 
         return (
             <>
                 <InspectorControls>
-                    <BlockContext.Provider value={{attributes, setAttributes, changeHandler}}>
-                        {this.InspectorControls({ attributes, changeHandler})}
-                    </BlockContext.Provider>
+                    <ControlContext.Provider value={
+                        {
+                            attributes,
+                            setAttributes,
+                            set,
+                            get
+                        }
+                    }>
+                        {this.InspectorControls()}
+                    </ControlContext.Provider>
                 </InspectorControls>
 
                 <BlockControls>
-                    {this.EditorControls({ attributes, changeHandler})}
+                    <ControlContext.Provider value={
+                        {
+                            attributes,
+                            setAttributes,
+                            set,
+                            get
+                        }
+                    }>
+                        {this.EditorControls()}
+                    </ControlContext.Provider>
                 </BlockControls>
 
-                <SaveContent { ...{ attributes, blockProps } } />
+                <div { ...blockProps }>
+                    <RenderContent {...{ attributes, get, blockProps }} />
+                </div>
             </>
         );
     };
 
     register = () => {
-        if ( !this.blockName ) {
+        if (!this.blockName) {
             throw new Error('You have to set the blockName property!');
         }
 
-        const SaveContent = this.SaveContent;
+        const RenderContent = this.SaveContent;
 
-        registerBlockType( this.blockName, {
-            edit: this.edit, 
-            save: function save( { attributes } ) {
+        registerBlockType(this.blockName, {
+            edit: this.edit,
+            save: function save({ attributes }) {
                 const blockProps = useBlockProps.save();
+                const get = (name, scope) => {
+                    return getAttribute(attributes, name, scope);
+                }
                 return (
-                    <>
-                        <SaveContent { ...{ attributes, blockProps } } />
-                    </>
+                    <div { ...blockProps }>
+                        <RenderContent {...{ attributes, get, blockProps }} />
+                    </div>
                 );
             },
-        } );
+        });
     }
 }

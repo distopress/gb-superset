@@ -30,12 +30,12 @@ const block = class extends blockType {
         );
     }
 
-	EditorControls = ({ attributes, changeHandler }) => {
+	EditorControls = () => {
 		return (
             <>
 				<AlignmentControl
-					value={ attributes.align }
-					onChange={ (v) => changeHandler('align', v) }
+					value={ this.ctx.attributes.align }
+					onChange={ (v) => this.ctx.setAttributes({align: v}) }
 				/>
 			</>
 		);
