@@ -30,6 +30,7 @@ const block = class extends blockType {
 						label="My Text Field"
 						help="Additional help text"
 						name="groupControl"
+						responsive={true}
 					/>
 				</Panel>
 			</>

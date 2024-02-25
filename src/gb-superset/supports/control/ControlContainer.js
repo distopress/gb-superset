@@ -34,12 +34,14 @@ export default (props) => {
     // Render the component
     return (
         <div {...props} className={classNames(props.extraClassName, props.className, 'gb-superset-control-container')}>
-            <p>
-                {/* Links for changing the scope */}
-                <a onClick={(e) => scopeHandler('desktop', e)}>Desktop</a>
-                <a onClick={(e) => scopeHandler('tablet', e)}>Tablet</a>
-                <a onClick={(e) => scopeHandler('mobile', e)}>Mobile</a>
-            </p>
+            {props.responsive && (
+                <p>
+                    {/* Links for changing the scope */}
+                    <a onClick={(e) => scopeHandler('desktop', e)}>Desktop</a>
+                    <a onClick={(e) => scopeHandler('tablet', e)}>Tablet</a>
+                    <a onClick={(e) => scopeHandler('mobile', e)}>Mobile</a>
+                </p>
+            )}
             {/* Map over the children and clone them with additional props */}
             {React.Children.map(props.children, child => {
                 return React.cloneElement(

@@ -347,7 +347,7 @@ __webpack_require__.r(__webpack_exports__);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...props,
     className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(props.extraClassName, props.className, 'gb-superset-control-container')
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+  }, props.responsive && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     onClick: e => scopeHandler('desktop', e)
   }, "Desktop"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     onClick: e => scopeHandler('tablet', e)
@@ -793,7 +793,8 @@ const block = class extends _gb_superset_blockType__WEBPACK_IMPORTED_MODULE_5__[
     }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.TestGroupControl, {
       label: "My Text Field",
       help: "Additional help text",
-      name: "groupControl"
+      name: "groupControl",
+      responsive: true
     })));
   };
   EditorControls = () => {
