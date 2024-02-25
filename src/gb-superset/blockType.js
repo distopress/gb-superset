@@ -6,7 +6,7 @@ import {
     InspectorControls,
 } from '@wordpress/block-editor';
 
-import { ControlContext, getAttribute, setAttribute } from '@gb-superset/supports/control';
+import { ControlContext, getObject, setObject } from '@gb-superset/supports/control';
 
 // Defining the blockType class
 export default class blockType {
@@ -27,8 +27,8 @@ export default class blockType {
     // Method to edit the block
     edit = ({ attributes, setAttributes }) => {
         // Helper methods to set and get attributes
-        const set = (name, scope, value) => setAttribute(attributes, setAttributes, name, scope, value);
-        const get = (name, scope) => getAttribute(attributes, name, scope);
+        const set = (name, value, scope) => setObject(name, value, scope, attributes, setAttributes);
+        const get = (name, scope) => getObject(name, scope, attributes);
 
         // Context for the block
         this.ctx = { attributes, setAttributes, set, get };
@@ -43,13 +43,13 @@ export default class blockType {
         return (
             <>
                 <InspectorControls>
-                    <ControlContext.Provider value={{ attributes, setAttributes, set, get }}>
+                    <ControlContext.Provider value={this.ctx}>
                         {this.InspectorControls()}
                     </ControlContext.Provider>
                 </InspectorControls>
 
                 <BlockControls>
-                    <ControlContext.Provider value={{ attributes, setAttributes, set, get }}>
+                    <ControlContext.Provider value={this.ctx}>
                         {this.EditorControls()}
                     </ControlContext.Provider>
                 </BlockControls>
@@ -79,7 +79,7 @@ export default class blockType {
                 const blockProps = useBlockProps.save();
 
                 // Helper method to get attributes
-                const get = (name, scope) => getAttribute(attributes, name, scope);
+                const get = (name, scope) => getObject(name, scope, attributes);
 
                 // Returning the JSX for the block
                 return (

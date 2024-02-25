@@ -84,8 +84,8 @@ class blockType {
   }) => {
     var _this$EditContent;
     // Helper methods to set and get attributes
-    const set = (name, scope, value) => (0,_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.setAttribute)(attributes, setAttributes, name, scope, value);
-    const get = (name, scope) => (0,_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.getAttribute)(attributes, name, scope);
+    const set = (name, value, scope) => (0,_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.setObject)(name, value, scope, attributes, setAttributes);
+    const get = (name, scope) => (0,_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.getObject)(name, scope, attributes);
 
     // Context for the block
     this.ctx = {
@@ -103,19 +103,9 @@ class blockType {
 
     // Returning the JSX for the block
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.ControlContext.Provider, {
-      value: {
-        attributes,
-        setAttributes,
-        set,
-        get
-      }
+      value: this.ctx
     }, this.InspectorControls())), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.BlockControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.ControlContext.Provider, {
-      value: {
-        attributes,
-        setAttributes,
-        set,
-        get
-      }
+      value: this.ctx
     }, this.EditorControls())), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       ...blockProps
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(RenderContent, {
@@ -145,7 +135,7 @@ class blockType {
         const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save();
 
         // Helper method to get attributes
-        const get = (name, scope) => (0,_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.getAttribute)(attributes, name, scope);
+        const get = (name, scope) => (0,_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.getObject)(name, scope, attributes);
 
         // Returning the JSX for the block
         return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -182,6 +172,40 @@ __webpack_require__.r(__webpack_exports__);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     ...props
   }, props.children);
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/TestGroupControl.js":
+/*!****************************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/TestGroupControl.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @gb-superset/controls/inspector */ "./src/gb-superset/controls/inspector/index.js");
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.GroupControlContainer, {
+    ...props
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    ...props,
+    name: 'control1',
+    label: "My Text Field 1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    ...props,
+    name: 'control2',
+    label: "My Text Field 2"
+  }));
 });
 
 /***/ }),
@@ -247,11 +271,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   IconPicker: () => (/* reexport safe */ _icon_picker__WEBPACK_IMPORTED_MODULE_2__["default"]),
 /* harmony export */   Panel: () => (/* reexport safe */ _Panel__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   TestGroupControl: () => (/* reexport safe */ _TestGroupControl__WEBPACK_IMPORTED_MODULE_3__["default"]),
 /* harmony export */   TextControl: () => (/* reexport safe */ _TextControl__WEBPACK_IMPORTED_MODULE_1__["default"])
 /* harmony export */ });
 /* harmony import */ var _Panel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Panel */ "./src/gb-superset/controls/inspector/Panel.js");
 /* harmony import */ var _TextControl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TextControl */ "./src/gb-superset/controls/inspector/TextControl.js");
 /* harmony import */ var _icon_picker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./icon-picker */ "./src/gb-superset/controls/inspector/icon-picker/index.js");
+/* harmony import */ var _TestGroupControl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TestGroupControl */ "./src/gb-superset/controls/inspector/TestGroupControl.js");
+
 
 
 
@@ -271,33 +298,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ControlContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ControlContext */ "./src/gb-superset/supports/control/ControlContext.js");
+/* harmony import */ var _getObject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getObject */ "./src/gb-superset/supports/control/getObject.js");
+/* harmony import */ var _setObject__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./setObject */ "./src/gb-superset/supports/control/setObject.js");
+
+
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
-  const {
+  let {
     get,
     set
   } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_ControlContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  if (props.attributes && props.setAttributes) {
+    get = (name, scope) => (0,_getObject__WEBPACK_IMPORTED_MODULE_2__["default"])(name, scope, props.attributes);
+    set = (name, value, scope) => (0,_setObject__WEBPACK_IMPORTED_MODULE_3__["default"])(name, value, scope, props.attributes, props.setAttributes);
+  }
+
+  // Create a state variable
+  const [scope, setScope] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('desktop');
+  const scopeHandler = (scope, e) => {
+    e.preventDefault();
+    setScope(scope);
+  };
+
+  // Use useEffect to track changes to scope
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    console.log('scope has changed', scope);
+  }, [scope]);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "control-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default().Children.map(props.children, child => {
-    let controlGroups = [react__WEBPACK_IMPORTED_MODULE_0___default().cloneElement(child, {
+    className: "gb-superset-control-container"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    onClick: e => scopeHandler('desktop', e)
+  }, "Desktop"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    onClick: e => scopeHandler('tablet', e)
+  }, "Tablet"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    onClick: e => scopeHandler('mobile', e)
+  }, "Mobile")), React.Children.map(props.children, child => {
+    let controlGroups = [React.cloneElement(child, {
       ...child.props,
-      [props.valueProp]: get(props.name),
-      [props.changeProp]: value => set(props.name, 'desktop', value)
+      [props.valueProp]: get(props.name, scope),
+      [props.changeProp]: value => set(props.name, value, scope)
     })];
-    if (props.responsive === true) {
-      controlGroups = [...controlGroups, react__WEBPACK_IMPORTED_MODULE_0___default().cloneElement(child, {
-        ...child.props,
-        [props.valueProp]: get(props.name, 'tablet'),
-        [props.changeProp]: value => set(props.name, 'tablet', value)
-      }), react__WEBPACK_IMPORTED_MODULE_0___default().cloneElement(child, {
-        ...child.props,
-        [props.valueProp]: get(props.name, 'mobile'),
-        [props.changeProp]: value => set(props.name, 'mobile', value)
-      })];
-    }
     return controlGroups;
   }));
 });
@@ -322,24 +364,71 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/gb-superset/supports/control/getAttribute.js":
-/*!**********************************************************!*\
-  !*** ./src/gb-superset/supports/control/getAttribute.js ***!
-  \**********************************************************/
+/***/ "./src/gb-superset/supports/control/GroupControlContainer.js":
+/*!*******************************************************************!*\
+  !*** ./src/gb-superset/supports/control/GroupControlContainer.js ***!
+  \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((attributes, name, scope) => {
-  var _scope;
-  scope = (_scope = scope) !== null && _scope !== void 0 ? _scope : 'desktop';
-  let value = attributes[name]?.[scope];
-  if (value === undefined) {
-    value = attributes[name]?.['desktop'];
-  }
-  return value;
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ControlContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ControlContext */ "./src/gb-superset/supports/control/ControlContext.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  var _get;
+  const {
+    get,
+    set
+  } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_ControlContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  const [groupObject, setGroupObjectSingle] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)((_get = get(props.name, null)) !== null && _get !== void 0 ? _get : {});
+  const setGroupObject = newObject => {
+    setGroupObjectSingle({
+      ...groupObject,
+      ...newObject
+    });
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (typeof groupObject === 'object') {
+      set(props.name, groupObject, null);
+    }
+  }, [groupObject]);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "gb-superset-group-control-container"
+  }, React.Children.map(props.children, child => {
+    let controlGroups = [React.cloneElement(child, {
+      ...child.props,
+      attributes: groupObject,
+      setAttributes: setGroupObject
+    })];
+    return controlGroups;
+  }));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/supports/control/getObject.js":
+/*!*******************************************************!*\
+  !*** ./src/gb-superset/supports/control/getObject.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((name, scope = 'desktop', object) => {
+  var _object$name$scope;
+  // If scope is null, return the value of the name key from the object
+  if (scope === null) return object[name];
+
+  // Try to get the value from the scope key of the name object, default to the desktop key if it's undefined
+  return (_object$name$scope = object[name]?.[scope]) !== null && _object$name$scope !== void 0 ? _object$name$scope : object[name]?.['desktop'];
 });
 
 /***/ }),
@@ -354,13 +443,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ControlContainer: () => (/* reexport safe */ _ControlContainer__WEBPACK_IMPORTED_MODULE_3__["default"]),
 /* harmony export */   ControlContext: () => (/* reexport safe */ _ControlContext__WEBPACK_IMPORTED_MODULE_0__["default"]),
-/* harmony export */   getAttribute: () => (/* reexport safe */ _getAttribute__WEBPACK_IMPORTED_MODULE_1__["default"]),
-/* harmony export */   setAttribute: () => (/* reexport safe */ _setAttribute__WEBPACK_IMPORTED_MODULE_2__["default"])
+/* harmony export */   GroupControlContainer: () => (/* reexport safe */ _GroupControlContainer__WEBPACK_IMPORTED_MODULE_4__["default"]),
+/* harmony export */   getObject: () => (/* reexport safe */ _getObject__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   setObject: () => (/* reexport safe */ _setObject__WEBPACK_IMPORTED_MODULE_2__["default"])
 /* harmony export */ });
 /* harmony import */ var _ControlContext__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ControlContext */ "./src/gb-superset/supports/control/ControlContext.js");
-/* harmony import */ var _getAttribute__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getAttribute */ "./src/gb-superset/supports/control/getAttribute.js");
-/* harmony import */ var _setAttribute__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./setAttribute */ "./src/gb-superset/supports/control/setAttribute.js");
+/* harmony import */ var _getObject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getObject */ "./src/gb-superset/supports/control/getObject.js");
+/* harmony import */ var _setObject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./setObject */ "./src/gb-superset/supports/control/setObject.js");
 /* harmony import */ var _ControlContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ControlContainer */ "./src/gb-superset/supports/control/ControlContainer.js");
+/* harmony import */ var _GroupControlContainer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./GroupControlContainer */ "./src/gb-superset/supports/control/GroupControlContainer.js");
+
 
 
 
@@ -369,32 +461,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/gb-superset/supports/control/setAttribute.js":
-/*!**********************************************************!*\
-  !*** ./src/gb-superset/supports/control/setAttribute.js ***!
-  \**********************************************************/
+/***/ "./src/gb-superset/supports/control/setObject.js":
+/*!*******************************************************!*\
+  !*** ./src/gb-superset/supports/control/setObject.js ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((attributes, setAttributes, name, scope, value) => {
-  // get the attributeObject from the attributes
-  let attributeObject = attributes[name];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((name, value, scope, object, setHandler) => {
+  // Get the attributeObject from the object, defaulting to an empty object if it's not an object
+  const objectValue = typeof object[name] === 'object' ? object[name] : {};
 
-  // check if the attributeObject is actually an object
-  if (attributeObject === undefined || typeof attributeObject !== 'object') {
-    attributeObject = {};
+  // Check if scope is null
+  if (scope === null) {
+    // Merge value with objectValue and set it by handler
+    setHandler({
+      [name]: {
+        ...objectValue,
+        ...value
+      }
+    });
+  } else {
+    // Set the new value if scope is not null
+    setHandler({
+      [name]: {
+        ...objectValue,
+        [scope]: value
+      }
+    });
   }
-
-  // set the attributeObject to the attributes
-  setAttributes({
-    [name]: {
-      ...attributeObject,
-      [scope]: value
-    }
-  });
 });
 
 /***/ }),
@@ -455,7 +553,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gb-superset/super-block-a","version":"0.1.0","title":"Super Block #A","category":"widgets","icon":"smiley","description":"Example block scaffolded with Gutenberg Superset.","textdomain":"gb-superset","editorScript":"file:./index.js","attributes":{"content":{"type":"object"},"align":{"type":"string"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gb-superset/super-block-a","version":"0.1.0","title":"Super Block #A","category":"widgets","icon":"smiley","description":"Example block scaffolded with Gutenberg Superset.","textdomain":"gb-superset","editorScript":"file:./index.js","attributes":{"content":{"type":"object"},"groupControl":{"type":"object"},"align":{"type":"string"}}}');
 
 /***/ })
 
@@ -562,6 +660,10 @@ const block = class extends _gb_superset_blockType__WEBPACK_IMPORTED_MODULE_5__[
       name: "content",
       responsive: true,
       state: ['hover', 'focus']
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.TestGroupControl, {
+      label: "My Text Field",
+      help: "Additional help text",
+      name: "groupControl"
     })));
   };
   EditorControls = () => {

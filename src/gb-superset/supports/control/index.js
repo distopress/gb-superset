@@ -1,10 +1,11 @@
 import ControlContext from './ControlContext';
-import getAttribute from './getAttribute';
-import setAttribute from './setAttribute';
+import getObject from './getObject';
+import setObject from './setObject';
 export {
     ControlContext,
-    getAttribute,
-    setAttribute
+    getObject,
+    setObject
 };
 
 export { default as ControlContainer } from './ControlContainer';
+export { default as GroupControlContainer } from './GroupControlContainer';
