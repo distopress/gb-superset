@@ -23,10 +23,6 @@ function content({
   attributes,
   blockProps
 }) {
-  // useEffect(() => {
-  // 	console.log('content', attributes);
-  // }, [attributes]);
-
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('I am super Block #A!', 'gb-superset'), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "content: ", get('content')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("pre", null, JSON.stringify({
     attributes
   }, null, 2)));
@@ -305,27 +301,36 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+// This is a functional component that uses the ControlContext to get and set values
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  // Destructure get and set from the context
   let {
     get,
     set
   } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_ControlContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+  // If attributes and setAttributes props are provided, override get and set
   if (props.attributes && props.setAttributes) {
     get = (name, scope) => (0,_getObject__WEBPACK_IMPORTED_MODULE_2__["default"])(name, scope, props.attributes);
     set = (name, value, scope) => (0,_setObject__WEBPACK_IMPORTED_MODULE_3__["default"])(name, value, scope, props.attributes, props.setAttributes);
   }
 
-  // Create a state variable
+  // Create a state variable for scope with initial value 'desktop'
   const [scope, setScope] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('desktop');
+
+  // Handler function for changing the scope
   const scopeHandler = (scope, e) => {
     e.preventDefault();
     setScope(scope);
   };
 
-  // Use useEffect to track changes to scope
+  // Use useEffect to log when the scope changes
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     console.log('scope has changed', scope);
   }, [scope]);
+
+  // Render the component
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "gb-superset-control-container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
@@ -335,12 +340,11 @@ __webpack_require__.r(__webpack_exports__);
   }, "Tablet"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     onClick: e => scopeHandler('mobile', e)
   }, "Mobile")), React.Children.map(props.children, child => {
-    let controlGroups = [React.cloneElement(child, {
+    return React.cloneElement(child, {
       ...child.props,
       [props.valueProp]: get(props.name, scope),
       [props.changeProp]: value => set(props.name, value, scope)
-    })];
-    return controlGroups;
+    });
   }));
 });
 
@@ -358,7 +362,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-// MyContext.js
+// create context for control
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null));
 
@@ -380,33 +384,43 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+// This is a functional component that uses the ControlContext to get and set group objects
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
   var _get;
+  // Destructure get and set from the context
   const {
     get,
     set
   } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_ControlContext__WEBPACK_IMPORTED_MODULE_1__["default"]);
-  const [groupObject, setGroupObjectSingle] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)((_get = get(props.name, null)) !== null && _get !== void 0 ? _get : {});
+
+  // Create a state variable for groupObject with initial value from get function or an empty object
+  const [groupObject, setGroupObjectState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)((_get = get(props.name, null)) !== null && _get !== void 0 ? _get : {});
+
+  // Function to set the groupObject state
   const setGroupObject = newObject => {
-    setGroupObjectSingle({
-      ...groupObject,
+    setGroupObjectState(prevGroupObject => ({
+      ...prevGroupObject,
       ...newObject
-    });
+    }));
   };
+
+  // Use useEffect to set the groupObject in the context when it changes
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     if (typeof groupObject === 'object') {
       set(props.name, groupObject, null);
     }
   }, [groupObject]);
+
+  // Render the component
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "gb-superset-group-control-container"
   }, React.Children.map(props.children, child => {
-    let controlGroups = [React.cloneElement(child, {
+    return React.cloneElement(child, {
       ...child.props,
       attributes: groupObject,
       setAttributes: setGroupObject
-    })];
-    return controlGroups;
+    });
   }));
 });
 
