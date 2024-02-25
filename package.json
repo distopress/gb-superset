@@ -20,6 +20,6 @@
 		"@wordpress/scripts": "^27.1.0"
 	},
 	"dependencies": {
-		"@preact/signals": "^1.2.2"
+		"classnames": "^2.5.1"
 	}
 }

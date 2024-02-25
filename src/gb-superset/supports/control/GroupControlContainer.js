@@ -1,4 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
+import classNames from 'classnames';
+
 import ControlContext from './ControlContext';
 
 // This is a functional component that uses the ControlContext to get and set group objects
@@ -26,7 +28,7 @@ export default (props) => {
 
     // Render the component
     return (
-        <div className='gb-superset-group-control-container'>
+        <div {...props} className={classNames(props.extraClassName, props.className, 'gb-superset-group-control-container')}>
             {/* Map over the children and clone them with additional props */}
             {React.Children.map(props.children, child => {
                 return React.cloneElement(

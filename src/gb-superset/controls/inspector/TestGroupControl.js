@@ -4,7 +4,7 @@ import { ControlContext, GroupControlContainer } from '@gb-superset/supports/con
 
 export default (props) => {
     return (
-        <GroupControlContainer {...props}>
+        <GroupControlContainer {...props} className="my-awesome-test-group-control">
             <TextControl
                 {...props}
                 name={'control1'}

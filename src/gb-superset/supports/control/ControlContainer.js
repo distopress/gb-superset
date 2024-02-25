@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
+import classNames from 'classnames';
 
 import ControlContext from './ControlContext';
 import getObject from './getObject';
@@ -32,7 +33,7 @@ export default (props) => {
 
     // Render the component
     return (
-        <div className="gb-superset-control-container">
+        <div {...props} className={classNames(props.extraClassName, props.className, 'gb-superset-control-container')}>
             <p>
                 {/* Links for changing the scope */}
                 <a onClick={(e) => scopeHandler('desktop', e)}>Desktop</a>
