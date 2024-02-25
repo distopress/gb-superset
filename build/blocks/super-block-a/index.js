@@ -58,36 +58,50 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+// Defining the blockType class
 class blockType {
-  constructor() {}
-  blockName = null;
-  EditContent = null;
-  SaveContent = () => {
-    throw new Error('You have to implement the method saveContent!');
-  };
-  InspectorControls = () => {
-    throw new Error('You have to implement the method InspectorControls!');
-  };
-  EditorControls = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null);
+  // Constructor
+  constructor() {
+    this.metadata = null;
+    this.EditContent = null;
+    this.SaveContent = this.throwError('You have to implement the method saveContent!');
+    this.InspectorControls = this.throwError('You have to implement the method InspectorControls!');
+    this.EditorControls = () => null;
+  }
+
+  // Method to throw an error
+  throwError(message) {
+    return () => {
+      throw new Error(message);
+    };
+  }
+
+  // Method to edit the block
   edit = ({
     attributes,
     setAttributes
   }) => {
     var _this$EditContent;
-    const set = (name, scope, value) => {
-      (0,_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.setAttribute)(attributes, setAttributes, name, scope, value);
-    };
-    const get = (name, scope) => {
-      return (0,_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.getAttribute)(attributes, name, scope);
-    };
+    // Helper methods to set and get attributes
+    const set = (name, scope, value) => (0,_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.setAttribute)(attributes, setAttributes, name, scope, value);
+    const get = (name, scope) => (0,_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.getAttribute)(attributes, name, scope);
+
+    // Context for the block
     this.ctx = {
       attributes,
       setAttributes,
       set,
       get
     };
+
+    // Block properties
     const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)();
+
+    // Content to render
     const RenderContent = (_this$EditContent = this.EditContent) !== null && _this$EditContent !== void 0 ? _this$EditContent : this.SaveContent;
+
+    // Returning the JSX for the block
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.ControlContext.Provider, {
       value: {
         attributes,
@@ -110,20 +124,30 @@ class blockType {
       blockProps
     })));
   };
+
+  // Method to register the block
   register = () => {
-    if (!this.blockName) {
-      throw new Error('You have to set the blockName property!');
+    // If metadata is not set, throw an error
+    if (!this.metadata) {
+      throw new Error('You have to set the block metadata!');
     }
+
+    // Content to render
     const RenderContent = this.SaveContent;
-    (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__.registerBlockType)(this.blockName, {
+
+    // Registering the block
+    (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_2__.registerBlockType)(this.metadata.name, {
       edit: this.edit,
-      save: function save({
+      save: ({
         attributes
-      }) {
+      }) => {
+        // Block properties
         const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save();
-        const get = (name, scope) => {
-          return (0,_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.getAttribute)(attributes, name, scope);
-        };
+
+        // Helper method to get attributes
+        const get = (name, scope) => (0,_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_4__.getAttribute)(attributes, name, scope);
+
+        // Returning the JSX for the block
         return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
           ...blockProps
         }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(RenderContent, {
@@ -528,7 +552,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const block = class extends _gb_superset_blockType__WEBPACK_IMPORTED_MODULE_5__["default"] {
-  blockName = _block_json__WEBPACK_IMPORTED_MODULE_1__.name;
+  metadata = _block_json__WEBPACK_IMPORTED_MODULE_1__;
   InspectorControls = () => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.Panel, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('My control')

@@ -4,16 +4,16 @@ import ControlContext from './ControlContext';
 
 export default (props) => {
 
-    const {get, set} = useContext(ControlContext);
+    const { get, set } = useContext(ControlContext);
 
     return (
         <div className="control-container">
             {React.Children.map(props.children, child => {
                 let controlGroups = [
                     React.cloneElement(
-                        child, 
+                        child,
                         {
-                            ...child.props, 
+                            ...child.props,
                             [props.valueProp]: get(props.name),
                             [props.changeProp]: (value) => set(props.name, 'desktop', value)
                         }
@@ -24,17 +24,17 @@ export default (props) => {
                     controlGroups = [
                         ...controlGroups,
                         React.cloneElement(
-                            child, 
+                            child,
                             {
-                                ...child.props, 
+                                ...child.props,
                                 [props.valueProp]: get(props.name, 'tablet'),
                                 [props.changeProp]: (value) => set(props.name, 'tablet', value)
                             }
                         ),
                         React.cloneElement(
-                            child, 
+                            child,
                             {
-                                ...child.props, 
+                                ...child.props,
                                 [props.valueProp]: get(props.name, 'mobile'),
                                 [props.changeProp]: (value) => set(props.name, 'mobile', value)
                             }

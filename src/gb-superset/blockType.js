@@ -6,98 +6,84 @@ import {
     InspectorControls,
 } from '@wordpress/block-editor';
 
-import {ControlContext, getAttribute, setAttribute} from '@gb-superset/supports/control';
+import { ControlContext, getAttribute, setAttribute } from '@gb-superset/supports/control';
 
+// Defining the blockType class
 export default class blockType {
+    // Constructor
+    constructor() {
+        this.metadata = null;
+        this.EditContent = null;
+        this.SaveContent = this.throwError('You have to implement the method saveContent!');
+        this.InspectorControls = this.throwError('You have to implement the method InspectorControls!');
+        this.EditorControls = () => null;
+    }
 
-    constructor() { }
+    // Method to throw an error
+    throwError(message) {
+        return () => { throw new Error(message); };
+    }
 
-    blockName = null;
-
-    EditContent = null;
-
-    SaveContent = () => {
-        throw new Error('You have to implement the method saveContent!');
-    };
-
-    InspectorControls = () => {
-        throw new Error('You have to implement the method InspectorControls!');
-    };
-
-    EditorControls = () => (<></>);
-
-
+    // Method to edit the block
     edit = ({ attributes, setAttributes }) => {
+        // Helper methods to set and get attributes
+        const set = (name, scope, value) => setAttribute(attributes, setAttributes, name, scope, value);
+        const get = (name, scope) => getAttribute(attributes, name, scope);
 
-        const set = (name, scope, value) => {
-            setAttribute(attributes, setAttributes, name, scope, value);
-        }
+        // Context for the block
+        this.ctx = { attributes, setAttributes, set, get };
 
-        const get = (name, scope) => {
-            return getAttribute(attributes, name, scope);
-        }
-
-        this.ctx = {
-            attributes,
-            setAttributes,
-            set,
-            get
-        }
-
+        // Block properties
         const blockProps = useBlockProps();
+
+        // Content to render
         const RenderContent = this.EditContent ?? this.SaveContent;
 
+        // Returning the JSX for the block
         return (
             <>
                 <InspectorControls>
-                    <ControlContext.Provider value={
-                        {
-                            attributes,
-                            setAttributes,
-                            set,
-                            get
-                        }
-                    }>
+                    <ControlContext.Provider value={{ attributes, setAttributes, set, get }}>
                         {this.InspectorControls()}
                     </ControlContext.Provider>
                 </InspectorControls>
 
                 <BlockControls>
-                    <ControlContext.Provider value={
-                        {
-                            attributes,
-                            setAttributes,
-                            set,
-                            get
-                        }
-                    }>
+                    <ControlContext.Provider value={{ attributes, setAttributes, set, get }}>
                         {this.EditorControls()}
                     </ControlContext.Provider>
                 </BlockControls>
 
-                <div { ...blockProps }>
+                <div {...blockProps}>
                     <RenderContent {...{ attributes, get, blockProps }} />
                 </div>
             </>
         );
     };
 
+    // Method to register the block
     register = () => {
-        if (!this.blockName) {
-            throw new Error('You have to set the blockName property!');
+        // If metadata is not set, throw an error
+        if (!this.metadata) {
+            throw new Error('You have to set the block metadata!');
         }
 
+        // Content to render
         const RenderContent = this.SaveContent;
 
-        registerBlockType(this.blockName, {
+        // Registering the block
+        registerBlockType(this.metadata.name, {
             edit: this.edit,
-            save: function save({ attributes }) {
+            save: ({ attributes }) => {
+                // Block properties
                 const blockProps = useBlockProps.save();
-                const get = (name, scope) => {
-                    return getAttribute(attributes, name, scope);
-                }
+
+                // Helper method to get attributes
+                const get = (name, scope) => getAttribute(attributes, name, scope);
+
+                // Returning the JSX for the block
                 return (
-                    <div { ...blockProps }>
+                    <div {...blockProps}>
                         <RenderContent {...{ attributes, get, blockProps }} />
                     </div>
                 );

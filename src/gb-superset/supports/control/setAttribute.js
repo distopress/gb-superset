@@ -8,5 +8,5 @@ export default (attributes, setAttributes, name, scope, value) => {
     }
 
     // set the attributeObject to the attributes
-    setAttributes({ [name]: { ...attributeObject, [scope]: value} });
+    setAttributes({ [name]: { ...attributeObject, [scope]: value } });
 }

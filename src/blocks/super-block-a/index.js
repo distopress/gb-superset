@@ -2,7 +2,7 @@ import metadata from './block.json';
 import SaveContent from './SaveContent';
 
 import { __ } from '@wordpress/i18n';
-import { AlignmentControl} from '@wordpress/block-editor';
+import { AlignmentControl } from '@wordpress/block-editor';
 
 import blockType from '@gb-superset/blockType';
 import {
@@ -11,13 +11,13 @@ import {
 } from '@gb-superset/controls/inspector';
 
 const block = class extends blockType {
-	blockName = metadata.name;
+	metadata = metadata;
 
 	InspectorControls = () => {
-        return (
-            <>
-				<Panel title={ __( 'My control' ) }>
-					<TextControl 
+		return (
+			<>
+				<Panel title={__('My control')}>
+					<TextControl
 						label="Text Field"
 						help="Additional help text"
 						name="content"
@@ -27,15 +27,15 @@ const block = class extends blockType {
 					/>
 				</Panel>
 			</>
-        );
-    }
+		);
+	}
 
 	EditorControls = () => {
 		return (
-            <>
+			<>
 				<AlignmentControl
-					value={ this.ctx.attributes.align }
-					onChange={ (v) => this.ctx.setAttributes({align: v}) }
+					value={this.ctx.attributes.align}
+					onChange={(v) => this.ctx.setAttributes({ align: v })}
 				/>
 			</>
 		);
