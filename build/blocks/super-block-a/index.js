@@ -331,6 +331,205 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/gb-superset/controls/inspector/Button.js":
+/*!******************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/Button.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (({
+  children,
+  ...Props
+}) => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...Props,
+    className: "gb-superset-button"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    ...Props
+  }, children));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/ButtonGroup.js":
+/*!***********************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/ButtonGroup.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    className: "gb-superset-button-group"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ButtonGroup, null, props.children));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/Card.js":
+/*!****************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/Card.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    className: "gb-superset-card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Card, {
+    ...props
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CardHeader, null, "Card Header"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CardBody, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit vel turpis in vehicula. "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CardDivider, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CardMedia, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: "https://cdn.the-scientist.com/assets/articleNo/66864/aImg/35078/foresttb-m.jpg"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CardFooter, null, "Card Footer")));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/CheckboxControl.js":
+/*!***************************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/CheckboxControl.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'checked',
+    changeProp: 'onChange',
+    className: "gb-superset-checkbox"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
+    ...props
+  }));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/ColorPalette.js":
+/*!************************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/ColorPalette.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  const colors = [{
+    name: 'White',
+    color: '#ffffff'
+  }, {
+    name: 'Black',
+    color: '#000000'
+  }, {
+    name: 'Gray',
+    color: '#808080'
+  }];
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'value',
+    changeProp: 'onChange',
+    className: "gb-superset-color-palette"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPalette, {
+    ...props,
+    colors: colors
+  }));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/ColorPicker.js":
+/*!***********************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/ColorPicker.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'color',
+    changeProp: 'onChange',
+    className: "gb-superset-color-picker"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPicker, {
+    ...props
+  }));
+});
+
+/***/ }),
+
 /***/ "./src/gb-superset/controls/inspector/Panel.js":
 /*!*****************************************************!*\
   !*** ./src/gb-superset/controls/inspector/Panel.js ***!
@@ -376,18 +575,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
-  const {
-    tabs,
-    children,
-    ...Props
-  } = props;
-  const Tabs = tabs.map(tab => {
-    const Tab = tab.replace(/\s/g, '').toLowerCase();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (({
+  children,
+  ...Props
+}) => {
+  const Tabs = children?.map(child => {
+    const Tab = child?.props?.content.toLowerCase();
     return {
       name: Tab || '',
       // required
-      title: tab || '',
+      title: child?.props?.content || '',
       // required
       className: `tab-${Tab}`
     };
@@ -399,8 +596,8 @@ __webpack_require__.r(__webpack_exports__);
     ...Props,
     tabs: Tabs,
     activeClass: "active"
-  }, tab => React.Children.map(children, child => {
-    if (child.props.content.toLowerCase() === tab?.name) {
+  }, tab => children?.map(child => {
+    if (child?.props?.content.toLowerCase() === tab?.name) {
       return child;
     }
     return null;
@@ -508,27 +705,45 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AlignmentMatrixControl: () => (/* reexport safe */ _AlignmentMatrixControl__WEBPACK_IMPORTED_MODULE_9__["default"]),
-/* harmony export */   AnglePickerControl: () => (/* reexport safe */ _AnglePickerControl__WEBPACK_IMPORTED_MODULE_8__["default"]),
-/* harmony export */   BorderBoxControl: () => (/* reexport safe */ _BorderBoxControl__WEBPACK_IMPORTED_MODULE_7__["default"]),
-/* harmony export */   BorderControl: () => (/* reexport safe */ _BorderControl__WEBPACK_IMPORTED_MODULE_5__["default"]),
-/* harmony export */   BoxControl: () => (/* reexport safe */ _BoxControl__WEBPACK_IMPORTED_MODULE_2__["default"]),
-/* harmony export */   IconPicker: () => (/* reexport safe */ _icon_picker__WEBPACK_IMPORTED_MODULE_3__["default"]),
-/* harmony export */   Panel: () => (/* reexport safe */ _Panel__WEBPACK_IMPORTED_MODULE_0__["default"]),
-/* harmony export */   TabPanel: () => (/* reexport safe */ _TabPanel__WEBPACK_IMPORTED_MODULE_1__["default"]),
-/* harmony export */   TestGroupControl: () => (/* reexport safe */ _TestGroupControl__WEBPACK_IMPORTED_MODULE_6__["default"]),
-/* harmony export */   TextControl: () => (/* reexport safe */ _TextControl__WEBPACK_IMPORTED_MODULE_4__["default"])
+/* harmony export */   AlignmentMatrixControl: () => (/* reexport safe */ _AlignmentMatrixControl__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   AnglePickerControl: () => (/* reexport safe */ _AnglePickerControl__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   BorderBoxControl: () => (/* reexport safe */ _BorderBoxControl__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   BorderControl: () => (/* reexport safe */ _BorderControl__WEBPACK_IMPORTED_MODULE_3__["default"]),
+/* harmony export */   BoxControl: () => (/* reexport safe */ _BoxControl__WEBPACK_IMPORTED_MODULE_5__["default"]),
+/* harmony export */   Button: () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_6__["default"]),
+/* harmony export */   ButtonGroup: () => (/* reexport safe */ _ButtonGroup__WEBPACK_IMPORTED_MODULE_4__["default"]),
+/* harmony export */   Card: () => (/* reexport safe */ _Card__WEBPACK_IMPORTED_MODULE_7__["default"]),
+/* harmony export */   CheckboxControl: () => (/* reexport safe */ _CheckboxControl__WEBPACK_IMPORTED_MODULE_8__["default"]),
+/* harmony export */   ColorPalette: () => (/* reexport safe */ _ColorPalette__WEBPACK_IMPORTED_MODULE_9__["default"]),
+/* harmony export */   ColorPicker: () => (/* reexport safe */ _ColorPicker__WEBPACK_IMPORTED_MODULE_10__["default"]),
+/* harmony export */   IconPicker: () => (/* reexport safe */ _icon_picker__WEBPACK_IMPORTED_MODULE_11__["default"]),
+/* harmony export */   Panel: () => (/* reexport safe */ _Panel__WEBPACK_IMPORTED_MODULE_15__["default"]),
+/* harmony export */   TabPanel: () => (/* reexport safe */ _TabPanel__WEBPACK_IMPORTED_MODULE_12__["default"]),
+/* harmony export */   TestGroupControl: () => (/* reexport safe */ _TestGroupControl__WEBPACK_IMPORTED_MODULE_14__["default"]),
+/* harmony export */   TextControl: () => (/* reexport safe */ _TextControl__WEBPACK_IMPORTED_MODULE_13__["default"])
 /* harmony export */ });
-/* harmony import */ var _Panel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Panel */ "./src/gb-superset/controls/inspector/Panel.js");
-/* harmony import */ var _TabPanel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TabPanel */ "./src/gb-superset/controls/inspector/TabPanel.js");
-/* harmony import */ var _BoxControl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BoxControl */ "./src/gb-superset/controls/inspector/BoxControl.js");
-/* harmony import */ var _icon_picker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./icon-picker */ "./src/gb-superset/controls/inspector/icon-picker/index.js");
-/* harmony import */ var _TextControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TextControl */ "./src/gb-superset/controls/inspector/TextControl.js");
-/* harmony import */ var _BorderControl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./BorderControl */ "./src/gb-superset/controls/inspector/BorderControl.js");
-/* harmony import */ var _TestGroupControl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./TestGroupControl */ "./src/gb-superset/controls/inspector/TestGroupControl.js");
-/* harmony import */ var _BorderBoxControl__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./BorderBoxControl */ "./src/gb-superset/controls/inspector/BorderBoxControl.js");
-/* harmony import */ var _AnglePickerControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./AnglePickerControl */ "./src/gb-superset/controls/inspector/AnglePickerControl.js");
-/* harmony import */ var _AlignmentMatrixControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./AlignmentMatrixControl */ "./src/gb-superset/controls/inspector/AlignmentMatrixControl.js");
+/* harmony import */ var _AnglePickerControl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AnglePickerControl */ "./src/gb-superset/controls/inspector/AnglePickerControl.js");
+/* harmony import */ var _AlignmentMatrixControl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AlignmentMatrixControl */ "./src/gb-superset/controls/inspector/AlignmentMatrixControl.js");
+/* harmony import */ var _BorderBoxControl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BorderBoxControl */ "./src/gb-superset/controls/inspector/BorderBoxControl.js");
+/* harmony import */ var _BorderControl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BorderControl */ "./src/gb-superset/controls/inspector/BorderControl.js");
+/* harmony import */ var _ButtonGroup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ButtonGroup */ "./src/gb-superset/controls/inspector/ButtonGroup.js");
+/* harmony import */ var _BoxControl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./BoxControl */ "./src/gb-superset/controls/inspector/BoxControl.js");
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Button */ "./src/gb-superset/controls/inspector/Button.js");
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Card */ "./src/gb-superset/controls/inspector/Card.js");
+/* harmony import */ var _CheckboxControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./CheckboxControl */ "./src/gb-superset/controls/inspector/CheckboxControl.js");
+/* harmony import */ var _ColorPalette__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ColorPalette */ "./src/gb-superset/controls/inspector/ColorPalette.js");
+/* harmony import */ var _ColorPicker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ColorPicker */ "./src/gb-superset/controls/inspector/ColorPicker.js");
+/* harmony import */ var _icon_picker__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./icon-picker */ "./src/gb-superset/controls/inspector/icon-picker/index.js");
+/* harmony import */ var _TabPanel__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./TabPanel */ "./src/gb-superset/controls/inspector/TabPanel.js");
+/* harmony import */ var _TextControl__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./TextControl */ "./src/gb-superset/controls/inspector/TextControl.js");
+/* harmony import */ var _TestGroupControl__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./TestGroupControl */ "./src/gb-superset/controls/inspector/TestGroupControl.js");
+/* harmony import */ var _Panel__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Panel */ "./src/gb-superset/controls/inspector/Panel.js");
+
+
+
+
+
+
 
 
 
@@ -934,7 +1149,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gb-superset/super-block-a","version":"0.1.0","title":"Super Block #A","category":"widgets","icon":"smiley","description":"Example block scaffolded with Gutenberg Superset.","textdomain":"gb-superset","editorScript":"file:./index.js","attributes":{"content":{"type":"object"},"groupControl":{"type":"object"},"align":{"type":"string"},"alignmentMatrix":{"type":"object"},"anglePicker":{"type":"object"},"borderBox":{"type":"object"},"border":{"type":"object"},"box":{"type":"object"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gb-superset/super-block-a","version":"0.1.0","title":"Super Block #A","category":"widgets","icon":"smiley","description":"Example block scaffolded with Gutenberg Superset.","textdomain":"gb-superset","editorScript":"file:./index.js","attributes":{"content":{"type":"object"},"groupControl":{"type":"object"},"align":{"type":"string"},"alignmentMatrix":{"type":"object"},"anglePicker":{"type":"object"},"borderBox":{"type":"object"},"border":{"type":"object"},"box":{"type":"object"},"checkBox":{"type":"object"},"colorPalette":{"type":"object"},"colorPicker":{"type":"object"}}}');
 
 /***/ })
 
@@ -1050,9 +1265,7 @@ const block = class extends _gb_superset_blockType__WEBPACK_IMPORTED_MODULE_5__[
     })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.TabPanel
     // initialTabName="advance"
     // orientation="horizontal"
-    , {
-      tabs: ['Settings', 'Styles', 'Advance']
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    , null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       content: "Settings"
     }, "For Settings"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       content: "Styles"
@@ -1077,6 +1290,21 @@ const block = class extends _gb_superset_blockType__WEBPACK_IMPORTED_MODULE_5__[
       name: "box",
       allowReset: true
       // splitOnAxis={true}
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.ButtonGroup, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.Button, {
+      isSecondary: true
+    }, "33.3%"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.Button, {
+      isPrimary: true
+    }, "66.6%"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.Button, {
+      isSecondary: true
+    }, "100%")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.CheckboxControl, {
+      label: "Is author",
+      help: "Is the user a author or not?",
+      name: "checkBox"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.ColorPalette, {
+      name: "colorPalette"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.ColorPicker, {
+      name: "colorPicker",
+      enableAlpha: true
     })));
   };
   EditorControls = () => {

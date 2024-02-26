@@ -2,14 +2,13 @@ import { TabPanel } from '@wordpress/components';
 
 import { ControlContainer } from '@gb-superset/supports/control';
 
-export default (props) => {
-  const { tabs, children, ...Props } = props;
-
-  const Tabs = tabs.map(tab => {
-    const Tab = tab.replace(/\s/g, '').toLowerCase();
+export default ({ children, ...Props }) => {
+  
+  const Tabs = children?.map(child => {
+    const Tab = child?.props?.content.toLowerCase();
     return {
       name: Tab || '', // required
-			title: tab || '', // required
+			title: child?.props?.content || '', // required
 			className: `tab-${Tab}`
     }
   });
@@ -18,8 +17,8 @@ export default (props) => {
     <ControlContainer {...Props} className="gb-superset-tab-panel">
       <TabPanel {...Props} tabs={Tabs} activeClass="active">
         {(tab) => (
-          React.Children.map(children, child => {
-            if (child.props.content.toLowerCase() === tab?.name) {
+          children?.map(child => {
+            if (child?.props?.content.toLowerCase() === tab?.name) {
               return child;
             }
             return null;

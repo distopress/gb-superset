@@ -6,15 +6,21 @@ import { AlignmentControl } from '@wordpress/block-editor';
 
 import blockType from '@gb-superset/blockType';
 import {
-	Panel,
-	TabPanel,
-	BoxControl,
-	TextControl,
-	BorderControl,
-	TestGroupControl,
-	BorderBoxControl,
 	AnglePickerControl,
 	AlignmentMatrixControl,
+	BorderBoxControl,
+	BorderControl,
+	ButtonGroup,
+	BoxControl,
+	Button,
+	Card,
+	CheckboxControl,
+	ColorPalette,
+	ColorPicker,
+	Panel,
+	TabPanel,
+	TextControl,
+	TestGroupControl,
 } from '@gb-superset/controls/inspector';
 
 const block = class extends blockType {
@@ -42,7 +48,6 @@ const block = class extends blockType {
 				<TabPanel
 					// initialTabName="advance"
 					// orientation="horizontal"
-					tabs={[ 'Settings', 'Styles', 'Advance' ]}
 				>
 					<div content="Settings">For Settings</div>
       		<div content="Styles">For Styles</div>
@@ -71,6 +76,23 @@ const block = class extends blockType {
 						allowReset={true}
 						// splitOnAxis={true}
 					/>
+					<ButtonGroup>
+						<Button isSecondary>33.3%</Button>
+						<Button isPrimary>66.6%</Button>
+						<Button isSecondary>100%</Button>
+					</ButtonGroup>
+					<CheckboxControl
+            label="Is author"
+            help="Is the user a author or not?"
+            name="checkBox"
+        	/>
+					<ColorPalette
+						name="colorPalette"
+					/>
+					<ColorPicker
+            name="colorPicker"
+            enableAlpha
+        	/>
 				</Panel>
 			</>
 		);

@@ -33,6 +33,15 @@
 		},
 		"box": {
 			"type": "object"
+		},
+		"checkBox": {
+			"type": "object"
+		},
+		"colorPalette": {
+			"type": "object"
+		},
+		"colorPicker": {
+			"type": "object"
 		}
 	}
 }
