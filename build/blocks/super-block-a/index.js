@@ -149,6 +149,188 @@ class blockType {
 
 /***/ }),
 
+/***/ "./src/gb-superset/controls/inspector/AlignmentMatrixControl.js":
+/*!**********************************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/AlignmentMatrixControl.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'value',
+    changeProp: 'onChange',
+    className: "gb-superset-alignment-matrix-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalAlignmentMatrixControl, {
+    ...props
+  }));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/AnglePickerControl.js":
+/*!******************************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/AnglePickerControl.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'value',
+    changeProp: 'onChange',
+    className: "gb-superset-angle-picker-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.AnglePickerControl, {
+    ...props
+  }));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/BorderBoxControl.js":
+/*!****************************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/BorderBoxControl.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  const colors = [{
+    name: 'White',
+    color: '#ffffff'
+  }, {
+    name: 'Black',
+    color: '#000000'
+  }, {
+    name: 'Gray',
+    color: '#808080'
+  }];
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'value',
+    changeProp: 'onChange',
+    className: "gb-superset-border-box-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalBorderBoxControl, {
+    ...props,
+    colors: colors
+  }));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/BorderControl.js":
+/*!*************************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/BorderControl.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  const colors = [{
+    name: 'White',
+    color: '#ffffff'
+  }, {
+    name: 'Black',
+    color: '#000000'
+  }, {
+    name: 'Gray',
+    color: '#808080'
+  }];
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'value',
+    changeProp: 'onChange',
+    className: "gb-superset-border-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalBorderControl, {
+    ...props,
+    colors: colors
+  }));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/BoxControl.js":
+/*!**********************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/BoxControl.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'value',
+    changeProp: 'onChange',
+    className: "gb-superset-box-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalBoxControl, {
+    ...props
+  }));
+});
+
+/***/ }),
+
 /***/ "./src/gb-superset/controls/inspector/Panel.js":
 /*!*****************************************************!*\
   !*** ./src/gb-superset/controls/inspector/Panel.js ***!
@@ -326,17 +508,32 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   IconPicker: () => (/* reexport safe */ _icon_picker__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   AlignmentMatrixControl: () => (/* reexport safe */ _AlignmentMatrixControl__WEBPACK_IMPORTED_MODULE_9__["default"]),
+/* harmony export */   AnglePickerControl: () => (/* reexport safe */ _AnglePickerControl__WEBPACK_IMPORTED_MODULE_8__["default"]),
+/* harmony export */   BorderBoxControl: () => (/* reexport safe */ _BorderBoxControl__WEBPACK_IMPORTED_MODULE_7__["default"]),
+/* harmony export */   BorderControl: () => (/* reexport safe */ _BorderControl__WEBPACK_IMPORTED_MODULE_5__["default"]),
+/* harmony export */   BoxControl: () => (/* reexport safe */ _BoxControl__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   IconPicker: () => (/* reexport safe */ _icon_picker__WEBPACK_IMPORTED_MODULE_3__["default"]),
 /* harmony export */   Panel: () => (/* reexport safe */ _Panel__WEBPACK_IMPORTED_MODULE_0__["default"]),
 /* harmony export */   TabPanel: () => (/* reexport safe */ _TabPanel__WEBPACK_IMPORTED_MODULE_1__["default"]),
-/* harmony export */   TestGroupControl: () => (/* reexport safe */ _TestGroupControl__WEBPACK_IMPORTED_MODULE_4__["default"]),
-/* harmony export */   TextControl: () => (/* reexport safe */ _TextControl__WEBPACK_IMPORTED_MODULE_3__["default"])
+/* harmony export */   TestGroupControl: () => (/* reexport safe */ _TestGroupControl__WEBPACK_IMPORTED_MODULE_6__["default"]),
+/* harmony export */   TextControl: () => (/* reexport safe */ _TextControl__WEBPACK_IMPORTED_MODULE_4__["default"])
 /* harmony export */ });
 /* harmony import */ var _Panel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Panel */ "./src/gb-superset/controls/inspector/Panel.js");
 /* harmony import */ var _TabPanel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TabPanel */ "./src/gb-superset/controls/inspector/TabPanel.js");
-/* harmony import */ var _icon_picker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./icon-picker */ "./src/gb-superset/controls/inspector/icon-picker/index.js");
-/* harmony import */ var _TextControl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TextControl */ "./src/gb-superset/controls/inspector/TextControl.js");
-/* harmony import */ var _TestGroupControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TestGroupControl */ "./src/gb-superset/controls/inspector/TestGroupControl.js");
+/* harmony import */ var _BoxControl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BoxControl */ "./src/gb-superset/controls/inspector/BoxControl.js");
+/* harmony import */ var _icon_picker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./icon-picker */ "./src/gb-superset/controls/inspector/icon-picker/index.js");
+/* harmony import */ var _TextControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TextControl */ "./src/gb-superset/controls/inspector/TextControl.js");
+/* harmony import */ var _BorderControl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./BorderControl */ "./src/gb-superset/controls/inspector/BorderControl.js");
+/* harmony import */ var _TestGroupControl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./TestGroupControl */ "./src/gb-superset/controls/inspector/TestGroupControl.js");
+/* harmony import */ var _BorderBoxControl__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./BorderBoxControl */ "./src/gb-superset/controls/inspector/BorderBoxControl.js");
+/* harmony import */ var _AnglePickerControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./AnglePickerControl */ "./src/gb-superset/controls/inspector/AnglePickerControl.js");
+/* harmony import */ var _AlignmentMatrixControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./AlignmentMatrixControl */ "./src/gb-superset/controls/inspector/AlignmentMatrixControl.js");
+
+
+
+
+
 
 
 
@@ -737,7 +934,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gb-superset/super-block-a","version":"0.1.0","title":"Super Block #A","category":"widgets","icon":"smiley","description":"Example block scaffolded with Gutenberg Superset.","textdomain":"gb-superset","editorScript":"file:./index.js","attributes":{"content":{"type":"object"},"groupControl":{"type":"object"},"align":{"type":"string"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gb-superset/super-block-a","version":"0.1.0","title":"Super Block #A","category":"widgets","icon":"smiley","description":"Example block scaffolded with Gutenberg Superset.","textdomain":"gb-superset","editorScript":"file:./index.js","attributes":{"content":{"type":"object"},"groupControl":{"type":"object"},"align":{"type":"string"},"alignmentMatrix":{"type":"object"},"anglePicker":{"type":"object"},"borderBox":{"type":"object"},"border":{"type":"object"},"box":{"type":"object"}}}');
 
 /***/ })
 
@@ -851,15 +1048,36 @@ const block = class extends _gb_superset_blockType__WEBPACK_IMPORTED_MODULE_5__[
       name: "groupControl",
       responsive: true
     })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.TabPanel
-    // initialTabName="tab2"
+    // initialTabName="advance"
     // orientation="horizontal"
     , {
-      tabs: ['Settings', 'Styles']
+      tabs: ['Settings', 'Styles', 'Advance']
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       content: "Settings"
     }, "For Settings"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       content: "Styles"
-    }, "For Styles")));
+    }, "For Styles"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      content: "Advance"
+    }, "For Advance")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.Panel, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('My All Control')
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.AlignmentMatrixControl, {
+      label: "Background Position",
+      name: "alignmentMatrix"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.AnglePickerControl, {
+      label: "Angle Picker",
+      name: "anglePicker"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.BorderBoxControl, {
+      label: "Border Box",
+      name: "borderBox"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.BorderControl, {
+      label: "Border",
+      name: "border"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.BoxControl, {
+      label: "Box Control",
+      name: "box",
+      allowReset: true
+      // splitOnAxis={true}
+    })));
   };
   EditorControls = () => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.AlignmentControl, {

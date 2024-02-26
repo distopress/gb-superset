@@ -7,9 +7,14 @@ import { AlignmentControl } from '@wordpress/block-editor';
 import blockType from '@gb-superset/blockType';
 import {
 	Panel,
+	TabPanel,
+	BoxControl,
 	TextControl,
+	BorderControl,
 	TestGroupControl,
-	TabPanel
+	BorderBoxControl,
+	AnglePickerControl,
+	AlignmentMatrixControl,
 } from '@gb-superset/controls/inspector';
 
 const block = class extends blockType {
@@ -35,13 +40,38 @@ const block = class extends blockType {
 					/>
 				</Panel>
 				<TabPanel
-					// initialTabName="tab2"
+					// initialTabName="advance"
 					// orientation="horizontal"
-					tabs={[ 'Settings', 'Styles' ]}
+					tabs={[ 'Settings', 'Styles', 'Advance' ]}
 				>
 					<div content="Settings">For Settings</div>
       		<div content="Styles">For Styles</div>
+      		<div content="Advance">For Advance</div>
 				</TabPanel>
+				<Panel title={__('My All Control')}>
+					<AlignmentMatrixControl
+						label="Background Position"
+						name="alignmentMatrix"
+					/>
+					<AnglePickerControl
+						label="Angle Picker"
+						name="anglePicker"
+					/>
+					<BorderBoxControl
+						label="Border Box"
+						name="borderBox"
+					/>
+					<BorderControl
+						label="Border"
+						name="border"
+					/>
+					<BoxControl
+						label="Box Control"
+						name="box"
+						allowReset={true}
+						// splitOnAxis={true}
+					/>
+				</Panel>
 			</>
 		);
 	}

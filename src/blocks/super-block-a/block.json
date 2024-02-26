@@ -18,6 +18,21 @@
 		},
 		"align": {
 			"type": "string"
+		},
+		"alignmentMatrix": {
+			"type": "object"
+		},
+		"anglePicker": {
+			"type": "object"
+		},
+		"borderBox": {
+			"type": "object"
+		},
+		"border": {
+			"type": "object"
+		},
+		"box": {
+			"type": "object"
 		}
 	}
 }
