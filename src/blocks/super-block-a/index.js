@@ -8,7 +8,8 @@ import blockType from '@gb-superset/blockType';
 import {
 	Panel,
 	TextControl,
-	TestGroupControl
+	TestGroupControl,
+	TabPanel
 } from '@gb-superset/controls/inspector';
 
 const block = class extends blockType {
@@ -33,6 +34,14 @@ const block = class extends blockType {
 						responsive={true}
 					/>
 				</Panel>
+				<TabPanel
+					// initialTabName="tab2"
+					// orientation="horizontal"
+					tabs={[ 'Settings', 'Styles' ]}
+				>
+					<div content="Settings">For Settings</div>
+      		<div content="Styles">For Styles</div>
+				</TabPanel>
 			</>
 		);
 	}

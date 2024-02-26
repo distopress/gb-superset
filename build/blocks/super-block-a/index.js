@@ -175,6 +175,58 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/gb-superset/controls/inspector/TabPanel.js":
+/*!********************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/TabPanel.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  const {
+    tabs,
+    children,
+    ...Props
+  } = props;
+  const Tabs = tabs.map(tab => {
+    const Tab = tab.replace(/\s/g, '').toLowerCase();
+    return {
+      name: Tab || '',
+      // required
+      title: tab || '',
+      // required
+      className: `tab-${Tab}`
+    };
+  });
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...Props,
+    className: "gb-superset-tab-panel"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TabPanel, {
+    ...Props,
+    tabs: Tabs,
+    activeClass: "active"
+  }, tab => React.Children.map(children, child => {
+    if (child.props.content.toLowerCase() === tab?.name) {
+      return child;
+    }
+    return null;
+  })));
+});
+
+/***/ }),
+
 /***/ "./src/gb-superset/controls/inspector/TestGroupControl.js":
 /*!****************************************************************!*\
   !*** ./src/gb-superset/controls/inspector/TestGroupControl.js ***!
@@ -276,13 +328,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   IconPicker: () => (/* reexport safe */ _icon_picker__WEBPACK_IMPORTED_MODULE_2__["default"]),
 /* harmony export */   Panel: () => (/* reexport safe */ _Panel__WEBPACK_IMPORTED_MODULE_0__["default"]),
-/* harmony export */   TestGroupControl: () => (/* reexport safe */ _TestGroupControl__WEBPACK_IMPORTED_MODULE_3__["default"]),
-/* harmony export */   TextControl: () => (/* reexport safe */ _TextControl__WEBPACK_IMPORTED_MODULE_1__["default"])
+/* harmony export */   TabPanel: () => (/* reexport safe */ _TabPanel__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   TestGroupControl: () => (/* reexport safe */ _TestGroupControl__WEBPACK_IMPORTED_MODULE_4__["default"]),
+/* harmony export */   TextControl: () => (/* reexport safe */ _TextControl__WEBPACK_IMPORTED_MODULE_3__["default"])
 /* harmony export */ });
 /* harmony import */ var _Panel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Panel */ "./src/gb-superset/controls/inspector/Panel.js");
-/* harmony import */ var _TextControl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TextControl */ "./src/gb-superset/controls/inspector/TextControl.js");
+/* harmony import */ var _TabPanel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TabPanel */ "./src/gb-superset/controls/inspector/TabPanel.js");
 /* harmony import */ var _icon_picker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./icon-picker */ "./src/gb-superset/controls/inspector/icon-picker/index.js");
-/* harmony import */ var _TestGroupControl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TestGroupControl */ "./src/gb-superset/controls/inspector/TestGroupControl.js");
+/* harmony import */ var _TextControl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TextControl */ "./src/gb-superset/controls/inspector/TextControl.js");
+/* harmony import */ var _TestGroupControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TestGroupControl */ "./src/gb-superset/controls/inspector/TestGroupControl.js");
+
 
 
 
@@ -795,7 +850,16 @@ const block = class extends _gb_superset_blockType__WEBPACK_IMPORTED_MODULE_5__[
       help: "Additional help text",
       name: "groupControl",
       responsive: true
-    })));
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.TabPanel
+    // initialTabName="tab2"
+    // orientation="horizontal"
+    , {
+      tabs: ['Settings', 'Styles']
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      content: "Settings"
+    }, "For Settings"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      content: "Styles"
+    }, "For Styles")));
   };
   EditorControls = () => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.AlignmentControl, {
