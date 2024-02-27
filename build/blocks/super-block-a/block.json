@@ -42,6 +42,36 @@
     },
     "colorPicker": {
       "type": "object"
+    },
+    "comboBox": {
+      "type": "object"
+    },
+    "datePicker": {
+      "type": "object"
+    },
+    "timePicker": {
+      "type": "object"
+    },
+    "dateTimePicker": {
+      "type": "object"
+    },
+    "fontSize": {
+      "type": "object"
+    },
+    "toggle": {
+      "type": "object"
+    },
+    "gradient": {
+      "type": "object"
+    },
+    "number": {
+      "type": "object"
+    },
+    "radio": {
+      "type": "object"
+    },
+    "range": {
+      "type": "object"
     }
   }
 }

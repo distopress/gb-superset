@@ -530,6 +530,292 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/gb-superset/controls/inspector/ComboboxControl.js":
+/*!***************************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/ComboboxControl.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (({
+  controls,
+  ...props
+}) => {
+  const [filteredOptions, setFilteredOptions] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    setFilteredOptions(controls?.map(control => ({
+      label: control,
+      value: control.toLowerCase()
+    })));
+  }, []);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'value',
+    changeProp: 'onChange',
+    className: "gb-superset-combobox-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ComboboxControl, {
+    ...props,
+    options: filteredOptions,
+    onInputChange: v => setFilteredOptions(options.filter(option => option.value === v))
+  }));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/DatePicker.js":
+/*!**********************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/DatePicker.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (({
+  container,
+  ...props
+}) => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'currentDate',
+    changeProp: 'onChange',
+    className: "gb-superset-date-time-picker"
+  }, container ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, container === 'time' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TimePicker, {
+    ...props
+  }), container === 'datetime' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.DateTimePicker, {
+    ...props
+  })) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.DatePicker, {
+    ...props
+  }));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/Divider.js":
+/*!*******************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/Divider.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    className: "gb-superset-divider"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalDivider, null));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/ExternalLink.js":
+/*!************************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/ExternalLink.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (({
+  children,
+  ...props
+}) => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    className: "gb-superset-externalLink"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ExternalLink, {
+    ...props
+  }, children));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/FontSizePicker.js":
+/*!**************************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/FontSizePicker.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'value',
+    changeProp: 'onChange',
+    className: "gb-superset-font-size-picker"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.FontSizePicker, {
+    ...props
+  }));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/FormToggle.js":
+/*!**********************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/FormToggle.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'checked',
+    changeProp: 'onChange',
+    className: "gb-superset-toggle"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.FormToggle, {
+    ...props
+  }));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/GradientPicker.js":
+/*!**************************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/GradientPicker.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  const gradients = [{
+    name: 'JShine',
+    gradient: 'linear-gradient(135deg,#12c2e9 0%,#c471ed 50%,#f64f59 100%)',
+    slug: 'jshine'
+  }, {
+    name: 'Moonlit Asteroid',
+    gradient: 'linear-gradient(135deg,#0F2027 0%, #203A43 0%, #2c5364 100%)',
+    slug: 'moonlit-asteroid'
+  }, {
+    name: 'Rastafarie',
+    gradient: 'linear-gradient(135deg,#1E9600 0%, #FFF200 0%, #FF0000 100%)',
+    slug: 'rastafari'
+  }];
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'value',
+    changeProp: 'onChange',
+    className: "gb-superset-gradient-picker"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.GradientPicker, {
+    ...props,
+    gradients: gradients
+  }));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/NumberControl.js":
+/*!*************************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/NumberControl.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'value',
+    changeProp: 'onChange',
+    className: "gb-superset-number-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.__experimentalNumberControl, {
+    ...props
+  }));
+});
+
+/***/ }),
+
 /***/ "./src/gb-superset/controls/inspector/Panel.js":
 /*!*****************************************************!*\
   !*** ./src/gb-superset/controls/inspector/Panel.js ***!
@@ -552,6 +838,81 @@ __webpack_require__.r(__webpack_exports__);
     ...props,
     className: "gb-superset-panel"
   }, props.children);
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/RadioControl.js":
+/*!************************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/RadioControl.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (({
+  options,
+  ...props
+}) => {
+  const option = options.map(option => {
+    const value = option.replace(/\s+/g, '-').toLowerCase();
+    return {
+      label: option,
+      value
+    };
+  });
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'selected',
+    changeProp: 'onChange',
+    className: "gb-superset-number-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RadioControl, {
+    ...props,
+    options: option
+  }));
+});
+
+/***/ }),
+
+/***/ "./src/gb-superset/controls/inspector/RangeControl.js":
+/*!************************************************************!*\
+  !*** ./src/gb-superset/controls/inspector/RangeControl.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @gb-superset/supports/control */ "./src/gb-superset/supports/control/index.js");
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_supports_control__WEBPACK_IMPORTED_MODULE_2__.ControlContainer, {
+    ...props,
+    valueProp: 'value',
+    changeProp: 'onChange',
+    className: "gb-superset-range-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
+    ...props
+  }));
 });
 
 /***/ }),
@@ -716,11 +1077,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   CheckboxControl: () => (/* reexport safe */ _CheckboxControl__WEBPACK_IMPORTED_MODULE_8__["default"]),
 /* harmony export */   ColorPalette: () => (/* reexport safe */ _ColorPalette__WEBPACK_IMPORTED_MODULE_9__["default"]),
 /* harmony export */   ColorPicker: () => (/* reexport safe */ _ColorPicker__WEBPACK_IMPORTED_MODULE_10__["default"]),
-/* harmony export */   IconPicker: () => (/* reexport safe */ _icon_picker__WEBPACK_IMPORTED_MODULE_11__["default"]),
-/* harmony export */   Panel: () => (/* reexport safe */ _Panel__WEBPACK_IMPORTED_MODULE_15__["default"]),
-/* harmony export */   TabPanel: () => (/* reexport safe */ _TabPanel__WEBPACK_IMPORTED_MODULE_12__["default"]),
-/* harmony export */   TestGroupControl: () => (/* reexport safe */ _TestGroupControl__WEBPACK_IMPORTED_MODULE_14__["default"]),
-/* harmony export */   TextControl: () => (/* reexport safe */ _TextControl__WEBPACK_IMPORTED_MODULE_13__["default"])
+/* harmony export */   ComboboxControl: () => (/* reexport safe */ _ComboboxControl__WEBPACK_IMPORTED_MODULE_11__["default"]),
+/* harmony export */   DatePicker: () => (/* reexport safe */ _DatePicker__WEBPACK_IMPORTED_MODULE_12__["default"]),
+/* harmony export */   Divider: () => (/* reexport safe */ _Divider__WEBPACK_IMPORTED_MODULE_13__["default"]),
+/* harmony export */   ExternalLink: () => (/* reexport safe */ _ExternalLink__WEBPACK_IMPORTED_MODULE_14__["default"]),
+/* harmony export */   FontSizePicker: () => (/* reexport safe */ _FontSizePicker__WEBPACK_IMPORTED_MODULE_15__["default"]),
+/* harmony export */   FormToggle: () => (/* reexport safe */ _FormToggle__WEBPACK_IMPORTED_MODULE_16__["default"]),
+/* harmony export */   GradientPicker: () => (/* reexport safe */ _GradientPicker__WEBPACK_IMPORTED_MODULE_17__["default"]),
+/* harmony export */   IconPicker: () => (/* reexport safe */ _icon_picker__WEBPACK_IMPORTED_MODULE_21__["default"]),
+/* harmony export */   NumberControl: () => (/* reexport safe */ _NumberControl__WEBPACK_IMPORTED_MODULE_18__["default"]),
+/* harmony export */   Panel: () => (/* reexport safe */ _Panel__WEBPACK_IMPORTED_MODULE_25__["default"]),
+/* harmony export */   RadioControl: () => (/* reexport safe */ _RadioControl__WEBPACK_IMPORTED_MODULE_19__["default"]),
+/* harmony export */   RangeControl: () => (/* reexport safe */ _RangeControl__WEBPACK_IMPORTED_MODULE_20__["default"]),
+/* harmony export */   TabPanel: () => (/* reexport safe */ _TabPanel__WEBPACK_IMPORTED_MODULE_22__["default"]),
+/* harmony export */   TestGroupControl: () => (/* reexport safe */ _TestGroupControl__WEBPACK_IMPORTED_MODULE_24__["default"]),
+/* harmony export */   TextControl: () => (/* reexport safe */ _TextControl__WEBPACK_IMPORTED_MODULE_23__["default"])
 /* harmony export */ });
 /* harmony import */ var _AnglePickerControl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AnglePickerControl */ "./src/gb-superset/controls/inspector/AnglePickerControl.js");
 /* harmony import */ var _AlignmentMatrixControl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AlignmentMatrixControl */ "./src/gb-superset/controls/inspector/AlignmentMatrixControl.js");
@@ -733,11 +1104,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CheckboxControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./CheckboxControl */ "./src/gb-superset/controls/inspector/CheckboxControl.js");
 /* harmony import */ var _ColorPalette__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ColorPalette */ "./src/gb-superset/controls/inspector/ColorPalette.js");
 /* harmony import */ var _ColorPicker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ColorPicker */ "./src/gb-superset/controls/inspector/ColorPicker.js");
-/* harmony import */ var _icon_picker__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./icon-picker */ "./src/gb-superset/controls/inspector/icon-picker/index.js");
-/* harmony import */ var _TabPanel__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./TabPanel */ "./src/gb-superset/controls/inspector/TabPanel.js");
-/* harmony import */ var _TextControl__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./TextControl */ "./src/gb-superset/controls/inspector/TextControl.js");
-/* harmony import */ var _TestGroupControl__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./TestGroupControl */ "./src/gb-superset/controls/inspector/TestGroupControl.js");
-/* harmony import */ var _Panel__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Panel */ "./src/gb-superset/controls/inspector/Panel.js");
+/* harmony import */ var _ComboboxControl__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ComboboxControl */ "./src/gb-superset/controls/inspector/ComboboxControl.js");
+/* harmony import */ var _DatePicker__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./DatePicker */ "./src/gb-superset/controls/inspector/DatePicker.js");
+/* harmony import */ var _Divider__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Divider */ "./src/gb-superset/controls/inspector/Divider.js");
+/* harmony import */ var _ExternalLink__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./ExternalLink */ "./src/gb-superset/controls/inspector/ExternalLink.js");
+/* harmony import */ var _FontSizePicker__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./FontSizePicker */ "./src/gb-superset/controls/inspector/FontSizePicker.js");
+/* harmony import */ var _FormToggle__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./FormToggle */ "./src/gb-superset/controls/inspector/FormToggle.js");
+/* harmony import */ var _GradientPicker__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./GradientPicker */ "./src/gb-superset/controls/inspector/GradientPicker.js");
+/* harmony import */ var _NumberControl__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./NumberControl */ "./src/gb-superset/controls/inspector/NumberControl.js");
+/* harmony import */ var _RadioControl__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./RadioControl */ "./src/gb-superset/controls/inspector/RadioControl.js");
+/* harmony import */ var _RangeControl__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./RangeControl */ "./src/gb-superset/controls/inspector/RangeControl.js");
+/* harmony import */ var _icon_picker__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./icon-picker */ "./src/gb-superset/controls/inspector/icon-picker/index.js");
+/* harmony import */ var _TabPanel__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./TabPanel */ "./src/gb-superset/controls/inspector/TabPanel.js");
+/* harmony import */ var _TextControl__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./TextControl */ "./src/gb-superset/controls/inspector/TextControl.js");
+/* harmony import */ var _TestGroupControl__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./TestGroupControl */ "./src/gb-superset/controls/inspector/TestGroupControl.js");
+/* harmony import */ var _Panel__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./Panel */ "./src/gb-superset/controls/inspector/Panel.js");
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1149,7 +1540,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gb-superset/super-block-a","version":"0.1.0","title":"Super Block #A","category":"widgets","icon":"smiley","description":"Example block scaffolded with Gutenberg Superset.","textdomain":"gb-superset","editorScript":"file:./index.js","attributes":{"content":{"type":"object"},"groupControl":{"type":"object"},"align":{"type":"string"},"alignmentMatrix":{"type":"object"},"anglePicker":{"type":"object"},"borderBox":{"type":"object"},"border":{"type":"object"},"box":{"type":"object"},"checkBox":{"type":"object"},"colorPalette":{"type":"object"},"colorPicker":{"type":"object"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"gb-superset/super-block-a","version":"0.1.0","title":"Super Block #A","category":"widgets","icon":"smiley","description":"Example block scaffolded with Gutenberg Superset.","textdomain":"gb-superset","editorScript":"file:./index.js","attributes":{"content":{"type":"object"},"groupControl":{"type":"object"},"align":{"type":"string"},"alignmentMatrix":{"type":"object"},"anglePicker":{"type":"object"},"borderBox":{"type":"object"},"border":{"type":"object"},"box":{"type":"object"},"checkBox":{"type":"object"},"colorPalette":{"type":"object"},"colorPicker":{"type":"object"},"comboBox":{"type":"object"},"datePicker":{"type":"object"},"timePicker":{"type":"object"},"dateTimePicker":{"type":"object"},"fontSize":{"type":"object"},"toggle":{"type":"object"},"gradient":{"type":"object"},"number":{"type":"object"},"radio":{"type":"object"},"range":{"type":"object"}}}');
 
 /***/ })
 
@@ -1305,6 +1696,62 @@ const block = class extends _gb_superset_blockType__WEBPACK_IMPORTED_MODULE_5__[
     }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.ColorPicker, {
       name: "colorPicker",
       enableAlpha: true
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.ComboboxControl, {
+      label: "Font Size",
+      name: "comboBox",
+      controls: ['Small', 'Normal', 'Large']
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.DatePicker, {
+      name: "datePicker",
+      is12Hour: true,
+      startOfWeek: 6 // 0 for Sunday, 1 for Monday, etc.
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.DatePicker, {
+      container: "time",
+      name: "timePicker",
+      is12Hour: true
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.DatePicker, {
+      container: "datetime",
+      name: "dateTimePicker",
+      is12Hour: true,
+      startOfWeek: 6 // 0 for Sunday, 1 for Monday, etc.
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.Divider, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.ExternalLink, {
+      href: "https://wordpress.org"
+    }, "WordPress.org"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.FontSizePicker, {
+      name: "fontSize",
+      fontSizes: [{
+        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Small'),
+        slug: 'small',
+        size: 12
+      }, {
+        name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Big'),
+        slug: 'big',
+        size: 26
+      }],
+      withReset: true,
+      withSlider: true,
+      fallbackFontSize: 16 // Only relevant if withSlider is true				
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.FormToggle, {
+      name: "toggle"
+      // checked={ true }
+      // onChange={ (v) => console.log(v) }
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.GradientPicker, {
+      name: "gradient"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.NumberControl, {
+      label: "Number",
+      name: "number",
+      min: 10,
+      max: 100,
+      isShiftStepEnabled: true,
+      shiftStep: 10
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.RadioControl, {
+      name: "radio",
+      label: "User type",
+      help: "The type of the current user",
+      options: ['Author', 'Editor']
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_gb_superset_controls_inspector__WEBPACK_IMPORTED_MODULE_6__.RangeControl, {
+      name: "range",
+      label: "Range Control",
+      min: 2,
+      max: 10
     })));
   };
   EditorControls = () => {

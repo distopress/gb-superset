@@ -17,6 +17,16 @@ import {
 	CheckboxControl,
 	ColorPalette,
 	ColorPicker,
+	ComboboxControl,
+	DatePicker,
+	Divider,
+	ExternalLink,
+	FontSizePicker,
+	FormToggle,
+	GradientPicker,
+	NumberControl,
+	RadioControl,
+	RangeControl,
 	Panel,
 	TabPanel,
 	TextControl,
@@ -92,6 +102,75 @@ const block = class extends blockType {
 					<ColorPicker
             name="colorPicker"
             enableAlpha
+        	/>
+					<ComboboxControl
+						label="Font Size"
+						name="comboBox"
+						controls={[ 'Small', 'Normal', 'Large' ]}
+					/>
+					<DatePicker
+						name="datePicker"
+						is12Hour={ true }
+						startOfWeek={6} // 0 for Sunday, 1 for Monday, etc.
+					/>
+					<DatePicker
+						container="time"
+						name="timePicker"
+						is12Hour={ true }
+					/>
+					<DatePicker
+						container="datetime"
+						name="dateTimePicker"
+						is12Hour={ true }
+						startOfWeek={6} // 0 for Sunday, 1 for Monday, etc.
+					/>
+					<Divider/>
+					<ExternalLink href="https://wordpress.org">WordPress.org</ExternalLink>
+					<FontSizePicker
+						name="fontSize"
+						fontSizes={[
+							{
+								name: __( 'Small' ),
+								slug: 'small',
+								size: 12,
+							},
+							{
+								name: __( 'Big' ),
+								slug: 'big',
+								size: 26,
+							},
+						]}
+						withReset={true}
+						withSlider={true}
+						fallbackFontSize={ 16 }	// Only relevant if withSlider is true				
+					/>
+					<FormToggle
+            name="toggle"
+						// checked={ true }
+						// onChange={ (v) => console.log(v) }
+        	/>
+					<GradientPicker
+            name="gradient"
+        	/>
+					<NumberControl
+						label="Number"
+						name="number"
+						min={10}
+						max={100}
+            isShiftStepEnabled={ true }
+            shiftStep={ 10 }
+        	/>
+					<RadioControl
+            name="radio"
+            label="User type"
+            help="The type of the current user"
+						options={[ 'Author', 'Editor' ]}
+        	/>
+					<RangeControl
+						name="range"
+            label="Range Control"
+            min={ 2 }
+            max={ 10 }
         	/>
 				</Panel>
 			</>

@@ -9,6 +9,16 @@ export { default as Card } from './Card';
 export { default as CheckboxControl } from './CheckboxControl';
 export { default as ColorPalette } from './ColorPalette';
 export { default as ColorPicker } from './ColorPicker';
+export { default as ComboboxControl } from './ComboboxControl';
+export { default as DatePicker } from './DatePicker';
+export { default as Divider } from './Divider';
+export { default as ExternalLink } from './ExternalLink';
+export { default as FontSizePicker } from './FontSizePicker';
+export { default as FormToggle } from './FormToggle';
+export { default as GradientPicker } from './GradientPicker';
+export { default as NumberControl } from './NumberControl';
+export { default as RadioControl } from './RadioControl';
+export { default as RangeControl } from './RangeControl';
 
 export { default as IconPicker } from './icon-picker';
 export { default as TabPanel } from './TabPanel';
