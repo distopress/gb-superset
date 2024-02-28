@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"name": "gb-superset/super-block-controls",
 	"version": "0.1.0",
-	"title": "Super Block #sagor",
+	"title": "Super Block Control #sagor",
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Example block scaffolded with Gutenberg Superset.",
