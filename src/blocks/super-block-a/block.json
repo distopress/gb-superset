@@ -21,6 +21,9 @@
 		},
 		"align": {
 			"type": "string"
+		},
+		"icons":{
+			"type": "object"
 		}
 	}
 }

@@ -11,6 +11,7 @@ import {
 	ToggleControl,
 	TestGroupControl
 } from '@gb-superset/controls/inspector';
+import IconPicker from '../../gb-superset/controls/inspector/icon-picker';
 
 const block = class extends blockType {
 	metadata = metadata;
@@ -40,6 +41,8 @@ const block = class extends blockType {
 						name="groupControl"
 						responsive={true}
 					/> */}
+
+					<IconPicker label="Choose Icon" name="icons" />
 				</Panel>
 			</>
 		);
