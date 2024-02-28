@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function _test_block_init() {
-	register_block_type( __DIR__ . '/build/blocks/super-block-a' );
+	register_block_type( __DIR__ . '/build/blocks/super-block-controls' );
 	// register_block_type( __DIR__ . '/build/blocks/super-block-b' );
 }
 add_action( 'init', '_test_block_init' );

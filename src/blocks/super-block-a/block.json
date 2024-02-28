@@ -18,60 +18,6 @@
 		},
 		"align": {
 			"type": "string"
-		},
-		"alignmentMatrix": {
-			"type": "object"
-		},
-		"anglePicker": {
-			"type": "object"
-		},
-		"borderBox": {
-			"type": "object"
-		},
-		"border": {
-			"type": "object"
-		},
-		"box": {
-			"type": "object"
-		},
-		"checkBox": {
-			"type": "object"
-		},
-		"colorPalette": {
-			"type": "object"
-		},
-		"colorPicker": {
-			"type": "object"
-		},
-		"comboBox": {
-			"type": "object"
-		},
-		"datePicker": {
-			"type": "object"
-		},
-		"timePicker": {
-			"type": "object"
-		},
-		"dateTimePicker": {
-			"type": "object"
-		},
-		"fontSize": {
-			"type": "object"
-		},
-		"toggle": {
-			"type": "object"
-		},
-		"gradient": {
-			"type": "object"
-		},
-		"number": {
-			"type": "object"
-		},
-		"radio": {
-			"type": "object"
-		},
-		"range": {
-			"type": "object"
 		}
 	}
 }
