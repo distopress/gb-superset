@@ -11,10 +11,12 @@ export default (props) => {
     // Destructure get and set from the context
     let { get, set } = useContext(ControlContext);
 
+    const beforeSave = props.beforeSave || ((n, c) => n);
+
     // If attributes and setAttributes props are provided, override get and set
-    if(props.attributes && props.setAttributes) {
+    if (props.attributes && props.setAttributes) {
         get = (name, scope) => getObject(name, scope, props.attributes);
-        set =(name, value, scope) => setObject(name, value, scope, props.attributes, props.setAttributes);
+        set = (name, value, scope) => setObject(name, value, scope, props.attributes, props.setAttributes);
     }
 
     // Create a state variable for scope with initial value 'desktop'
@@ -44,12 +46,17 @@ export default (props) => {
             )}
             {/* Map over the children and clone them with additional props */}
             {React.Children.map(props.children, child => {
+                const currentValue = get(props.name, scope);
+                const setNewValue = (newValue) => {
+                    set(props.name, beforeSave(newValue, currentValue), scope)
+                };
+
                 return React.cloneElement(
                     child,
                     {
                         ...child.props,
-                        [props.valueProp]: get(props.name, scope),
-                        [props.changeProp]: (value) => set(props.name, value, scope)
+                        [props.valueProp]: currentValue,
+                        [props.changeProp]: (newValue) => setNewValue(newValue)
                     }
                 );
             })}

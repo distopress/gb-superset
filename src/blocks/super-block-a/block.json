@@ -16,6 +16,9 @@
 		"groupControl": {
 			"type": "object"
 		},
+		"toggle": {
+			"type": "object"
+		},
 		"align": {
 			"type": "string"
 		}

@@ -8,6 +8,7 @@ import blockType from '@gb-superset/blockType';
 import {
 	Panel,
 	TextControl,
+	ToggleControl,
 	TestGroupControl
 } from '@gb-superset/controls/inspector';
 
@@ -18,20 +19,27 @@ const block = class extends blockType {
 		return (
 			<>
 				<Panel title={__('My control')}>
-					<TextControl
+					{/* <TextControl
 						label="Text Field"
 						help="Additional help text"
 						name="content"
 
 						responsive={true}
 						state={['hover', 'focus']}
+					/> */}
+					<ToggleControl
+						label="Text Field"
+						help="Additional help text"
+						name="toggle"
+
+						responsive={false}
 					/>
-					<TestGroupControl
+					{/* <TestGroupControl
 						label="My Text Field"
 						help="Additional help text"
 						name="groupControl"
 						responsive={true}
-					/>
+					/> */}
 				</Panel>
 			</>
 		);

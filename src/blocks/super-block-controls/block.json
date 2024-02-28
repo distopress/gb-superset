@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gb-superset/super-block-a",
+	"name": "gb-superset/super-block-controls",
 	"version": "0.1.0",
-	"title": "Super Block #A",
+	"title": "Super Block #sagor",
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Example block scaffolded with Gutenberg Superset.",
