@@ -46,19 +46,7 @@
     "comboBox": {
       "type": "object"
     },
-    "datePicker": {
-      "type": "object"
-    },
-    "timePicker": {
-      "type": "object"
-    },
-    "dateTimePicker": {
-      "type": "object"
-    },
     "fontSize": {
-      "type": "object"
-    },
-    "toggle": {
       "type": "object"
     },
     "gradient": {

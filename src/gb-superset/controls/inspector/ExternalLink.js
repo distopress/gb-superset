@@ -1,13 +1,9 @@
 import { ExternalLink } from '@wordpress/components';
 
-import { ControlContainer } from '@gb-superset/supports/control';
-
-export default ({children, ...props}) => {
+export default (props) => {
   return (
-    <ControlContainer {...props} className="gb-superset-externalLink">
-      <ExternalLink {...props} >
-        { children }
-      </ExternalLink>
-    </ControlContainer>
+    <ExternalLink {...props} className="gb-superset-externalLink">
+      { props.children }
+    </ExternalLink>
   );
 }

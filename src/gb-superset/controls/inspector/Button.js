@@ -1,13 +1,9 @@
 import { Button } from '@wordpress/components';
 
-import { ControlContainer } from '@gb-superset/supports/control';
-
-export default ({ children, ...Props }) => {
+export default (props) => {
   return (
-    <ControlContainer {...Props} className="gb-superset-button">
-      <Button {...Props}>
-        { children }
-      </Button>
-    </ControlContainer>
+    <Button {...props} className="gb-superset-button">
+      { props.children }
+    </Button>
   );
 }

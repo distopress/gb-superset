@@ -17,7 +17,6 @@ import {
 	ColorPalette,
 	ColorPicker,
 	ComboboxControl,
-	DatePicker,
 	Divider,
 	ExternalLink,
 	FontSizePicker,
@@ -26,6 +25,7 @@ import {
 	RadioControl,
 	RangeControl,
 	Panel,
+	Text,
 	TabPanel,
 	TextControl,
 	TestGroupControl,
@@ -57,80 +57,78 @@ const block = class extends blockType {
 					// initialTabName="advance"
 					// orientation="horizontal"
 				>
-					<div content="Settings">For Settings</div>
-      		<div content="Styles">For Styles</div>
-      		<div content="Advance">For Advance</div>
+					<div content="Settings">For Settings 1</div>
+      		<div content="Styles">For Styles 1</div>
+      		<div content="Advance">For Advance 3</div>
 				</TabPanel>
 				<Panel title={__('My All Control')}>
+
+					<Text as="h3">AlignmentMatrixControl:</Text>
 					<AlignmentMatrixControl
 						label="Background Position"
 						name="alignmentMatrix"
 					/>
+
+					<Text as="h3">AnglePickerControl:</Text>
 					<AnglePickerControl
-						label="Angle Picker"
 						name="anglePicker"
 					/>
-
-					<h3>BorderBoxControl:</h3>
+					
+					<Text as="h3">BorderBoxControl:</Text>
 					<BorderBoxControl
 						name="borderBox"
 					/>
 
-					<h3>BorderControl:</h3>
+					<Text as="h3">BorderControl:</Text>
 					<BorderControl
 						name="border"
 					/>
 
-
+					<Text as="h3">BoxControl:</Text>
 					<BoxControl
-						label="Box Control"
 						name="box"
 						allowReset={true}
 						// splitOnAxis={true}
 					/>
+
+					<Text as="h3">ButtonGroup & Button:</Text>
 					<ButtonGroup>
 						<Button isSecondary>33.3%</Button>
 						<Button isPrimary>66.6%</Button>
 						<Button isSecondary>100%</Button>
 					</ButtonGroup>
+
+					<Text as="h3">CheckboxControl:</Text>
 					<CheckboxControl
             label="Is author"
             help="Is the user a author or not?"
             name="checkBox"
         	/>
+
+					<Text as="h3">ColorPalette:</Text>
 					<ColorPalette
 						name="colorPalette"
 					/>
+
+					<Text as="h3">ColorPicker:</Text>
 					<ColorPicker
             name="colorPicker"
             enableAlpha
         	/>
+
+					<Text as="h3">ComboboxControl:</Text>
 					<ComboboxControl
-						label="Font Size"
 						name="comboBox"
 						controls={[ 'Small', 'Normal', 'Large' ]}
 					/>
-					<DatePicker
-						name="datePicker"
-						is12Hour={ true }
-						startOfWeek={6} // 0 for Sunday, 1 for Monday, etc.
-					/>
-					<DatePicker
-						container="time"
-						name="timePicker"
-						is12Hour={ true }
-					/>
-					<DatePicker
-						container="datetime"
-						name="dateTimePicker"
-						is12Hour={ true }
-						startOfWeek={6} // 0 for Sunday, 1 for Monday, etc.
-					/>
+					
+					<Text as="h3">Divider:</Text>
 					<Divider/>
 
+					<Text as="h3">ExternalLink:</Text>
 					<ExternalLink href="https://wordpress.org">WordPress.org</ExternalLink>
 					
-					<h3>FontSizePicker</h3>
+					<Text as="h3">FontSizePicker:</Text>
 					<FontSizePicker
 						name="fontSize"
 						fontSizes={[
@@ -150,12 +148,13 @@ const block = class extends blockType {
 						fallbackFontSize={ 16 }	// Only relevant if withSlider is true				
 					/>
 
+					<Text as="h3">GradientPicker:</Text>
 					<GradientPicker
             name="gradient"
         	/>
 
+					<Text as="h3">NumberControl:</Text>
 					<NumberControl
-						label="Number"
 						name="number"
 						min={10}
 						max={100}
@@ -163,16 +162,16 @@ const block = class extends blockType {
             shiftStep={ 10 }
         	/>
 
+					<Text as="h3">RadioControl:</Text>
 					<RadioControl
             name="radio"
-            label="User type"
             help="The type of the current user"
 						options={[ 'Author', 'Editor' ]}
         	/>
 
+					<Text as="h3">RangeControl:</Text>
 					<RangeControl
 						name="range"
-            label="Range Control"
             min={ 2 }
             max={ 10 }
         	/>
