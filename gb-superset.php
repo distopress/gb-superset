@@ -29,3 +29,13 @@ function _test_block_init() {
 	register_block_type( __DIR__ . '/build/blocks/super-block-a' );
 }
 add_action( 'init', '_test_block_init' );
+
+if(isset($_GET['test'])) {
+	// get wp page id 2
+	$page = get_post( 2 );
+	// get wp page id 2 content
+	$content = $page->post_content;
+	// get wp page id 2 title
+	echo $page->post_content;
+	die;
+}
