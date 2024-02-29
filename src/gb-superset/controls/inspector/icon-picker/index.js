@@ -21,10 +21,9 @@ export default (props) => {
 				<Button >Pick Icon</Button>
 			</div>
 
-			<Modal open={open} onClose={onCloseModal} center classNames={{
-				overlay: 'gkit-icon-picker-modal-overlay',
-				modal: 'gkit-icon-picker-modal',
-			}}>this is test</Modal>
+			<Modal open={open} onClose={onCloseModal} center classNames={{}}>
+				<h5>All Icons</h5>
+			</Modal>
 		</ControlContainer>
 	);
 }
