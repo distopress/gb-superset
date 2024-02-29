@@ -18,17 +18,27 @@ import {
 	ColorPicker,
 	ComboboxControl,
 	Divider,
+	DatePicker,
+	DuotonePicker,
+	DateTimePicker,
 	ExternalLink,
 	FontSizePicker,
+	FormTokenField,
+	FocalPointPicker,
 	GradientPicker,
 	NumberControl,
 	RadioControl,
 	RangeControl,
+	ResizableBox,
+	ResponsiveWrapper,
 	Panel,
 	Text,
 	TabPanel,
+	TimePicker,
 	TextControl,
+	TextareaControl,
 	TestGroupControl,
+	ToggleGroupControl,
 } from '@gb-superset/controls/inspector';
 
 const block = class extends blockType {
@@ -42,7 +52,7 @@ const block = class extends blockType {
 						label="Text Field"
 						help="Additional help text"
 						name="content"
-
+						placeholder="Text Field"
 						responsive={true}
 						state={['hover', 'focus']}
 					/>
@@ -53,15 +63,87 @@ const block = class extends blockType {
 						responsive={true}
 					/>
 				</Panel>
+				
 				<TabPanel
-					// initialTabName="advance"
-					// orientation="horizontal"
+					initialTabName="advance"
+					orientation="horizontal"
 				>
 					<div content="Settings">For Settings 1</div>
       		<div content="Styles">For Styles 1</div>
       		<div content="Advance">For Advance 3</div>
 				</TabPanel>
+				
 				<Panel title={__('My All Control')}>
+
+					<Text as="h3">ToggleGroupControl:</Text>
+					<ToggleGroupControl 
+						label="my label" 
+						name="toggleGroup"
+						options={[ 'Horizontal', 'Vertical' ]}
+						isBlock
+					/>
+
+					<Text as="h3">ResponsiveWrapper:</Text>
+					<ResponsiveWrapper naturalWidth={ 2000 } naturalHeight={ 680 }>
+						<img
+							src="https://s.w.org/style/images/about/WordPress-logotype-standard.png"
+							alt="WordPress"
+						/>
+					</ResponsiveWrapper>
+
+					<Text as="h3">ResizableBox:</Text>
+					<ResizableBox
+						enable={{
+							bottom: true,
+							bottomLeft: false,
+							bottomRight: true,
+							left: false,
+							right: true,
+							top: false,
+							topLeft: false,
+							topRight: false
+						}}
+						size={{ height: 200, width: 200 }}
+					>
+						<div style={{ alignItems: 'center', background: '#eee', display: 'flex', height: '100%', justifyContent: 'center', width: '100%' }} >
+							Resize
+						</div>
+					</ResizableBox>
+
+					<Text as="h3">DuotonePicker:</Text>
+					<DuotonePicker
+						name="duotone"
+					/>
+
+					<Text as="h3">DatePicker:</Text>
+					<DatePicker
+						name="date"
+						is12Hour={ true }
+					/>
+
+					<Text as="h3">TimePicker:</Text>
+					<TimePicker
+						name="time"
+						is12Hour={ true }
+					/>
+
+					<Text as="h3">DateTimePicker:</Text>
+					<DateTimePicker
+						name="dateTime"
+						is12Hour={ true }
+					/>
+
+					<Text as="h3">FormTokenField:</Text>
+					<FormTokenField
+						name="tokenField"
+						suggestions={[ 'Africa', 'America', 'Antarctica', 'Asia', 'Europe', 'Oceania' ]}
+					/>
+
+					<Text as="h3">TextareaControl:</Text>
+					<TextareaControl
+						name="textarea"
+						help="Enter some text"
+					/>
 
 					<Text as="h3">AlignmentMatrixControl:</Text>
 					<AlignmentMatrixControl

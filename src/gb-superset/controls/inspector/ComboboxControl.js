@@ -3,7 +3,7 @@ import { ComboboxControl } from '@wordpress/components';
 
 import { ControlContainer } from '@gb-superset/supports/control';
 
-export default ({ controls, ...props }) => {
+export default ({ controls, props }) => {
   const [ filteredOptions, setFilteredOptions ] = useState([]);
 
   useEffect(() => {
