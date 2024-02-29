@@ -18,16 +18,22 @@ import {
 	ColorPicker,
 	ComboboxControl,
 	Divider,
+	DatePicker,
+	DateTimePicker,
 	ExternalLink,
 	FontSizePicker,
+	FormTokenField,
 	GradientPicker,
+	InputControl,
 	NumberControl,
 	RadioControl,
 	RangeControl,
 	Panel,
 	Text,
 	TabPanel,
+	TimePicker,
 	TextControl,
+	TextareaControl,
 	TestGroupControl,
 } from '@gb-superset/controls/inspector';
 
@@ -42,7 +48,7 @@ const block = class extends blockType {
 						label="Text Field"
 						help="Additional help text"
 						name="content"
-
+						placeholder="Text Field"
 						responsive={true}
 						state={['hover', 'focus']}
 					/>
@@ -53,15 +59,53 @@ const block = class extends blockType {
 						responsive={true}
 					/>
 				</Panel>
+				
 				<TabPanel
-					// initialTabName="advance"
-					// orientation="horizontal"
+					initialTabName="advance"
+					orientation="horizontal"
 				>
 					<div content="Settings">For Settings 1</div>
       		<div content="Styles">For Styles 1</div>
       		<div content="Advance">For Advance 3</div>
 				</TabPanel>
+				
 				<Panel title={__('My All Control')}>
+
+					<Text as="h3">DatePicker:</Text>
+					<DatePicker
+						name="date"
+						is12Hour={ true }
+					/>
+
+					<Text as="h3">TimePicker:</Text>
+					<TimePicker
+						name="time"
+						is12Hour={ true }
+					/>
+
+					<Text as="h3">DateTimePicker:</Text>
+					<DateTimePicker
+						name="dateTime"
+						is12Hour={ true }
+					/>
+
+					<Text as="h3">FormTokenField:</Text>
+					<FormTokenField
+						name="tokenField"
+						suggestions={[ 'Africa', 'America', 'Antarctica', 'Asia', 'Europe', 'Oceania' ]}
+					/>
+
+					<Text as="h3">InputControl:</Text>
+					<InputControl
+						name="inputControl"
+						placeholder="InputControl"
+					/>
+
+					<Text as="h3">TextareaControl:</Text>
+					<TextareaControl
+						name="textarea"
+						help="Enter some text"
+					/>
 
 					<Text as="h3">AlignmentMatrixControl:</Text>
 					<AlignmentMatrixControl

@@ -60,6 +60,24 @@
     },
     "range": {
       "type": "object"
+    },
+    "textarea": {
+      "type": "object"
+    },
+    "inputControl": {
+      "type": "object"
+    },
+    "tokenField": {
+      "type": "object"
+    },
+    "dateTime": {
+      "type": "object"
+    },
+    "time": {
+      "type": "object"
+    },
+    "date": {
+      "type": "object"
     }
   }
 }
