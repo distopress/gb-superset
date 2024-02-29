@@ -26,7 +26,6 @@ import {
 	FormTokenField,
 	FocalPointPicker,
 	GradientPicker,
-	InputControl,
 	NumberControl,
 	RadioControl,
 	RangeControl,
@@ -138,12 +137,6 @@ const block = class extends blockType {
 					<FormTokenField
 						name="tokenField"
 						suggestions={[ 'Africa', 'America', 'Antarctica', 'Asia', 'Europe', 'Oceania' ]}
-					/>
-
-					<Text as="h3">InputControl:</Text>
-					<InputControl
-						name="inputControl"
-						placeholder="InputControl"
 					/>
 
 					<Text as="h3">TextareaControl:</Text>
