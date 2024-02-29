@@ -78,6 +78,12 @@
     },
     "date": {
       "type": "object"
+    },
+    "duotone": {
+      "type": "object"
+    },
+    "toggleGroup": {
+      "type": "object"
     }
   }
 }
