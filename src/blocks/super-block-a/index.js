@@ -42,7 +42,7 @@ const block = class extends blockType {
 						responsive={true}
 					/> */}
 
-					<IconPicker label="Choose Icon" name="icons" />
+					<IconPicker label="Choose Icon" name="icon" />
 				</Panel>
 			</>
 		);

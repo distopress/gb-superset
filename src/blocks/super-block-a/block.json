@@ -22,7 +22,7 @@
 		"align": {
 			"type": "string"
 		},
-		"icons":{
+		"icon":{
 			"type": "object"
 		}
 	}

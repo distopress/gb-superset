@@ -13,7 +13,7 @@ module.exports = {
     },
     entry: {
         ...defaultConfig.entry(),
-        "my/global": ['./src/global.js'],
+        "gb-superset/global": ['./src/global.js'],
         // "gutenkit/frontend-common": ['./src/styles/common.scss'],
         // "modules/icon-pack/index": ['./src/modules/icon-pack/index.js'],
     },
