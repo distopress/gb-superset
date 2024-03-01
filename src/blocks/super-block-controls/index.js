@@ -19,11 +19,11 @@ import {
 	ComboboxControl,
 	Divider,
 	DatePicker,
-	DuotonePicker,
+	DuoColorPicker,
 	DateTimePicker,
 	ExternalLink,
 	FontSizePicker,
-	FormTokenField,
+	SelectTagsField,
 	FocalPointPicker,
 	GradientPicker,
 	NumberControl,
@@ -110,8 +110,8 @@ const block = class extends blockType {
 						</div>
 					</ResizableBox>
 
-					<Text as="h3">DuotonePicker:</Text>
-					<DuotonePicker
+					<Text as="h3">DuoColorPicker:</Text>
+					<DuoColorPicker
 						name="duotone"
 					/>
 
@@ -133,8 +133,8 @@ const block = class extends blockType {
 						is12Hour={ true }
 					/>
 
-					<Text as="h3">FormTokenField:</Text>
-					<FormTokenField
+					<Text as="h3">SelectTagsField:</Text>
+					<SelectTagsField
 						name="tokenField"
 						suggestions={[ 'Africa', 'America', 'Antarctica', 'Asia', 'Europe', 'Oceania' ]}
 					/>
