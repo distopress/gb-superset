@@ -32,6 +32,7 @@ const IconList = ({ icons = [], selectedIcon, setSelectedIcon }) => {
 		<div>
 
 			<SearchControl
+				size="compact"
 				value={searchInput}
 				onChange={setSearchInput}
 				className="gb-superset-icon-picker-search-control"
@@ -40,7 +41,7 @@ const IconList = ({ icons = [], selectedIcon, setSelectedIcon }) => {
 			<div className="gb-superset-icon-picker-list">
 				{filteredIcons.map((icon, index) => {
 					return (
-						<div className={"gb-superset-icon-picker-icon " + icon?.title + (selectedIcon?.title == icon?.title ? ' gb-superset-icon-picker-icon-selected' : '')} key={index} onClick={() => setSelectedIcon(icon)}>
+						<div className={`gb-superset-icon-picker-icon ${(selectedIcon?.title == icon?.title ? 'gb-superset-icon-picker-icon-selected' : '')} ${icon?.title || ''}`} key={index} onClick={() => setSelectedIcon(icon)}>
 							<div className="gb-superset-icon-picker-icon-content" dangerouslySetInnerHTML={{ __html: icon?.src }} />
 						</div>
 					);

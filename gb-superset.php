@@ -33,7 +33,7 @@ function _test_block_init() {
 
 	wp_enqueue_style(
 		'gb-superset/global',
-		GBSUPERSET_PLUGIN_URL . 'build/gb-superset/style-global.css',
+		GBSUPERSET_PLUGIN_URL . 'build/gb-superset/controls-style.css',
 		array(),
 		"0.1.0"
 	);

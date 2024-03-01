@@ -9,10 +9,10 @@ export default (props) => {
     }
 
     return (
-        <ControlContainer {...props} 
-            valueProp={'checked'} 
-            changeProp={'onChange'} 
-            beforeSave={isChecked} 
+        <ControlContainer {...props}
+            valueProp={'checked'}
+            changeProp={'onChange'}
+            beforeSave={isChecked}
             className="gb-superset-text-control"
             >
             <FormToggle
