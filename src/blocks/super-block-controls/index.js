@@ -222,19 +222,9 @@ const block = class extends blockType {
 
 					<Text as="h3">ColorPicker:</Text>
 					<ColorPicker
-
             name="colorPicker"
             enableAlpha
         	/>
-						name="colorPicker"
-						enableAlpha
-					/>
-
-					<Text as="h3">ComboboxControl:</Text>
-					<ComboboxControl
-						name="comboBox"
-						controls={['Small', 'Normal', 'Large']}
-					/>
 
 					<Text as="h3">Divider:</Text>
 					<Divider />
