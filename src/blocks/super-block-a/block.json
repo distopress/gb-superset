@@ -26,6 +26,9 @@
     },
 		"icon":{
 			"type": "object"
+    },
+		"icon":{
+			"type": "object"
 		}
 	}
 }

@@ -66,6 +66,12 @@
     }
 		"icon": {
 			"type": "object"
+		},
+		"image": {
+			"type": "object"
+		},
+		"search": {
+			"type": "object"
 		}
 	}
 }
