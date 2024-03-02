@@ -23,9 +23,10 @@
 			"type": "string"
 		},
 		"image": {
+			"type": "object"
     },
 		"icon":{
 			"type": "object"
-		}
+    }
 	}
 }

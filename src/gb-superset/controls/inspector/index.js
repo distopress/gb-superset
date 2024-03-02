@@ -25,6 +25,7 @@ export { default as RangeControl } from './RangeControl';
 export { default as ResizableBox } from './ResizableBox';
 export { default as ResponsiveWrapper } from './ResponsiveWrapper';
 export { default as SelectControl } from './SelectControl';
+export { default as SearchControl } from './SearchControl';
 export { default as Text } from './Text';
 export { default as TabPanel } from './TabPanel';
 export { default as TimePicker } from './TimePicker';

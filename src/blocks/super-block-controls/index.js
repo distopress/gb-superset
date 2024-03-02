@@ -25,12 +25,14 @@ import {
 	SelectTagsField,
 	FocalPointPicker,
 	GradientPicker,
+	MediaUpload,
 	NumberControl,
 	RadioControl,
 	RangeControl,
 	ResizableBox,
 	ResponsiveWrapper,
 	SelectControl,
+	SearchControl,
 	Panel,
 	Text,
 	TabPanel,
@@ -75,6 +77,16 @@ const block = class extends blockType {
 				</TabPanel>
 
 				<Panel title={__('My All Control')}>
+
+					<Text as="h3">SearchControl:</Text>
+					<SearchControl
+						name="search"
+					/>
+
+					<Text as="h3">MediaUpload:</Text>
+					<MediaUpload
+						name="image"
+					/>
 
 					<Text as="h3">SelectControl:</Text>
 					<SelectControl

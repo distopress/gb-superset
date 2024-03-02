@@ -63,8 +63,11 @@
 		},
 		"selectControl": {
       "type": "object"
-    }
-		"icon": {
+    },
+		"image": {
+			"type": "object"
+		},
+		"search": {
 			"type": "object"
 		}
 	}
