@@ -9,8 +9,7 @@ import {
 	Panel,
 	TextControl,
 	ToggleControl,
-	TestGroupControl,
-	MediaUpload
+	TestGroupControl
 } from '@gb-superset/controls/inspector';
 
 const block = class extends blockType {
@@ -28,13 +27,6 @@ const block = class extends blockType {
 						responsive={true}
 						state={['hover', 'focus']}
 					/> */}
-
-					<h3>MediaUpload:</h3>
-					<MediaUpload
-						name="image"
-					/>
-
-					<h3>ToggleControl:</h3>
 					<ToggleControl
 						label="Text Field"
 						help="Additional help text"

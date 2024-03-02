@@ -5,7 +5,7 @@ import { ControlContainer } from '@gb-superset/supports/control';
 
 export default (props) => {
   return (
-    <ControlContainer {...props} valueProp={'value'} changeProp={'onSelect'} className="gb-superset-number-control">
+    <ControlContainer {...props} valueProp={'value'} changeProp={'onSelect'} className="gb-superset-media-upload">
       <MediaUploadCheck>
         <MediaUpload
           allowedTypes={[ 'image', 'video', 'audio' ]}

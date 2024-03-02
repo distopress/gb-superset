@@ -21,9 +21,6 @@
 		},
 		"align": {
 			"type": "string"
-		},
-		"image": {
-			"type": "object"
 		}
 	}
 }
