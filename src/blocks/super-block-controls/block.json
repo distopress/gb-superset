@@ -63,10 +63,7 @@
 		},
 		"selectControl": {
       "type": "object"
-    }
-		"icon": {
-			"type": "object"
-		},
+    },
 		"image": {
 			"type": "object"
 		},

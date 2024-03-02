@@ -23,12 +23,10 @@
 			"type": "string"
 		},
 		"image": {
-    },
-		"icon":{
 			"type": "object"
     },
 		"icon":{
 			"type": "object"
-		}
+    }
 	}
 }
