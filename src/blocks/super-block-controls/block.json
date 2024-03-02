@@ -43,9 +43,6 @@
 		"colorPicker": {
 			"type": "object"
 		},
-		"comboBox": {
-			"type": "object"
-		},
 		"fontSize": {
 			"type": "object"
 		},
@@ -61,6 +58,12 @@
 		"range": {
 			"type": "object"
 		},
+		"focalPoint": {
+			"type": "object"
+		},
+		"selectControl": {
+      "type": "object"
+    }
 		"icon": {
 			"type": "object"
 		}
