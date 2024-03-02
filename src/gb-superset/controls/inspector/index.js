@@ -18,6 +18,7 @@ export { default as FontSizePicker } from './FontSizePicker';
 export { default as FocalPointPicker } from './FocalPointPicker';
 export { default as GradientPicker } from './GradientPicker';
 export { default as IconPicker } from './icon-picker';
+export { default as MediaUpload } from './MediaUpload';
 export { default as NumberControl } from './NumberControl';
 export { default as RadioControl } from './RadioControl';
 export { default as RangeControl } from './RangeControl';
