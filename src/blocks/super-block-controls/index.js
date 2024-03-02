@@ -40,6 +40,7 @@ import {
 	TestGroupControl,
 	ToggleGroupControl,
 } from '@gb-superset/controls/inspector';
+import IconPicker from '../../gb-superset/controls/inspector/icon-picker';
 
 const block = class extends blockType {
 	metadata = metadata;
@@ -63,21 +64,21 @@ const block = class extends blockType {
 						responsive={true}
 					/>
 				</Panel>
-				
+
 				<TabPanel
 					initialTabName="advance"
 					orientation="horizontal"
 				>
 					<div content="Settings">For Settings 1</div>
-      		<div content="Styles">For Styles 1</div>
-      		<div content="Advance">For Advance 3</div>
+					<div content="Styles">For Styles 1</div>
+					<div content="Advance">For Advance 3</div>
 				</TabPanel>
-				
+
 				<Panel title={__('My All Control')}>
 
 					<Text as="h3">ToggleGroupControl:</Text>
-					<ToggleGroupControl 
-						label="my label" 
+					<ToggleGroupControl
+						label="my label"
 						name="toggleGroup"
 						options={[ 'Horizontal', 'Vertical' ]}
 						isBlock
@@ -155,7 +156,7 @@ const block = class extends blockType {
 					<AnglePickerControl
 						name="anglePicker"
 					/>
-					
+
 					<Text as="h3">BorderBoxControl:</Text>
 					<BorderBoxControl
 						name="borderBox"
@@ -170,7 +171,7 @@ const block = class extends blockType {
 					<BoxControl
 						name="box"
 						allowReset={true}
-						// splitOnAxis={true}
+					// splitOnAxis={true}
 					/>
 
 					<Text as="h3">ButtonGroup & Button:</Text>
@@ -182,10 +183,10 @@ const block = class extends blockType {
 
 					<Text as="h3">CheckboxControl:</Text>
 					<CheckboxControl
-            label="Is author"
-            help="Is the user a author or not?"
-            name="checkBox"
-        	/>
+						label="Is author"
+						help="Is the user a author or not?"
+						name="checkBox"
+					/>
 
 					<Text as="h3">ColorPalette:</Text>
 					<ColorPalette
@@ -194,71 +195,72 @@ const block = class extends blockType {
 
 					<Text as="h3">ColorPicker:</Text>
 					<ColorPicker
-            name="colorPicker"
-            enableAlpha
-        	/>
+						name="colorPicker"
+						enableAlpha
+					/>
 
 					<Text as="h3">ComboboxControl:</Text>
 					<ComboboxControl
 						name="comboBox"
-						controls={[ 'Small', 'Normal', 'Large' ]}
+						controls={['Small', 'Normal', 'Large']}
 					/>
-					
+
 					<Text as="h3">Divider:</Text>
-					<Divider/>
+					<Divider />
 
 					<Text as="h3">ExternalLink:</Text>
 					<ExternalLink href="https://wordpress.org">WordPress.org</ExternalLink>
-					
+
 					<Text as="h3">FontSizePicker:</Text>
 					<FontSizePicker
 						name="fontSize"
 						fontSizes={[
 							{
-								name: __( 'Small' ),
+								name: __('Small'),
 								slug: 'small',
 								size: 12,
 							},
 							{
-								name: __( 'Big' ),
+								name: __('Big'),
 								slug: 'big',
 								size: 26,
 							},
 						]}
 						withReset={true}
 						withSlider={true}
-						fallbackFontSize={ 16 }	// Only relevant if withSlider is true				
+						fallbackFontSize={16}	// Only relevant if withSlider is true
 					/>
 
 					<Text as="h3">GradientPicker:</Text>
 					<GradientPicker
-            name="gradient"
-        	/>
+						name="gradient"
+					/>
 
 					<Text as="h3">NumberControl:</Text>
 					<NumberControl
 						name="number"
 						min={10}
 						max={100}
-            isShiftStepEnabled={ true }
-            shiftStep={ 10 }
-        	/>
+						isShiftStepEnabled={true}
+						shiftStep={10}
+					/>
 
 					<Text as="h3">RadioControl:</Text>
 					<RadioControl
-            name="radio"
-            help="The type of the current user"
-						options={[ 'Author', 'Editor' ]}
-        	/>
+						name="radio"
+						help="The type of the current user"
+						options={['Author', 'Editor']}
+					/>
 
 					<Text as="h3">RangeControl:</Text>
 					<RangeControl
 						name="range"
-            min={ 2 }
-            max={ 10 }
-        	/>
+						min={2}
+						max={10}
+					/>
 
 				</Panel>
+				<IconPicker label="Choose Icon" name="icons" />
 			</>
 		);
 	}

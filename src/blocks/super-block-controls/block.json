@@ -60,6 +60,9 @@
 		},
 		"range": {
 			"type": "object"
+		},
+		"icon": {
+			"type": "object"
 		}
 	}
 }
