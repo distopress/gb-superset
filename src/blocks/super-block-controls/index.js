@@ -16,7 +16,6 @@ import {
 	CheckboxControl,
 	ColorPalette,
 	ColorPicker,
-	ComboboxControl,
 	Divider,
 	DatePicker,
 	DuoColorPicker,
@@ -31,6 +30,7 @@ import {
 	RangeControl,
 	ResizableBox,
 	ResponsiveWrapper,
+	SelectControl,
 	Panel,
 	Text,
 	TabPanel,
@@ -74,6 +74,21 @@ const block = class extends blockType {
 				</TabPanel>
 				
 				<Panel title={__('My All Control')}>
+
+					<Text as="h3">SelectControl:</Text>
+					<SelectControl
+						name="selectControl"
+						options={ [
+							{ label: 'Big', value: '100%' },
+							{ label: 'Medium', value: '50%' },
+							{ label: 'Small', value: '25%' },
+						] }
+					/>
+
+					<Text as="h3">FocalPointPicker:</Text>
+					<FocalPointPicker
+						name="focalPoint"
+					/>
 
 					<Text as="h3">ToggleGroupControl:</Text>
 					<ToggleGroupControl 
@@ -197,12 +212,6 @@ const block = class extends blockType {
             name="colorPicker"
             enableAlpha
         	/>
-
-					<Text as="h3">ComboboxControl:</Text>
-					<ComboboxControl
-						name="comboBox"
-						controls={[ 'Small', 'Normal', 'Large' ]}
-					/>
 					
 					<Text as="h3">Divider:</Text>
 					<Divider/>
