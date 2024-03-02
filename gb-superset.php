@@ -24,8 +24,18 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
+
+
+define( 'GBSUPERSET_PLUGIN_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) );
 function _test_block_init() {
 	register_block_type( __DIR__ . '/build/blocks/super-block-controls' );
 	register_block_type( __DIR__ . '/build/blocks/super-block-a' );
+
+	wp_enqueue_style(
+		'gb-superset/global',
+		GBSUPERSET_PLUGIN_URL . 'build/gb-superset/controls-style.css',
+		array(),
+		"0.1.0"
+	);
 }
 add_action( 'init', '_test_block_init' );

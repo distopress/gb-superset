@@ -23,6 +23,8 @@
 			"type": "string"
 		},
 		"image": {
+    },
+		"icon":{
 			"type": "object"
 		}
 	}

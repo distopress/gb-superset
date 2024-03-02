@@ -12,6 +12,7 @@ import {
 	TestGroupControl,
 	MediaUpload
 } from '@gb-superset/controls/inspector';
+import IconPicker from '../../gb-superset/controls/inspector/icon-picker';
 
 const block = class extends blockType {
 	metadata = metadata;
@@ -48,6 +49,8 @@ const block = class extends blockType {
 						name="groupControl"
 						responsive={true}
 					/> */}
+
+					<IconPicker label="Add Icon" name="icon" />
 				</Panel>
 			</>
 		);
