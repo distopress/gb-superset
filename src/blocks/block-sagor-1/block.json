@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gb-superset/super-block-controls",
+	"name": "gb-superset/block-sagor-1",
 	"version": "0.1.0",
-	"title": "Super Block Control #sagor",
+	"title": "Block Sagor #1",
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Example block scaffolded with Gutenberg Superset.",
@@ -43,9 +43,6 @@
 		"colorPicker": {
 			"type": "object"
 		},
-		"comboBox": {
-			"type": "object"
-		},
 		"fontSize": {
 			"type": "object"
 		},
@@ -59,6 +56,18 @@
 			"type": "object"
 		},
 		"range": {
+			"type": "object"
+		},
+		"focalPoint": {
+			"type": "object"
+		},
+		"selectControl": {
+      "type": "object"
+    },
+		"image": {
+			"type": "object"
+		},
+		"search": {
 			"type": "object"
 		}
 	}

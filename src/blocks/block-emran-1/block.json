@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gb-superset/super-block-a",
+	"name": "gb-superset/block-emran-1",
 	"version": "0.1.0",
-	"title": "Super Block #A",
+	"title": "Block Emran #1",
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Example block scaffolded with Gutenberg Superset.",
@@ -21,6 +21,12 @@
 		},
 		"align": {
 			"type": "string"
-		}
+		},
+		"image": {
+			"type": "object"
+    },
+		"icon":{
+			"type": "object"
+    }
 	}
 }

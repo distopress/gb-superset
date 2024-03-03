@@ -14,6 +14,7 @@ import {
 	ToggleControl,
 	TestGroupControl
 } from '@gb-superset/controls/inspector';
+import IconPicker from '../../gb-superset/controls/inspector/icon-picker';
 
 const block = class extends blockType {
 	metadata = metadata;
@@ -61,6 +62,8 @@ const block = class extends blockType {
 			/>
 		</MediaUploadCheck>
 
+
+					<IconPicker label="Add Icon" name="icon" />
 				</Panel>
 			</>
 		);
