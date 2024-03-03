@@ -2,7 +2,7 @@ import metadata from './block.json';
 import SaveContent from './SaveContent';
 
 import { Button } from '@wordpress/components';
-import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
+// import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 
 import { __ } from '@wordpress/i18n';
 import { AlignmentControl } from '@wordpress/block-editor';
@@ -12,6 +12,7 @@ import {
 	Panel,
 	TextControl,
 	ToggleControl,
+	MediaUpload,
 	TestGroupControl
 } from '@gb-superset/controls/inspector';
 import IconPicker from '../../gb-superset/controls/inspector/icon-picker';
@@ -20,8 +21,8 @@ const block = class extends blockType {
 	metadata = metadata;
 
 
-	
-	
+
+
 	InspectorControls = () => {
 		return (
 			<>
@@ -48,20 +49,18 @@ const block = class extends blockType {
 						responsive={true}
 					/> */}
 
-		<MediaUploadCheck>
-			<MediaUpload
-				onSelect={ ( media ) =>
-					console.log( media )
-				}
-				multiple={ true}
-				// allowedTypes={ [ 'audio', 'image' ] }
-				value={ [] }
-				render={ ( { open } ) => (
-					<Button onClick={ open }>Open Media Library</Button>
-				) }
-			/>
-		</MediaUploadCheck>
 
+					<MediaUpload
+						onSelect={(media) =>
+							console.log(media)
+						}
+						multiple={true}
+						// allowedTypes={ [ 'audio', 'image' ] }
+						value={[]}
+						render={({ open }) => (
+							<Button onClick={open}>Open Media Library</Button>
+						)}
+					/>
 
 					<IconPicker label="Add Icon" name="icon" />
 				</Panel>
