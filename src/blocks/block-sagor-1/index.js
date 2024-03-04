@@ -33,7 +33,6 @@ import {
 	ResponsiveWrapper,
 	SelectControl,
 	SearchControl,
-	Panel,
 	Text,
 	TabPanel,
 	TimePicker,
@@ -41,6 +40,8 @@ import {
 	TextareaControl,
 	TestGroupControl,
 	ToggleGroupControl,
+	Panel,
+	QueryControls,
 } from '@gb-superset/controls/inspector';
 import IconPicker from '../../gb-superset/controls/inspector/icon-picker';
 
@@ -77,6 +78,21 @@ const block = class extends blockType {
 				</TabPanel>
 
 				<Panel title={__('My All Control')}>
+
+					<Text as="h3">QueryControls:</Text>
+					<QueryControls
+						authorList={[
+							{ id: 1, name: 'admin' },
+							{ id: 2, name: 'editor' }
+						]}					
+						categoriesList={[
+							{ id: 1, name: 'Category 1', parent: 0 },
+							{ id: 2, name: 'Category 2', parent: 0 },
+							{ id: 3, name: 'Category 3', parent: 0 },
+						]}			
+						value={this.ctx.attributes.query}
+						setHandler={this.ctx.setAttributes}
+					/>
 
 					<Text as="h3">SearchControl:</Text>
 					<SearchControl
@@ -222,19 +238,9 @@ const block = class extends blockType {
 
 					<Text as="h3">ColorPicker:</Text>
 					<ColorPicker
-
             name="colorPicker"
             enableAlpha
         	/>
-						name="colorPicker"
-						enableAlpha
-					/>
-
-					<Text as="h3">ComboboxControl:</Text>
-					<ComboboxControl
-						name="comboBox"
-						controls={['Small', 'Normal', 'Large']}
-					/>
 
 					<Text as="h3">Divider:</Text>
 					<Divider />
