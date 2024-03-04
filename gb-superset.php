@@ -17,6 +17,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+
+
+
+
+function debug(...$data) {
+	$log_file = defined('WP_DEBUG_LOG_PATH') ? WP_DEBUG_LOG_PATH : __DIR__ . '../../../debug.log';
+
+	$output = '';
+	foreach ($data as $key => $value) {
+		if(is_numeric($key)){
+			$output .= print_r($value, true);
+		}
+		else{
+			$output .= "$key: " . print_r($value, true);
+		}
+	}
+	$flag = isset($data['reset']) && $data['reset'] === true ? 0 : FILE_APPEND;
+
+	file_put_contents($log_file, $output . "\n", $flag);
+}
+
+
+add_filter('render_block_data', function(array $parsed_block, array $source_block, ?\WP_Block $parent_block ){
+	debug(render_block_data: $source_block);
+	return $parsed_block;
+}, 10, 3 );
+
+
+
+
 /**
  * Registers the block using the metadata loaded from the `block.json` file.
  * Behind the scenes, it registers also all assets so they can be enqueued
@@ -28,8 +58,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'GBSUPERSET_PLUGIN_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) );
 function _test_block_init() {
-	register_block_type( __DIR__ . '/build/blocks/super-block-controls' );
-	register_block_type( __DIR__ . '/build/blocks/super-block-a' );
+	register_block_type( __DIR__ . '/build/blocks/block-emran-1' );
+	register_block_type( __DIR__ . '/build/blocks/block-sagor-1' );
 
 	wp_enqueue_style(
 		'gb-superset/global',

@@ -16,22 +16,23 @@ import {
 	CheckboxControl,
 	ColorPalette,
 	ColorPicker,
-	ComboboxControl,
 	Divider,
 	DatePicker,
-	DuotonePicker,
+	DuoColorPicker,
 	DateTimePicker,
 	ExternalLink,
 	FontSizePicker,
-	FormTokenField,
+	SelectTagsField,
 	FocalPointPicker,
 	GradientPicker,
+	MediaUpload,
 	NumberControl,
 	RadioControl,
 	RangeControl,
 	ResizableBox,
 	ResponsiveWrapper,
-	Panel,
+	SelectControl,
+	SearchControl,
 	Text,
 	TabPanel,
 	TimePicker,
@@ -39,6 +40,8 @@ import {
 	TextareaControl,
 	TestGroupControl,
 	ToggleGroupControl,
+	Panel,
+	QueryControls,
 } from '@gb-superset/controls/inspector';
 import IconPicker from '../../gb-superset/controls/inspector/icon-picker';
 
@@ -76,6 +79,46 @@ const block = class extends blockType {
 
 				<Panel title={__('My All Control')}>
 
+					<Text as="h3">QueryControls:</Text>
+					<QueryControls
+						authorList={[
+							{ id: 1, name: 'admin' },
+							{ id: 2, name: 'editor' }
+						]}					
+						categoriesList={[
+							{ id: 1, name: 'Category 1', parent: 0 },
+							{ id: 2, name: 'Category 2', parent: 0 },
+							{ id: 3, name: 'Category 3', parent: 0 },
+						]}			
+						value={this.ctx.attributes.query}
+						setHandler={this.ctx.setAttributes}
+					/>
+
+					<Text as="h3">SearchControl:</Text>
+					<SearchControl
+						name="search"
+					/>
+
+					<Text as="h3">MediaUpload:</Text>
+					<MediaUpload
+						name="image"
+					/>
+
+					<Text as="h3">SelectControl:</Text>
+					<SelectControl
+						name="selectControl"
+						options={ [
+							{ label: 'Big', value: '100%' },
+							{ label: 'Medium', value: '50%' },
+							{ label: 'Small', value: '25%' },
+						] }
+					/>
+
+					<Text as="h3">FocalPointPicker:</Text>
+					<FocalPointPicker
+						name="focalPoint"
+					/>
+
 					<Text as="h3">ToggleGroupControl:</Text>
 					<ToggleGroupControl
 						label="my label"
@@ -111,8 +154,8 @@ const block = class extends blockType {
 						</div>
 					</ResizableBox>
 
-					<Text as="h3">DuotonePicker:</Text>
-					<DuotonePicker
+					<Text as="h3">DuoColorPicker:</Text>
+					<DuoColorPicker
 						name="duotone"
 					/>
 
@@ -134,8 +177,8 @@ const block = class extends blockType {
 						is12Hour={ true }
 					/>
 
-					<Text as="h3">FormTokenField:</Text>
-					<FormTokenField
+					<Text as="h3">SelectTagsField:</Text>
+					<SelectTagsField
 						name="tokenField"
 						suggestions={[ 'Africa', 'America', 'Antarctica', 'Asia', 'Europe', 'Oceania' ]}
 					/>
@@ -195,15 +238,9 @@ const block = class extends blockType {
 
 					<Text as="h3">ColorPicker:</Text>
 					<ColorPicker
-						name="colorPicker"
-						enableAlpha
-					/>
-
-					<Text as="h3">ComboboxControl:</Text>
-					<ComboboxControl
-						name="comboBox"
-						controls={['Small', 'Normal', 'Large']}
-					/>
+            name="colorPicker"
+            enableAlpha
+        	/>
 
 					<Text as="h3">Divider:</Text>
 					<Divider />
