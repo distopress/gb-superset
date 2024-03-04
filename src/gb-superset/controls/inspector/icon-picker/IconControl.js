@@ -1,11 +1,10 @@
-import { Button, TabPanel, ButtonGroup, Dropdown } from '@wordpress/components';
+import { Button, TabPanel, ButtonGroup, Dropdown, Modal } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
 import { list, reset, upload, Icon } from '@wordpress/icons';
 import { applyFilters } from '@wordpress/hooks';
 import { MediaUpload } from '@wordpress/block-editor';
 import { dispatch, select } from '@wordpress/data';
 import apiFetch from '@wordpress/api-fetch';
-import Modal from 'react-responsive-modal';
 import icons from '../../../../assets/icons';
 import IconList from './IconList';
 import UpdateDatabase from '../../../api/UpdateDatabase';
@@ -44,11 +43,11 @@ const IconControl = ({ label, value, onChange }) => {
 
 
 	useEffect(() => {
-		apiFetch({ path: '/gb-superset/v1/settings' })
-			.then((data) => {
-				setSettingsData(data.settings);
-				setAllowUpload(data.settings.unfiltered_upload.status === 'active')
-			})
+		// apiFetch({ path: '/gb-superset/v1/settings' })
+		// 	.then((data) => {
+		// 		setSettingsData(data.settings);
+		// 		setAllowUpload(data.settings.unfiltered_upload.status === 'active')
+		// 	})
 	}, []);
 
 	useEffect(() => {
@@ -147,6 +146,8 @@ const IconControl = ({ label, value, onChange }) => {
 
 				<div className='gb-superset-icon-picker-actions'>
 					<Button {...defaultActionProps} label='None' icon={reset} onClick={() => setSelectedIcon({})} />
+					{/*
+
 					{allowUpload ?
 						(
 							<MediaUpload
@@ -179,6 +180,7 @@ const IconControl = ({ label, value, onChange }) => {
 								</>}
 							/>
 						)}
+				*/}
 
 					<Button {...defaultActionProps} label="Pick from library" onClick={onOpenModal}>
 						{selectedIcon?.src ?
@@ -190,10 +192,7 @@ const IconControl = ({ label, value, onChange }) => {
 				</div>
 			</div>
 
-			<Modal open={open} onClose={onCloseModal} center classNames={{
-				overlay: '',
-				modal: 'gb-superset-icon-picker-modal',
-			}}>
+			{open && <Modal onRequestClose={onCloseModal} className='gb-superset-icon-picker-modal'>
 				<TabPanel
 					tabs={iconCategories.map((category) => { return { name: category?.value, title: category?.label } })}
 				>
@@ -212,7 +211,7 @@ const IconControl = ({ label, value, onChange }) => {
 						Insert
 					</Button>
 				</div>
-			</Modal>
+			</Modal>}
 		</>
 	);
 };

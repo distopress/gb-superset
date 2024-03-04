@@ -60,6 +60,7 @@ define( 'GBSUPERSET_PLUGIN_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) )
 function __block_init() {
 	register_block_type( __DIR__ . '/build/blocks/block-emran-1' );
 	register_block_type( __DIR__ . '/build/blocks/block-sagor-1' );
+	register_block_type( __DIR__ . '/build/blocks/block-salekin-1' );
 
 
 }
