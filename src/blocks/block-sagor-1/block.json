@@ -10,6 +10,12 @@
 	"textdomain": "gb-superset",
 	"editorScript": "file:./index.js",
 	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"blockCss":{ 
+			"type": "string"
+		},
 		"content": {
 			"type": "object"
 		},
