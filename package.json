@@ -21,7 +21,6 @@
 	},
 	"dependencies": {
 		"@wordpress/icons": "^9.18.0",
-		"classnames": "^2.5.1",
-		"react-responsive-modal": "^6.4.2"
+		"classnames": "^2.5.1"
 	}
 }
