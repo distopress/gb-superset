@@ -25,7 +25,12 @@ export default class blockType {
     }
 
     // Method to edit the block
-    edit = ({ attributes, setAttributes }) => {
+    edit = ({ attributes, setAttributes, clientId }) => {
+        // Set blockId
+        if (!attributes.blockId) {
+            setAttributes({ blockId: 'block-' + clientId });
+        }
+
         // Helper methods to set and get attributes
         const set = (name, value, scope) => setObject(name, value, scope, attributes, setAttributes);
         const get = (name, scope) => getObject(name, scope, attributes);
@@ -67,6 +72,19 @@ export default class blockType {
         if (!this.metadata) {
             throw new Error('You have to set the block metadata!');
         }
+
+        if(!this.metadata.name) {
+            throw new Error('You have to set the block name!');
+        }
+
+        // Add blockId and blockCss to the attributes
+        this.metadata.attributes.blockId = {
+            type: 'string',
+        };
+
+        this.metadata.attributes.blockCss = {
+            type: 'string',
+        };
 
         // Content to render
         const RenderContent = this.SaveContent;
