@@ -9,7 +9,7 @@
 	"description": "Example block scaffolded with Gutenberg Superset.",
 	"textdomain": "gb-superset",
 	"editorScript": "file:./index.js",
-	"style": "gb-superset-controls",
+	"style": "gb-superset/block-emran-1",
 	"attributes": {
 		"blockId": {
 			"type": "string"

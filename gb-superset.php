@@ -57,11 +57,24 @@ function debug(...$data) {
 
 
 define( 'GBSUPERSET_PLUGIN_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) );
+
 function __block_init() {
+	wp_register_style(
+		'gb-superset/block-emran-1',
+		GBSUPERSET_PLUGIN_URL . 'build/blocks/block-emran-1/style-index.css',
+		array(),
+		"0.1.0"
+	);
+
 	register_block_type( __DIR__ . '/build/blocks/block-emran-1' );
 	register_block_type( __DIR__ . '/build/blocks/block-sagor-1' );
 	register_block_type( __DIR__ . '/build/blocks/block-salekin-1' );
+}
+add_action( 'init', '__block_init' );
 
+// Register block assets.
+function __block_editor_assets() {
+	
 	wp_enqueue_style(
 		'gb-superset/global',
 		GBSUPERSET_PLUGIN_URL . 'build/gb-superset/controls-style.css',
@@ -69,21 +82,4 @@ function __block_init() {
 		"0.1.0"
 	);
 }
-add_action( 'init', '__block_init' );
-
-
-/**
- * Registers a stylesheet.
- */
-function __register_plugin_styles() {
-
-	wp_register_style(
-		'gb-superset-controls',
-		GBSUPERSET_PLUGIN_URL . 'build/blocks/block-emran-1/style-index.css',
-		array(),
-		"0.1.0"
-	);
-
-}
-// Register style sheet.
-add_action( 'wp_enqueue_scripts', '__register_plugin_styles' );
+add_action( 'enqueue_block_editor_assets', '__block_editor_assets' );
