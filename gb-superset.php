@@ -62,7 +62,12 @@ function __block_init() {
 	register_block_type( __DIR__ . '/build/blocks/block-sagor-1' );
 	register_block_type( __DIR__ . '/build/blocks/block-salekin-1' );
 
-
+	wp_enqueue_style(
+		'gb-superset/global',
+		GBSUPERSET_PLUGIN_URL . 'build/gb-superset/controls-style.css',
+		array(),
+		"0.1.0"
+	);
 }
 add_action( 'init', '__block_init' );
 
@@ -71,12 +76,6 @@ add_action( 'init', '__block_init' );
  * Registers a stylesheet.
  */
 function __register_plugin_styles() {
-	wp_enqueue_style(
-		'gb-superset/global',
-		GBSUPERSET_PLUGIN_URL . 'build/gb-superset/controls-style.css',
-		array(),
-		"0.1.0"
-	);
 
 	wp_register_style(
 		'gb-superset-controls',
