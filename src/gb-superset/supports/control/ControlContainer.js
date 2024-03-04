@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useId, useEffect } from 'react';
 import classNames from 'classnames';
 
 import ControlContext from './ControlContext';
@@ -33,9 +33,11 @@ export default (props) => {
         console.log('scope has changed', scope);
     }, [scope]);
 
+    const childId = 'gb-superset-inspector-control-' + props.name + useId();
+
     // Render the component
     return (
-        <div {...props} className={classNames(props.extraClassName, props.className, 'gb-superset-control-container')}>
+        <div {...props} className={classNames(props.extraClassName, props.className, 'gb-superset-inspector-control')}>
             {props.responsive && (
                 <p>
                     {/* Links for changing the scope */}
@@ -46,19 +48,48 @@ export default (props) => {
             )}
             {/* Map over the children and clone them with additional props */}
             {React.Children.map(props.children, child => {
+                
                 const currentValue = get(props.name, scope);
                 const setNewValue = (newValue) => {
                     set(props.name, beforeSave(newValue, currentValue), scope)
                 };
 
-                return React.cloneElement(
-                    child,
-                    {
-                        ...child.props,
-                        [props.valueProp]: currentValue,
-                        [props.changeProp]: (newValue) => setNewValue(newValue)
-                    }
-                );
+                delete child.props?.label;
+                delete child.props?.help;
+                delete child.props?.extraClassName;
+
+                child.props.id = childId;
+                child.props.autoComplete = 'off';
+
+                child.props.className = 'gb-superset-inspector-control__component-component';
+
+                // Clone the child element and add additional props
+                const component = React.cloneElement(child, {
+                    ...child.props,
+                    [props.valueProp]: currentValue,
+                    [props.changeProp]: (newValue) => setNewValue(newValue)
+                });
+
+                return (
+                    <div className="gb-superset-inspector-control__component-container">
+                        {/* Render label if it's defined */}
+                        {props.label && 
+                            <label className='gb-superset-inspector-control__component-label' htmlFor={childId}>
+                                {props.label}
+                            </label>
+                        }
+
+                        {/* Render the child controls */}
+                        {component}
+
+                        {/* Render help text if it's defined */}
+                        {props.help && 
+                            <small className='gb-superset-inspector-control__component-help'>
+                                {props.help}
+                            </small>
+                        }
+                    </div>
+                )
             })}
         </div>
     );

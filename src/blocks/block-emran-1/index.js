@@ -20,14 +20,14 @@ const block = class extends blockType {
 		return (
 			<>
 				<Panel title={__('My control')}>
-					{/* <TextControl
-						label="Text Field"
-						help="Additional help text"
+					<TextControl
+						label="Foo"
+						help="bar"
 						name="content"
 
 						responsive={true}
 						state={['hover', 'focus']}
-					/> */}
+					/>
 					<ToggleControl
 						label="Text Field"
 						help="Additional help text"
@@ -35,12 +35,12 @@ const block = class extends blockType {
 
 						responsive={false}
 					/>
-					{/* <TestGroupControl
+					<TestGroupControl
 						label="My Text Field"
 						help="Additional help text"
 						name="groupControl"
 						responsive={true}
-					/> */}
+					/>
 
 					<IconPicker label="Add Icon" name="icon" />
 				</Panel>

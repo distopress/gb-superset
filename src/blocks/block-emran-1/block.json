@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"name": "gb-superset/block-emran-1",
 	"version": "0.1.0",
-	"title": "Block Emran #1",
+	"title": "Block Emran #1 foo",
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Example block scaffolded with Gutenberg Superset.",

@@ -39,10 +39,10 @@ function debug(...$data) {
 }
 
 
-add_filter('render_block_data', function(array $parsed_block, array $source_block, ?\WP_Block $parent_block ){
-	debug(render_block_data: $source_block);
-	return $parsed_block;
-}, 10, 3 );
+// add_filter('render_block_data', function(array $parsed_block, array $source_block, ?\WP_Block $parent_block ){
+// 	debug(render_block_data: $source_block);
+// 	return $parsed_block;
+// }, 10, 3 );
 
 
 
