@@ -1,0 +1,18 @@
+{
+    "steps": [
+        {
+            "step": "defineWpConfigConsts",
+            "consts": {
+                "WP_DEBUG_LOG": true,
+                "WP_MEMORY_LIMIT": "256M",
+                "WP_MAX_MEMORY_LIMIT": "512M",
+                "AUTOSAVE_INTERVAL": 0,
+                "WP_POST_REVISIONS": false,
+                "UPLOAD_MAX_SIZE": "24M",
+                "AUTOMATIC_UPDATER_DISABLED": true,
+                "WP_AUTO_UPDATE_CORE": false
+            },
+            "method": "define-before-run"
+        }
+    ]
+}
