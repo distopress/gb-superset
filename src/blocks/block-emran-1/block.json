@@ -9,7 +9,14 @@
 	"description": "Example block scaffolded with Gutenberg Superset.",
 	"textdomain": "gb-superset",
 	"editorScript": "file:./index.js",
+	"style": "gb-superset-controls",
 	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"blockStyle": {
+			"type": "string"
+		},
 		"content": {
 			"type": "object"
 		},
@@ -24,9 +31,9 @@
 		},
 		"image": {
 			"type": "object"
-    },
-		"icon":{
+		},
+		"icon": {
 			"type": "object"
-    }
+		}
 	}
 }

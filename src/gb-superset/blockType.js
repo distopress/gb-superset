@@ -6,6 +6,8 @@ import {
     InspectorControls,
 } from '@wordpress/block-editor';
 
+import cssx from 'cssx';
+
 import { ControlContext, getObject, setObject } from '@gb-superset/supports/control';
 
 // Defining the blockType class
@@ -17,6 +19,8 @@ export default class blockType {
         this.SaveContent = this.throwError('You have to implement the method saveContent!');
         this.InspectorControls = this.throwError('You have to implement the method InspectorControls!');
         this.EditorControls = () => null;
+        this.ctx = null;
+
     }
 
     // Method to throw an error
@@ -27,7 +31,7 @@ export default class blockType {
     // Method to edit the block
     edit = ({ attributes, setAttributes, clientId }) => {
         // Set blockId
-        if (!attributes.blockId) {
+        if ('block-' + clientId != !attributes.blockId) {
             setAttributes({ blockId: 'block-' + clientId });
         }
 
@@ -43,6 +47,14 @@ export default class blockType {
 
         // Content to render
         const RenderContent = this.EditContent ?? this.SaveContent;
+        var sheet = cssx();
+        sheet.add({
+          '.header': { margin: 0 }
+        });
+
+        // console.log(sheet.getCSS());
+
+        setAttributes({ blockStyle: sheet.getCSS() });
 
         // Returning the JSX for the block
         return (
@@ -73,18 +85,18 @@ export default class blockType {
             throw new Error('You have to set the block metadata!');
         }
 
+        // name, blockId, blockStyle are also required
         if(!this.metadata.name) {
-            throw new Error('You have to set the block name!');
+            throw new Error('You have to set the block name attribute!');
         }
 
-        // Add blockId and blockCss to the attributes
-        this.metadata.attributes.blockId = {
-            type: 'string',
-        };
+        if(!this.metadata.attributes.blockId) {
+            throw new Error('You have to set the block blockId attribute!');
+        }
 
-        this.metadata.attributes.blockCss = {
-            type: 'string',
-        };
+        if(!this.metadata.attributes.blockStyle) {
+            throw new Error('You have to set the block blockStyle attribute!');
+        }
 
         // Content to render
         const RenderContent = this.SaveContent;

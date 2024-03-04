@@ -4,7 +4,7 @@
             "step": "defineWpConfigConsts",
             "consts": {
                 "WP_DEBUG_LOG": true,
-                "WP_MEMORY_LIMIT": "256M",
+                "WP_MEMORY_LIMIT": "512M",
                 "WP_MAX_MEMORY_LIMIT": "512M",
                 "AUTOSAVE_INTERVAL": 0,
                 "WP_POST_REVISIONS": false,

@@ -13,6 +13,8 @@ import {
 } from '@gb-superset/controls/inspector';
 import IconPicker from '../../gb-superset/controls/inspector/icon-picker';
 
+import './style.scss';
+
 const block = class extends blockType {
 	metadata = metadata;
 
@@ -35,14 +37,14 @@ const block = class extends blockType {
 
 						responsive={false}
 					/>
-					<TestGroupControl
+					{/* <TestGroupControl
 						label="My Text Field"
 						help="Additional help text"
 						name="groupControl"
 						responsive={true}
-					/>
+					/> */}
 
-					<IconPicker label="Add Icon" name="icon" />
+					{/* <IconPicker label="Add Icon" name="icon" /> */}
 				</Panel>
 			</>
 		);
