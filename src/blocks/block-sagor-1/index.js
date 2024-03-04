@@ -81,8 +81,15 @@ const block = class extends blockType {
 
 					<Text as="h3">QueryControls:</Text>
 					<QueryControls
-						authors={[ 'admin', 'editor' ]}
-						suggestions={[ 'JavaScript', 'TypeScript' ]}			
+						authorList={[
+							{ id: 1, name: 'admin' },
+							{ id: 2, name: 'editor' }
+						]}					
+						categoriesList={[
+							{ id: 1, name: 'Category 1', parent: 0 },
+							{ id: 2, name: 'Category 2', parent: 0 },
+							{ id: 3, name: 'Category 3', parent: 0 },
+						]}			
 						value={this.ctx.attributes.query}
 						setHandler={this.ctx.setAttributes}
 					/>
