@@ -6,7 +6,7 @@ import {
     InspectorControls,
 } from '@wordpress/block-editor';
 
-import cssx from 'cssx';
+import cssx from '@gb-superset/asset-manager/cssx';
 
 import { ControlContext, getObject, setObject } from '@gb-superset/supports/control';
 
@@ -48,8 +48,16 @@ export default class blockType {
         // Content to render
         const RenderContent = this.EditContent ?? this.SaveContent;
         var sheet = cssx();
+        var a = 1;
+        
         sheet.add({
-          '.header': { margin: 0 }
+            '.header': { 
+                margin: a + 'px',
+                paddingTop: '7px',
+            },
+            '.header h1': {
+                color: 'red',
+            }
         });
 
         // console.log(sheet.getCSS());
