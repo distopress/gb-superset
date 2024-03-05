@@ -21,6 +21,7 @@ import {
 	InnerBlocks
 } from '@wordpress/block-editor';
 import { createBlock } from '@wordpress/blocks';
+import './style.scss'
 
 import { variations } from './variations';
 import { useSelect, useDispatch } from '@wordpress/data';
@@ -70,7 +71,7 @@ const block = class extends blockType {
 	}
 
 	EditContent = ({ attributes, blockProps }) => {
-		const { setAttributes, clientId, set } = this.ctx;
+		const { setAttributes, clientId } = this.ctx;
 		const { replaceInnerBlocks } = useDispatch('core/block-editor');
 		const { hasChildBlocks, hasParent, isParent } = useSelect(
 			(select) => {
@@ -83,9 +84,7 @@ const block = class extends blockType {
 			},
 			[clientId]
 		);
-		console.log("hasChildBlocks", hasChildBlocks);
-		console.log("hasParent", hasParent);
-		console.log("isParent", isParent);
+
 		const createBlocksFromInnerBlocksTemplate = (innerBlocksTemplate) => {
 			console.log("innerBlocksTemplate", innerBlocksTemplate);
 			return innerBlocksTemplate.map(
@@ -130,8 +129,9 @@ const block = class extends blockType {
 					: InnerBlocks.ButtonBlockAppender,
 			}
 		);
+		console.log("blockProps", blockProps)
 		return (
-			<div {...blockProps}>
+			<>
 				{
 					!attributes?.variationSelected && isParent && <div className="gkit-placeholder">
 						<Button
@@ -174,7 +174,7 @@ const block = class extends blockType {
 						</>
 					)
 				} */}
-			</div>
+			</>
 		);
 	}
 

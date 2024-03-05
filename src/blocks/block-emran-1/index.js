@@ -23,8 +23,6 @@ const block = class extends blockType {
 	metadata = metadata;
 
 
-
-
 	InspectorControls = () => {
 		return (
 			<>

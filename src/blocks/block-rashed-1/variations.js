@@ -6,7 +6,7 @@ export const variations = [
         title: '100',
         icon: Column100,
         innerBlocks: [
-            ['gb-superset/container', { containerWidth: 'alignfull', variationSelected: true }]
+            ['gb-superset/block-rashed-1', { containerWidth: 'alignfull', variationSelected: true }]
         ],
         scope: ['block'],
     },
@@ -16,11 +16,11 @@ export const variations = [
         icon: Column5050,
         innerBlocks: [
             [
-                'gb-superset/container',
+                'gb-superset/block-rashed-1',
                 { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 50, unit: "%" }, customWidthTablet: { size: 50, unit: "%" }, customWidthMobile: { size: 50, unit: "%" }, variationSelected: true },
             ],
             [
-                'gb-superset/container',
+                'gb-superset/block-rashed-1',
                 { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 50, unit: "%" }, customWidthTablet: { size: 50, unit: "%" }, customWidthMobile: { size: 50, unit: "%" }, variationSelected: true },
             ]
         ],
@@ -32,11 +32,11 @@ export const variations = [
         icon: Column3366,
         innerBlocks: [
             [
-                'gb-superset/container',
+                'gb-superset/block-rashed-1',
                 { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 33, unit: "%" }, customWidthTablet: { size: 33, unit: "%" }, customWidthMobile: { size: 33, unit: "%" }, variationSelected: true },
             ],
             [
-                'gb-superset/container',
+                'gb-superset/block-rashed-1',
                 { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 66, unit: "%" }, customWidthTablet: { size: 66, unit: "%" }, customWidthMobile: { size: 66, unit: "%" }, variationSelected: true },
             ]
         ],
@@ -48,11 +48,11 @@ export const variations = [
         icon: Column6633,
         innerBlocks: [
             [
-                'gb-superset/container',
+                'gb-superset/block-rashed-1',
                 { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 66, unit: "%" }, customWidthTablet: { size: 66, unit: "%" }, customWidthMobile: { size: 66, unit: "%" }, variationSelected: true },
             ],
             [
-                'gb-superset/container',
+                'gb-superset/block-rashed-1',
                 { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 33, unit: "%" }, customWidthTablet: { size: 33, unit: "%" }, customWidthMobile: { size: 33, unit: "%" }, variationSelected: true },
             ]
         ],
@@ -64,15 +64,15 @@ export const variations = [
         icon: Column333333,
         innerBlocks: [
             [
-                'gb-superset/container',
+                'gb-superset/block-rashed-1',
                 { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 33, unit: "%" }, customWidthTablet: { size: 33, unit: "%" }, customWidthMobile: { size: 33, unit: "%" }, variationSelected: true },
             ],
             [
-                'gb-superset/container',
+                'gb-superset/block-rashed-1',
                 { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 33, unit: "%" }, customWidthTablet: { size: 33, unit: "%" }, customWidthMobile: { size: 33, unit: "%" }, variationSelected: true },
             ],
             [
-                'gb-superset/container',
+                'gb-superset/block-rashed-1',
                 { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 33, unit: "%" }, customWidthTablet: { size: 33, unit: "%" }, customWidthMobile: { size: 33, unit: "%" }, variationSelected: true },
             ]
         ],
@@ -84,15 +84,15 @@ export const variations = [
         icon: Column255025,
         innerBlocks: [
             [
-                'gb-superset/container',
+                'gb-superset/block-rashed-1',
                 { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 25, unit: "%" }, customWidthTablet: { size: 25, unit: "%" }, customWidthMobile: { size: 25, unit: "%" }, variationSelected: true },
             ],
             [
-                'gb-superset/container',
+                'gb-superset/block-rashed-1',
                 { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 50, unit: "%" }, customWidthTablet: { size: 50, unit: "%" }, customWidthMobile: { size: 50, unit: "%" }, variationSelected: true },
             ],
             [
-                'gb-superset/container',
+                'gb-superset/block-rashed-1',
                 { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 25, unit: "%" }, customWidthTablet: { size: 25, unit: "%" }, customWidthMobile: { size: 25, unit: "%" }, variationSelected: true },
             ]
         ],

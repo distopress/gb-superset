@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gb-superset/container",
+	"name": "gb-superset/block-rashed-1",
 	"version": "0.1.0",
-	"title": "Container",
+	"title": "Block Rashed #1",
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Create beautiful layouts with flexbox powered container block.",
@@ -11,8 +11,15 @@
 		"preview": true
 	},
 	"textdomain": "gb-superset",
+	"style": "gb-superset/block-rashed-1",
 	"editorScript": "file:./index.js",
 	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"blockStyle": {
+			"type": "string"
+		},
 		"containerWidth": {
 			"type": "string",
 			"default": "alignfull"
