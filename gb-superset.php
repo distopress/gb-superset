@@ -39,10 +39,10 @@ function debug(...$data) {
 }
 
 
-add_filter('render_block_data', function(array $parsed_block, array $source_block, ?\WP_Block $parent_block ){
-	debug(render_block_data: $source_block);
-	return $parsed_block;
-}, 10, 3 );
+// add_filter('render_block_data', function(array $parsed_block, array $source_block, ?\WP_Block $parent_block ){
+// 	debug(render_block_data: $source_block);
+// 	return $parsed_block;
+// }, 10, 3 );
 
 
 
@@ -57,10 +57,24 @@ add_filter('render_block_data', function(array $parsed_block, array $source_bloc
 
 
 define( 'GBSUPERSET_PLUGIN_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) );
-function _test_block_init() {
+
+function __block_init() {
+	wp_register_style(
+		'gb-superset/block-emran-1',
+		GBSUPERSET_PLUGIN_URL . 'build/blocks/block-emran-1/style-index.css',
+		array(),
+		"0.1.0"
+	);
+
 	register_block_type( __DIR__ . '/build/blocks/block-emran-1' );
 	register_block_type( __DIR__ . '/build/blocks/block-sagor-1' );
+	register_block_type( __DIR__ . '/build/blocks/block-salekin-1' );
+}
+add_action( 'init', '__block_init' );
 
+// Register block assets.
+function __block_editor_assets() {
+	
 	wp_enqueue_style(
 		'gb-superset/global',
 		GBSUPERSET_PLUGIN_URL . 'build/gb-superset/controls-style.css',
@@ -68,14 +82,4 @@ function _test_block_init() {
 		"0.1.0"
 	);
 }
-add_action( 'init', '_test_block_init' );
-
-if(isset($_GET['test'])) {
-	// get wp page id 2
-	$page = get_post( 2 );
-	// get wp page id 2 content
-	$content = $page->post_content;
-	// get wp page id 2 title
-	echo $page->post_content;
-	die;
-}
+add_action( 'enqueue_block_editor_assets', '__block_editor_assets' );

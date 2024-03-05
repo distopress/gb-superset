@@ -1,15 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gb-superset/block-emran-1",
+	"name": "gb-superset/block-salekin-1",
 	"version": "0.1.0",
-	"title": "Block Emran #1 foo",
+	"title": "Block Salekin #1",
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Example block scaffolded with Gutenberg Superset.",
 	"textdomain": "gb-superset",
 	"editorScript": "file:./index.js",
-	"style": "gb-superset/block-emran-1",
 	"attributes": {
 		"blockId": {
 			"type": "string"
@@ -31,9 +30,9 @@
 		},
 		"image": {
 			"type": "object"
-		},
-		"icon": {
+    },
+		"icon":{
 			"type": "object"
-		}
+    }
 	}
 }

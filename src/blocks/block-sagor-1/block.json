@@ -10,6 +10,12 @@
 	"textdomain": "gb-superset",
 	"editorScript": "file:./index.js",
 	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"blockStyle": {
+			"type": "string"
+		},
 		"content": {
 			"type": "object"
 		},
@@ -62,12 +68,15 @@
 			"type": "object"
 		},
 		"selectControl": {
-      "type": "object"
-    },
+			"type": "object"
+		},
 		"image": {
 			"type": "object"
 		},
 		"search": {
+			"type": "object"
+		},
+		"query": {
 			"type": "object"
 		}
 	}
