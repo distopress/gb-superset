@@ -40,7 +40,7 @@ export default class blockType {
         const get = (name, scope) => getObject(name, scope, attributes);
 
         // Context for the block
-        this.ctx = { attributes, setAttributes, set, get };
+        this.ctx = { attributes, setAttributes, set, get, clientId };
 
         // Block properties
         const blockProps = useBlockProps();
@@ -49,9 +49,9 @@ export default class blockType {
         const RenderContent = this.EditContent ?? this.SaveContent;
         var sheet = cssx();
         var a = 1;
-        
+
         sheet.add({
-            '.header': { 
+            '.header': {
                 margin: a + 'px',
                 paddingTop: '7px',
             },
@@ -94,15 +94,15 @@ export default class blockType {
         }
 
         // name, blockId, blockStyle are also required
-        if(!this.metadata.name) {
+        if (!this.metadata.name) {
             throw new Error('You have to set the block name attribute!');
         }
 
-        if(!this.metadata.attributes.blockId) {
+        if (!this.metadata.attributes.blockId) {
             throw new Error('You have to set the block blockId attribute!');
         }
 
-        if(!this.metadata.attributes.blockStyle) {
+        if (!this.metadata.attributes.blockStyle) {
             throw new Error('You have to set the block blockStyle attribute!');
         }
 

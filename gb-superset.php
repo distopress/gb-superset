@@ -69,6 +69,7 @@ function __block_init() {
 	register_block_type( __DIR__ . '/build/blocks/block-emran-1' );
 	register_block_type( __DIR__ . '/build/blocks/block-sagor-1' );
 	register_block_type( __DIR__ . '/build/blocks/block-salekin-1' );
+	register_block_type( __DIR__ . '/build/blocks/container' );
 }
 add_action( 'init', '__block_init' );
 

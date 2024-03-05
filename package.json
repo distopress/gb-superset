@@ -22,6 +22,7 @@
 	"dependencies": {
 		"@wordpress/icons": "^9.18.0",
 		"classnames": "^2.5.1",
-		"cssx": "^5.2.1"
+		"cssx": "^5.2.1",
+		"classnames": "^2.5.1"
 	}
 }

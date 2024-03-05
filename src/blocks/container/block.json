@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "gb-superset/container",
+	"version": "0.1.0",
+	"title": "Container",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Create beautiful layouts with flexbox powered container block.",
+	"example": {
+		"preview": true
+	},
+	"textdomain": "gb-superset",
+	"editorScript": "file:./index.js",
+	"attributes": {
+		"containerWidth": {
+			"type": "string",
+			"default": "alignfull"
+		},
+		"customWidthDesktop": {
+			"type": "object",
+			"default": {
+				"size": 60,
+				"unit": "%"
+			}
+		},
+		"customWidthTablet": {
+			"type": "object",
+			"default": {
+				"size": 60,
+				"unit": "%"
+			}
+		},
+		"customWidthMobile": {
+			"type": "object",
+			"default": {
+				"size": 60,
+				"unit": "%"
+			}
+		},
+		"variationSelected": {
+			"type": "boolean",
+			"default": false
+		}
+	}
+}
