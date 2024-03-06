@@ -1,0 +1,38 @@
+.gb-superset-inspector-control{
+  margin-bottom: 14px;
+
+  .gb-superset-inspector-control__component-container{
+
+    .components-base-control{
+      margin-bottom: 0px;
+    }
+
+    .gb-superset-inspector-control__component-label{
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.4;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: calc(5px);
+      padding: 0px;
+    }
+
+    .gb-superset-inspector-control__component-field {
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+
+      label {
+        width: 50%;
+      }
+    }
+
+    .gb-superset-inspector-control__component-help {
+      display: inline-block;
+      margin-top: calc(8px);
+      font-size: 12px;
+      color: rgb(117, 117, 117);
+    }
+  }
+
+}

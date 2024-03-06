@@ -23,7 +23,7 @@ export default (props) => {
         duotonePalette={ DUOTONE_PALETTE }
         colorPalette={ COLOR_PALETTE }
       />
-      <DuotoneSwatch valueProp={'values'} />
+      {/* <DuotoneSwatch valueProp={'values'} /> */}
     </ControlContainer>
   );
 }
