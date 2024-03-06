@@ -25,6 +25,28 @@
       label {
         width: 50%;
       }
+
+      // Hide Default Label Start
+      .components-base-control__field{
+        .components-flex{
+          .components-flex-item{
+            display: none;
+          }
+        }
+      }
+
+      .components-base-control__label{
+        display: none;
+      }
+
+      .components-form-token-field{
+        .components-form-token-field__label, 
+        .components-form-token-field__help, 
+        .components-spacer{
+          display: none;
+        }
+      }
+      // Hide Default Label End
     }
 
     .gb-superset-inspector-control__component-help {

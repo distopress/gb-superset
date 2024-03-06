@@ -49,8 +49,8 @@ const block = class extends blockType {
 				<Panel title={__('My control')}>
 
 					<AnglePickerControl
-						// label="AnglePicker Control"
-						// labelPosition="top"
+						label="AnglePicker Control"
+						labelPosition="top"
 						help="AnglePicker Control Help Text."
 						name="anglePicker"
 					/>
@@ -257,6 +257,9 @@ const block = class extends blockType {
 					/>
 
 					<QueryControls
+						label="Query Controls Control"
+						labelPosition="top"
+						help="Query Controls Control Help Text."
 						authorList={[
 							{ id: 1, name: 'admin' },
 							{ id: 2, name: 'editor' }

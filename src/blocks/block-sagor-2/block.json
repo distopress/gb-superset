@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "gb-superset/block-sagor-2",
+	"version": "0.1.0",
+	"title": "Block Sagor #2",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example block scaffolded with Gutenberg Superset.",
+	"textdomain": "gb-superset",
+	"editorScript": "file:./index.js",
+	"style": "gb-superset/block-sagor-2",
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"blockStyle": {
+			"type": "string"
+		},
+		"anglePicker": {
+			"type": "object"
+		},
+		"box": {
+			"type": "object"
+		},
+		"selectTagsField": {
+			"type": "object"
+		},
+		"radio": {
+			"type": "object"
+		}
+	}
+}
