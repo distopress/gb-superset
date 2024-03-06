@@ -5,13 +5,13 @@ import {
 
 import { ControlContainer } from '@gb-superset/supports/control';
 
-export default ({options, props}) => {
+export default (props) => {
 
   return (
     <ControlContainer {...props} valueProp={'value'} changeProp={'onChange'} className="gb-superset-toggle-group-control">
       <ToggleGroupControl {...props}>
         { 
-          options?.map( option => 
+          props?.options?.map( option => 
             <ToggleGroupControlOption 
               value={option.replace(/\s+/g, '-').toLowerCase()}
               label={option} 
