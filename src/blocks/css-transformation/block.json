@@ -1,15 +1,15 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "gb-superset/block-sagor-2",
+	"name": "gb-superset/css-transformation",
 	"version": "0.1.0",
-	"title": "Block Sagor #2",
+	"title": "CSS Transformation",
 	"category": "widgets",
 	"icon": "smiley",
 	"description": "Example block scaffolded with Gutenberg Superset.",
 	"textdomain": "gb-superset",
 	"editorScript": "file:./index.js",
-	"style": "gb-superset/block-sagor-2",
+	"style": "gb-superset/css-transformation",
 	"attributes": {
 		"blockId": {
 			"type": "string"
@@ -17,16 +17,22 @@
 		"blockStyle": {
 			"type": "string"
 		},
-		"anglePicker": {
+		"rotate": {
 			"type": "object"
 		},
-		"box": {
+		"offsetx": {
 			"type": "object"
 		},
-		"selectTagsField": {
+		"offsety": {
 			"type": "object"
 		},
-		"radio": {
+		"scale": {
+			"type": "object"
+		},
+		"skewx": {
+			"type": "object"
+		},
+		"skewy": {
 			"type": "object"
 		}
 	}
