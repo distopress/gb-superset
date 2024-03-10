@@ -17,16 +17,22 @@
 		"blockStyle": {
 			"type": "string"
 		},
-		"anglePicker": {
+		"rotate": {
 			"type": "object"
 		},
-		"box": {
+		"offsetx": {
 			"type": "object"
 		},
-		"selectTagsField": {
+		"offsety": {
 			"type": "object"
 		},
-		"radio": {
+		"scale": {
+			"type": "object"
+		},
+		"skewx": {
+			"type": "object"
+		},
+		"skewy": {
 			"type": "object"
 		}
 	}

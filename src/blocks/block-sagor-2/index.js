@@ -6,13 +6,9 @@ import { AlignmentControl } from '@wordpress/block-editor';
 
 import blockType from '@gb-superset/blockType';
 import {
-	AnglePickerControl,
-	BoxControl,
-	RadioControl,
-	SelectTagsField,
-	ToggleGroupControl,
-	QueryControls,
 	Panel,
+	Dropdown,
+	RangeControl
 } from '@gb-superset/controls/inspector';
 
 const block = class extends blockType {
@@ -21,54 +17,89 @@ const block = class extends blockType {
 	InspectorControls = () => {
 		return (
 			<>
-				<Panel title={__('My control')}>					
-					<AnglePickerControl
-						label="AnglePicker Control"
-						labelPosition="top"
-						help="AnglePicker Control Help Text."
-						name="anglePicker"
-					/>
+				<Panel title={__('CSS Transformation')}>		
 
-					<BoxControl
-						label="Box Control"
-						labelPosition="top"
-						help="Box Control Help Text."
-						name="box"
-						allowReset={true}
-					/>
+					<Dropdown
+						label="Rotate"
+						labelPosition="inline"
+					>
+						<RangeControl
+							max={360}
+							min={-360}
+							name="rotate"
+							label="Rotate (deg)"
+							labelPosition="top"
+						/>
+					</Dropdown>
 
-					<SelectTagsField
-						label="Select Tags Field"
-						labelPosition="top"
-						help="Select Tags Field Help Text."
-						name="selectTagsField"
-						suggestions={[ 'Africa', 'America', 'Antarctica', 'Asia', 'Europe', 'Oceania' ]}
-					/>
+					<Dropdown
+						label="Offset"
+						labelPosition="inline"
+					>
+						<RangeControl
+							max={360}
+							min={-360}
+							name="offsetx"
+							label="Offset X"
+							labelPosition="top"
+						/>
 
-					<RadioControl
-						label="Radio Control"
-						labelPosition="top"
-						help="Radio Control Help Text."
-						name="radio"
-						options={['Author', 'Editor']}
-					/>
+						<RangeControl
+							max={360}
+							min={-360}
+							name="offsety"
+							label="Offset Y"
+							labelPosition="top"
+						/>
+					</Dropdown>
 
-					<QueryControls
-						label="Query Controls Control"
-						labelPosition="top"
-						help="Query Controls Control Help Text."
-						authorList={[
-							{ id: 1, name: 'admin' },
-							{ id: 2, name: 'editor' }
-						]}					
-						categoriesList={[
-							{ id: 1, name: 'Category 1', parent: 0 },
-							{ id: 2, name: 'Category 2', parent: 0 },
-							{ id: 3, name: 'Category 3', parent: 0 },
-						]}			
-						value={this.ctx.attributes.query}
-						setHandler={this.ctx.setAttributes}
+					<Dropdown
+						label="Scale"
+						labelPosition="inline"
+					>
+						<RangeControl
+							max={2}
+							min={0}
+							name="scale"
+							label="Scale"
+							labelPosition="top"
+						/>
+					</Dropdown>
+
+					<Dropdown
+						label="Skew"
+						labelPosition="inline"
+					>
+						<RangeControl
+							max={360}
+							min={-360}
+							name="skewx"
+							label="Skew X"
+							labelPosition="top"
+						/>
+						
+						<RangeControl
+							max={360}
+							min={-360}
+							name="skewy"
+							label="Skew Y"
+							labelPosition="top"
+						/>
+					</Dropdown>
+
+					{/*
+					<Dropdown
+						label="Skew"
+						labelPosition="inline"
 					/>
+					<Dropdown
+						label="Flip Horizontal"
+						labelPosition="inline"
+					/>
+					<Dropdown
+						label="Flip Vertical"
+						labelPosition="inline"
+					/> */}
 				</Panel>
 			</>
 		);
