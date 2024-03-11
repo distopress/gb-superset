@@ -10,7 +10,6 @@ import {
 	AlignmentMatrixControl,
 	BorderBoxControl,
 	BorderControl,
-	ButtonGroup,
 	BoxControl,
 	Button,
 	CheckboxControl,
@@ -33,7 +32,6 @@ import {
 	ResponsiveWrapper,
 	SelectControl,
 	SearchControl,
-	Text,
 	TabPanel,
 	TimePicker,
 	TextControl,
@@ -79,7 +77,7 @@ const block = class extends blockType {
 
 				<Panel title={__('My All Control')}>
 
-					<Text as="h3">QueryControls:</Text>
+					<h3>QueryControls:</h3>
 					<QueryControls
 						authorList={[
 							{ id: 1, name: 'admin' },
@@ -94,17 +92,17 @@ const block = class extends blockType {
 						setHandler={this.ctx.setAttributes}
 					/>
 
-					<Text as="h3">SearchControl:</Text>
+					<h3>SearchControl:</h3>
 					<SearchControl
 						name="search"
 					/>
 
-					<Text as="h3">MediaUpload:</Text>
+					<h3>MediaUpload:</h3>
 					<MediaUpload
 						name="image"
 					/>
 
-					<Text as="h3">SelectControl:</Text>
+					<h3>SelectControl:</h3>
 					<SelectControl
 						name="selectControl"
 						options={ [
@@ -114,12 +112,12 @@ const block = class extends blockType {
 						] }
 					/>
 
-					<Text as="h3">FocalPointPicker:</Text>
+					<h3>FocalPointPicker:</h3>
 					<FocalPointPicker
 						name="focalPoint"
 					/>
 
-					<Text as="h3">ToggleGroupControl:</Text>
+					<h3>ToggleGroupControl:</h3>
 					<ToggleGroupControl
 						label="my label"
 						name="toggleGroup"
@@ -127,7 +125,7 @@ const block = class extends blockType {
 						isBlock
 					/>
 
-					<Text as="h3">ResponsiveWrapper:</Text>
+					<h3>ResponsiveWrapper:</h3>
 					<ResponsiveWrapper naturalWidth={ 2000 } naturalHeight={ 680 }>
 						<img
 							src="https://s.w.org/style/images/about/WordPress-logotype-standard.png"
@@ -135,7 +133,7 @@ const block = class extends blockType {
 						/>
 					</ResponsiveWrapper>
 
-					<Text as="h3">ResizableBox:</Text>
+					<h3>ResizableBox:</h3>
 					<ResizableBox
 						enable={{
 							bottom: true,
@@ -154,101 +152,99 @@ const block = class extends blockType {
 						</div>
 					</ResizableBox>
 
-					<Text as="h3">DuoColorPicker:</Text>
+					<h3>DuoColorPicker:</h3>
 					<DuoColorPicker
 						name="duotone"
 					/>
 
-					<Text as="h3">DatePicker:</Text>
+					<h3>DatePicker:</h3>
 					<DatePicker
 						name="date"
 						is12Hour={ true }
 					/>
 
-					<Text as="h3">TimePicker:</Text>
+					<h3>TimePicker:</h3>
 					<TimePicker
 						name="time"
 						is12Hour={ true }
 					/>
 
-					<Text as="h3">DateTimePicker:</Text>
+					<h3>DateTimePicker:</h3>
 					<DateTimePicker
 						name="dateTime"
 						is12Hour={ true }
 					/>
 
-					<Text as="h3">SelectTagsField:</Text>
+					<h3>SelectTagsField:</h3>
 					<SelectTagsField
 						name="tokenField"
 						suggestions={[ 'Africa', 'America', 'Antarctica', 'Asia', 'Europe', 'Oceania' ]}
 					/>
 
-					<Text as="h3">TextareaControl:</Text>
+					<h3>TextareaControl:</h3>
 					<TextareaControl
 						name="textarea"
 						help="Enter some text"
 					/>
 
-					<Text as="h3">AlignmentMatrixControl:</Text>
+					<h3>AlignmentMatrixControl:</h3>
 					<AlignmentMatrixControl
 						label="Background Position"
 						name="alignmentMatrix"
 					/>
 
-					<Text as="h3">AnglePickerControl:</Text>
+					<h3>AnglePickerControl:</h3>
 					<AnglePickerControl
 						name="anglePicker"
 					/>
 
-					<Text as="h3">BorderBoxControl:</Text>
+					<h3>BorderBoxControl:</h3>
 					<BorderBoxControl
 						name="borderBox"
 					/>
 
-					<Text as="h3">BorderControl:</Text>
+					<h3>BorderControl:</h3>
 					<BorderControl
 						name="border"
 					/>
 
-					<Text as="h3">BoxControl:</Text>
+					<h3>BoxControl:</h3>
 					<BoxControl
 						name="box"
 						allowReset={true}
 					// splitOnAxis={true}
 					/>
 
-					<Text as="h3">ButtonGroup & Button:</Text>
-					<ButtonGroup>
-						<Button isSecondary>33.3%</Button>
-						<Button isPrimary>66.6%</Button>
-						<Button isSecondary>100%</Button>
-					</ButtonGroup>
+					<h3>ButtonGroup & Button:</h3>					
+					<Button isSecondary>33.3%</Button>
+					<Button isPrimary>66.6%</Button>
+					<Button isSecondary>100%</Button>
 
-					<Text as="h3">CheckboxControl:</Text>
+					<h3>CheckboxControl:</h3>
 					<CheckboxControl
 						label="Is author"
 						help="Is the user a author or not?"
 						name="checkBox"
 					/>
 
-					<Text as="h3">ColorPalette:</Text>
+					<h3>ColorPalette:</h3>
 					<ColorPalette
 						name="colorPalette"
 					/>
 
-					<Text as="h3">ColorPicker:</Text>
+					<h3>ColorPicker:</h3>
 					<ColorPicker
             name="colorPicker"
             enableAlpha
         	/>
 
-					<Text as="h3">Divider:</Text>
+					<h3>Divider:</h3>
 					<Divider />
 
-					<Text as="h3">ExternalLink:</Text>
+					<h3>ExternalLink:</h3>
 					<ExternalLink href="https://wordpress.org">WordPress.org</ExternalLink>
 
-					<Text as="h3">FontSizePicker:</Text>
+					<h3>FontSizePicker:</h3>
 					<FontSizePicker
 						name="fontSize"
 						fontSizes={[
@@ -268,12 +264,12 @@ const block = class extends blockType {
 						fallbackFontSize={16}	// Only relevant if withSlider is true
 					/>
 
-					<Text as="h3">GradientPicker:</Text>
+					<h3>GradientPicker:</h3>
 					<GradientPicker
 						name="gradient"
 					/>
 
-					<Text as="h3">NumberControl:</Text>
+					<h3>NumberControl:</h3>
 					<NumberControl
 						name="number"
 						min={10}
@@ -282,14 +278,14 @@ const block = class extends blockType {
 						shiftStep={10}
 					/>
 
-					<Text as="h3">RadioControl:</Text>
+					<h3>RadioControl:</h3>
 					<RadioControl
 						name="radio"
 						help="The type of the current user"
 						options={['Author', 'Editor']}
 					/>
 
-					<Text as="h3">RangeControl:</Text>
+					<h3>RangeControl:</h3>
 					<RangeControl
 						name="range"
 						min={2}

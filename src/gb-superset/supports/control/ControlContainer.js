@@ -73,14 +73,25 @@ export default (props) => {
                 return (
                     <div className="gb-superset-inspector-control__component-container">
                         {/* Render label if it's defined */}
-                        {props.label && 
+                        {props.label && props.labelPosition === "top" && 
                             <label className='gb-superset-inspector-control__component-label' htmlFor={childId}>
                                 {props.label}
                             </label>
                         }
 
                         {/* Render the child controls */}
-                        {component}
+                        <div 
+                            className='gb-superset-inspector-control__component-field' 
+                            style={{ display: `${props.labelPosition === "top" ? 'inline':'flex'}` }}
+                        >
+                            {props.label && props.labelPosition === "inline" &&
+                                <label className='gb-superset-inspector-control__component-label' htmlFor={childId}>
+                                    {props.label}
+                                </label>
+                            }
+
+                            {component}
+                        </div>
 
                         {/* Render help text if it's defined */}
                         {props.help && 

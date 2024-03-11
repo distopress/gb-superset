@@ -1,14 +1,9 @@
-import { Button, TabPanel, ButtonGroup, Dropdown, Modal } from '@wordpress/components';
+import { Button, TabPanel, Modal } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
-import { list, reset, upload, Icon } from '@wordpress/icons';
-import { applyFilters } from '@wordpress/hooks';
-import { MediaUpload } from '@wordpress/block-editor';
+import { list, reset } from '@wordpress/icons';
 import { dispatch, select } from '@wordpress/data';
-import apiFetch from '@wordpress/api-fetch';
 import icons from '../../../../assets/icons';
 import IconList from './IconList';
-import UpdateDatabase from '../../../api/UpdateDatabase';
-
 
 const iconCategories = [
 	{
@@ -37,18 +32,6 @@ const IconControl = ({ label, value, onChange }) => {
 	const defaultIcon = value?.title ? icons.find(icon => icon?.title === value.title) : {};
 	const [selectedIcon, setSelectedIcon] = useState(defaultIcon);
 	const [scrollToSelected, setScrollToSelected] = useState(false);
-	const [allowUpload, setAllowUpload] = useState(false);
-	const [settingsData, setSettingsData] = useState({});
-	const [svg, setSvg] = useState(value?.id || '');
-
-
-	useEffect(() => {
-		// apiFetch({ path: '/gb-superset/v1/settings' })
-		// 	.then((data) => {
-		// 		setSettingsData(data.settings);
-		// 		setAllowUpload(data.settings.unfiltered_upload.status === 'active')
-		// 	})
-	}, []);
 
 	useEffect(() => {
 		if (!selectedIcon?.title || !open || !scrollToSelected) {
@@ -90,54 +73,15 @@ const IconControl = ({ label, value, onChange }) => {
 		if (onChange) {
 			onChange(selectedIcon);
 		}
-		setSvg('')
 	}
 
 	const onCloseModal = () => setOpen(false);
 
-	const handleSVGUpload = (media) => {
-
-		if (media.url && media.mime.includes('svg')) {
-			fetch(media.url)
-				.then(response => response.text())
-				.then(data => {
-					const svgMarkup = data;
-					const svgObject = {
-						id: media.id,
-						label: media.title,
-						src: svgMarkup,
-						title: media.title.toLowerCase(),
-						type: 'custom'
-					}
-					console.log(svgObject);
-					//setShowIconOnPreview(svgMarkup);
-					onChange(svgObject);
-					setSelectedIcon(svgObject);
-				})
-		}
-		setSvg(media.id);
-	}
-
-	const handleAllowSvg = (onClose) => {
-
-		const newSettings = { ...settingsData };
-		if (newSettings.unfiltered_upload) {
-			newSettings.unfiltered_upload.status = 'active';
-		}
-		UpdateDatabase('settings', { settings: newSettings });
-		setAllowUpload(true);
-		onClose;
-		location.reload();
-	}
-
 	const defaultActionProps = {
 		showTooltip: true,
 		tooltipPosition: 'top',
-		//isSmall: true,
 		className: 'gb-superset-icon-picker-actions-item'
 	}
-
-
 
 	return (
 		<>
@@ -146,42 +90,6 @@ const IconControl = ({ label, value, onChange }) => {
 
 				<div className='gb-superset-icon-picker-actions'>
 					<Button {...defaultActionProps} label='None' icon={reset} onClick={() => setSelectedIcon({})} />
-					{/*
-
-					{allowUpload ?
-						(
-							<MediaUpload
-								onSelect={handleSVGUpload}
-								allowedTypes={['image/svg+xml']}
-								value={svg}
-								render={({ open }) => (
-									<Button {...defaultActionProps} onClick={open} label="Pick from library" icon={upload} />
-								)}
-							/>
-						)
-						:
-						(
-							<Dropdown
-								className="gkit-icon-picker__dropdown"
-								contentClassName="gkit-icon-picker__dropdown-content"
-								popoverProps={{ placement: "top" }}
-								renderToggle={({ isOpen, onToggle }) => (
-									<Button {...defaultActionProps} aria-expanded={isOpen} onClick={onToggle} label="Upload SVG" icon={upload} />
-								)}
-								renderContent={({ onClose }) => <>
-									<div className='gkit-icon-picker__dropdown-content-wrapper'>
-										<h2 className='gkit-icon-picker__dropdown-header'>Enable SVG File Upload</h2>
-										<p className='gkit-icon-picker__dropdown-description'>Before you enable SVG file upload, be aware that such files include a security vulnerability. <b>Reload</b> the editor once after clicking the "Enable" button to finish the process</p>
-										<div className='gkit-icon-picker__dropdown-buttons'>
-											<Button variant="secondary" onClick={onClose}>Cancel</Button>
-											<Button variant="primary" onClick={() => handleAllowSvg(onClose)}>Enable</Button>
-										</div>
-									</div>
-								</>}
-							/>
-						)}
-				*/}
-
 					<Button {...defaultActionProps} label="Pick from library" onClick={onOpenModal}>
 						{selectedIcon?.src ?
 							<span dangerouslySetInnerHTML={{ __html: selectedIcon.src }} />
