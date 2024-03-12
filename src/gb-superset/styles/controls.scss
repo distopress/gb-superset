@@ -1,6 +1,11 @@
 .gb-superset-inspector-control{
   margin-bottom: 14px;
 
+  .gb-superset-control-responsive-switcher .active{
+    background-color: #007cba;
+    color: #fff;
+  }
+
   .gb-superset-inspector-control__component-container{
 
     .components-base-control{

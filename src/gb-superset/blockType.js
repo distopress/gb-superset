@@ -6,9 +6,10 @@ import {
     InspectorControls,
 } from '@wordpress/block-editor';
 
-import cssx from '@gb-superset/asset-manager/cssx';
-
+import getDeviceType from './supports/getDeviceType';
+import { createStyleSheet, breakpoints } from '@gb-superset/asset-manager/styleSheet';
 import { ControlContext, getObject, setObject } from '@gb-superset/supports/control';
+
 
 // Defining the blockType class
 export default class blockType {
@@ -18,6 +19,7 @@ export default class blockType {
         this.EditContent = null;
         this.SaveContent = this.throwError('You have to implement the method saveContent!');
         this.InspectorControls = this.throwError('You have to implement the method InspectorControls!');
+        this.StyleSheet = () => null;
         this.EditorControls = () => null;
         this.ctx = null;
 
@@ -30,6 +32,7 @@ export default class blockType {
 
     // Method to edit the block
     edit = ({ attributes, setAttributes, clientId }) => {
+
         // Set blockId
         if ('block-' + clientId != !attributes.blockId) {
             setAttributes({ blockId: 'block-' + clientId });
@@ -47,22 +50,11 @@ export default class blockType {
 
         // Content to render
         const RenderContent = this.EditContent ?? this.SaveContent;
-        var sheet = cssx();
-        var a = 1;
-        
-        sheet.add({
-            '.header': { 
-                margin: a + 'px',
-                paddingTop: '7px',
-            },
-            '.header h1': {
-                color: 'red',
-            }
-        });
+        this.sheet = createStyleSheet();
+        this.StyleSheet({ get, sheet: this.sheet, breakpoints});
 
-        // console.log(sheet.getCSS());
-
-        setAttributes({ blockStyle: sheet.getCSS() });
+        // Set blockStyle
+        setAttributes({ blockStyle: this.sheet.extractCSS(attributes.blockId) });
 
         // Returning the JSX for the block
         return (
@@ -79,7 +71,8 @@ export default class blockType {
                     </ControlContext.Provider>
                 </BlockControls>
 
-                <div {...blockProps}>
+                <div {...blockProps} id={attributes.blockId}>
+                    <style>{attributes.blockStyle}</style>
                     <RenderContent {...{ attributes, get, blockProps }} />
                 </div>
             </>
@@ -94,15 +87,15 @@ export default class blockType {
         }
 
         // name, blockId, blockStyle are also required
-        if(!this.metadata.name) {
+        if (!this.metadata.name) {
             throw new Error('You have to set the block name attribute!');
         }
 
-        if(!this.metadata.attributes.blockId) {
+        if (!this.metadata.attributes.blockId) {
             throw new Error('You have to set the block blockId attribute!');
         }
 
-        if(!this.metadata.attributes.blockStyle) {
+        if (!this.metadata.attributes.blockStyle) {
             throw new Error('You have to set the block blockStyle attribute!');
         }
 
@@ -121,7 +114,8 @@ export default class blockType {
 
                 // Returning the JSX for the block
                 return (
-                    <div {...blockProps}>
+                    <div {...blockProps} id={attributes.blockId}>
+                        <style>{attributes.blockStyle}</style>
                         <RenderContent {...{ attributes, get, blockProps }} />
                     </div>
                 );
