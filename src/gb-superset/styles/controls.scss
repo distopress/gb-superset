@@ -24,6 +24,7 @@
 
       label {
         width: 50%;
+        margin-bottom: 0px;
       }
 
       // Hide Default Label Start
@@ -57,4 +58,18 @@
     }
   }
 
+}
+
+.gb-superset-dropdown{
+  .dropdown-button{
+    border: 1px solid #007cba;
+  }
+}
+
+.gb-superset-dropdown-content{
+  .components-popover__content{
+    max-height: none !important;
+    width: 250px;
+    padding: 15px 15px;
+  }
 }

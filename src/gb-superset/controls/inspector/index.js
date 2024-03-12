@@ -8,6 +8,7 @@ export { default as CheckboxControl } from './CheckboxControl';
 export { default as ColorPalette } from './ColorPalette';
 export { default as ColorPicker } from './ColorPicker';
 export { default as Divider } from './Divider';
+export { default as Dropdown } from './Dropdown';
 export { default as DatePicker } from './DatePicker';
 export { default as DuoColorPicker } from './DuoColorPicker';
 export { default as DateTimePicker } from './DateTimePicker';
