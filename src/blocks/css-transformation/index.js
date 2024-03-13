@@ -1,5 +1,6 @@
 import metadata from './block.json';
 import SaveContent from './SaveContent';
+import style from './style';
 
 import { __ } from '@wordpress/i18n';
 import { AlignmentControl } from '@wordpress/block-editor';
@@ -112,6 +113,8 @@ const block = class extends blockType {
 	// }
 
 	SaveContent = SaveContent;
+
+	StyleSheet = style;
 }
 
 new block().register();
