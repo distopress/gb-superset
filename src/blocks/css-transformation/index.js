@@ -30,6 +30,7 @@ const block = class extends blockType {
 							name="rotate"
 							label="Rotate (deg)"
 							labelPosition="top"
+							allowReset={true}
 						/>
 					</Dropdown>
 
@@ -43,6 +44,7 @@ const block = class extends blockType {
 							name="offsetx"
 							label="Offset X"
 							labelPosition="top"
+							allowReset={true}
 						/>
 
 						<RangeControl
@@ -51,6 +53,7 @@ const block = class extends blockType {
 							name="offsety"
 							label="Offset Y"
 							labelPosition="top"
+							allowReset={true}
 						/>
 					</Dropdown>
 
@@ -59,11 +62,13 @@ const block = class extends blockType {
 						labelPosition="inline"
 					>
 						<RangeControl
-							max={2}
-							min={0}
+							min={ 0.0 }
+							max={ 2.0 }
+							step={ 0.1 }
 							name="scale"
 							label="Scale"
 							labelPosition="top"
+							allowReset={true}
 						/>
 					</Dropdown>
 
@@ -77,6 +82,7 @@ const block = class extends blockType {
 							name="skewx"
 							label="Skew X"
 							labelPosition="top"
+							allowReset={true}
 						/>
 						
 						<RangeControl
@@ -85,6 +91,7 @@ const block = class extends blockType {
 							name="skewy"
 							label="Skew Y"
 							labelPosition="top"
+							allowReset={true}
 						/>
 					</Dropdown>
 					
