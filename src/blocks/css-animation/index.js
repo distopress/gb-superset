@@ -39,8 +39,12 @@ const block = class extends blockType {
 								{ label: 'Bounce', value: 'bounce' },
 								{ label: 'Flash', value: 'flash' },
 								{ label: 'Pulse', value: 'pulse' },
+								{ label: 'Shake', value: 'shakeX' },
 								{ label: 'Head Shake', value: 'headShake' },
-								{ label: 'Rubber Band', value: 'rubberBand' },
+								{ label: 'Swing', value: 'swing' },
+								{ label: 'Tada', value: 'tada' },
+								{ label: 'Wobble', value: 'wobble' },
+								{ label: 'Jello', value: 'jello' },
 							]}
 						/>
           
