@@ -1,5 +1,7 @@
 import metadata from './block.json';
 import SaveContent from './SaveContent';
+import style from './style';
+import './style.scss';
 
 import { __ } from '@wordpress/i18n';
 import { AlignmentControl } from '@wordpress/block-editor';
@@ -8,7 +10,8 @@ import blockType from '@gb-superset/blockType';
 import {
 	Panel,
   ToggleControl,
-  SelectControl
+  SelectControl,
+	RangeControl
 } from '@gb-superset/controls/inspector';
 
 const block = class extends blockType {
@@ -27,48 +30,53 @@ const block = class extends blockType {
 
           { this.ctx.attributes?.enableAnimation?.desktop && <>
             
-            {/* 
-            add the class animate__animated to an element, along with any of the animation names (don't forget the animate__ prefix!): 
-            Example: <h1 class="animate__animated animate__bounce">An animated element</h1>
-          */}
-          <SelectControl
-						label="Type"
-						labelPosition="top"
-						name="animateType"
-						options={[
-							{ label: 'Bounce', value: 'bounce' },
-							{ label: 'Flash', value: 'flash' },
-							{ label: 'Pulse', value: 'pulse' },
-							{ label: 'Head Shake', value: 'headShake' },
-							{ label: 'Rubber Band', value: 'rubberBand' },
-						]}
-					/>
+						<SelectControl
+							label="Type"
+							labelPosition="top"
+							name="animateType"
+							options={[
+								{ label: 'Default', value: '' },
+								{ label: 'Bounce', value: 'bounce' },
+								{ label: 'Flash', value: 'flash' },
+								{ label: 'Pulse', value: 'pulse' },
+								{ label: 'Head Shake', value: 'headShake' },
+								{ label: 'Rubber Band', value: 'rubberBand' },
+							]}
+						/>
+          
+						<SelectControl
+							label="Delay"
+							labelPosition="top"
+							name="delayAnimate"
+							options={[
+								{ label: 'Select Delay', value: '' },
+								{ label: '2 Seconds', value: '2s' },
+								{ label: '3 Seconds', value: '3s' },
+								{ label: '4 Seconds', value: '4s' },
+								{ label: '5 Seconds', value: '5s' },
+							]}
+						/>
 
-          {/* Example: <div class="animate__animated animate__bounce animate__delay-2s">Example</div> */}
-          <SelectControl
-						label="Delay"
-						labelPosition="top"
-						name="delayAnimate"
-						options={[
-							{ label: '2 Seconds', value: '2s' },
-							{ label: '3 Seconds', value: '3s' },
-							{ label: '4 Seconds', value: '4s' },
-							{ label: '5 Seconds', value: '5s' },
-						]}
-					/>
+						<RangeControl
+							min={ 0.0 }
+							max={ 5.0 }
+							step={ 0.1 }
+							name="animateDuration"
+							label="Duration"
+							labelPosition="top"
+						/>
 
-          {/* Example: <div class="animate__animated animate__bounce animate__repeat-2">Example</div> */}
-          <SelectControl
-						label="Repeat"
-						labelPosition="top"
-						name="repeatAnimate"
-						options={[
-							{ label: 'Once', value: '1' },
-							{ label: 'Twice', value: '2' },
-							{ label: 'Thrice', value: '3' },
-							{ label: 'Infinite', value: 'infinite' },
-						]}
-					/>
+						<SelectControl
+							label="Repeat"
+							labelPosition="top"
+							name="repeatAnimate"
+							options={[
+								{ label: 'Once', value: '1' },
+								{ label: 'Twice', value: '2' },
+								{ label: 'Thrice', value: '3' },
+								{ label: 'Infinite', value: 'infinite' },
+							]}
+						/>
           
           </> }
 
@@ -97,6 +105,8 @@ const block = class extends blockType {
 	// }
 
 	SaveContent = SaveContent;
+
+	StyleSheet = style;
 }
 
 new block().register();

@@ -20,7 +20,13 @@
 		"enableAnimation": {
 			"type": "object"
 		},
+		"animateType": {
+			"type": "object"
+		},
 		"delayAnimate": {
+			"type": "object"
+		},
+		"animateDuration": {
 			"type": "object"
 		},
 		"repeatAnimate": {
