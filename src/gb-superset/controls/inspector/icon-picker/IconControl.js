@@ -2,8 +2,9 @@ import { Button, TabPanel, Modal } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
 import { list, reset } from '@wordpress/icons';
 import { dispatch, select } from '@wordpress/data';
-import icons from '../../../../assets/icons';
+import { solid, regular } from '../../../../assets/icons';
 import IconList from './IconList';
+
 
 const iconCategories = [
 	{
@@ -11,30 +12,34 @@ const iconCategories = [
 		value: 'all',
 	},
 	{
-		label: 'Font Awesome Solid',
+		label: 'Solid',
 		value: 'solid',
 	},
 	{
-		label: 'Font Awesome Brand',
-		value: 'brands',
-	},
-	{
-		label: 'Font Awesome Regular',
+		label: 'Regular',
 		value: 'regular',
 	}
 ];
 
+const solidIcons = Object.values(solid).map(icon => ({ name: icon.name, component: icon }))
+const regularIcons = Object.values(regular).map(icon => ({ name: icon.name, component: icon }))
 
-const iconsByCategory = Object.groupBy(icons.slice(0, 100), ({ type }) => type);
+
+const iconsByCategory = {
+	solid: solidIcons,
+	regular: regularIcons
+}
+
+const icons = [...solidIcons, ...regularIcons];
 
 const IconControl = ({ label, value, onChange }) => {
 	const [open, setOpen] = useState(false);
 	const defaultIcon = value?.title ? icons.find(icon => icon?.title === value.title) : {};
-	const [selectedIcon, setSelectedIcon] = useState(defaultIcon);
+	const [selectedIcon, setSelectedIcon] = useState();
 	const [scrollToSelected, setScrollToSelected] = useState(false);
 
 	useEffect(() => {
-		if (!selectedIcon?.title || !open || !scrollToSelected) {
+		if (!selectedIcon?.name || !open || !scrollToSelected) {
 			return
 		}
 
@@ -64,7 +69,7 @@ const IconControl = ({ label, value, onChange }) => {
 
 	const onOpenModal = () => {
 		setOpen(true);
-		if (Object.keys(selectedIcon).length > 0)
+		if (selectedIcon?.name)
 			setScrollToSelected(true);
 	}
 
@@ -89,10 +94,10 @@ const IconControl = ({ label, value, onChange }) => {
 				<label className='gb-superset-icon-picker-label'>{label || 'Add Icon'}</label>
 
 				<div className='gb-superset-icon-picker-actions'>
-					<Button {...defaultActionProps} label='None' icon={reset} onClick={() => setSelectedIcon({})} />
+					<Button {...defaultActionProps} label='None' icon={reset} onClick={() => setSelectedIcon(null)} />
 					<Button {...defaultActionProps} label="Pick from library" onClick={onOpenModal}>
-						{selectedIcon?.src ?
-							<span dangerouslySetInnerHTML={{ __html: selectedIcon.src }} />
+						{selectedIcon ?
+							<selectedIcon.component />
 							:
 							list
 						}
@@ -101,12 +106,12 @@ const IconControl = ({ label, value, onChange }) => {
 			</div>
 
 			{open && <Modal onRequestClose={onCloseModal} className='gb-superset-icon-picker-modal'>
-				<TabPanel
+				<TabPanel orientation='vertical' className='gb-superset-icon-picker-tab'
 					tabs={iconCategories.map((category) => { return { name: category?.value, title: category?.label } })}
 				>
 					{
 						(tab) => (
-							<IconList icons={tab.name === 'all' ? icons : iconsByCategory[tab.name]} selectedIcon={selectedIcon} setSelectedIcon={setSelectedIcon} />
+							<IconList type={tab.name} icons={tab.name === 'all' ? icons : iconsByCategory[tab.name]} selectedIcon={selectedIcon} setSelectedIcon={setSelectedIcon} />
 						)
 					}
 				</TabPanel>

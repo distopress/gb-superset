@@ -1,3 +1,7 @@
-import icons from './font-awesome-icons/icons.json';
+import * as solid from './solid'
+import * as regular from './regular'
 
-export default icons;
+
+export {
+	solid, regular
+}

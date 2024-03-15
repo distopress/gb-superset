@@ -1,17 +1,18 @@
 .gb-superset-icon-picker {
-	&-wrapper{
+	&-wrapper {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		width: 100%;
 	}
 	&-actions {
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
-		&-item{
+		&-item {
 			outline: 1px solid #c7c7c7;
 			height: 24px !important;
-			svg{
+			svg {
 				width: 20px;
 				height: 20px;
 			}
@@ -99,11 +100,11 @@
 		overflow: hidden !important;
 		max-width: 70vw !important;
 
-		.components-modal__header{
+		.components-modal__header {
 			height: unset;
 			position: relative;
 			padding: 8px;
-			.components-button{
+			.components-button {
 				position: absolute;
 				top: -10px;
 				right: -15px;
@@ -111,7 +112,7 @@
 			}
 		}
 
-		.components-modal__content{
+		.components-modal__content {
 			margin-top: 10px;
 			padding: 10px 1.2rem;
 			overflow: hidden;
@@ -127,6 +128,17 @@
 			z-index: 999999;
 			background-color: rgb(240, 240, 240);
 			text-align: right;
+		}
+	}
+	&-tab {
+		display: flex;
+		gap: 10px;
+		.components-color-picker {
+			display: flex;
+			width: 100%;
+			.react-colorful{
+				height: 130px;
+			}
 		}
 	}
 	&-search-control {
