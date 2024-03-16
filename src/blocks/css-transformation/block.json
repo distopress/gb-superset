@@ -17,16 +17,25 @@
 		"blockStyle": {
 			"type": "string"
 		},
-		"rotate": {
+		"translatex": {
 			"type": "object"
 		},
-		"offsetx": {
+		"translatey": {
 			"type": "object"
 		},
-		"offsety": {
+		"rotatex": {
 			"type": "object"
 		},
-		"scale": {
+		"rotatey": {
+			"type": "object"
+		},
+		"rotatez": {
+			"type": "object"
+		},
+		"scalex": {
+			"type": "object"
+		},
+		"scaley": {
 			"type": "object"
 		},
 		"skewx": {

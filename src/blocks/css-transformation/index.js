@@ -1,5 +1,6 @@
 import metadata from './block.json';
 import SaveContent from './SaveContent';
+import style from './style';
 
 import { __ } from '@wordpress/i18n';
 import { AlignmentControl } from '@wordpress/block-editor';
@@ -20,36 +21,57 @@ const block = class extends blockType {
 				<Panel title={__('CSS Transformation')}>		
 
 					<Dropdown
+						label="Translate"
+						labelPosition="inline"
+					>
+						<RangeControl
+							max={360}
+							min={-360}
+							name="translatex"
+							label="Translate X"
+							labelPosition="top"
+							allowReset={true}
+						/>
+
+						<RangeControl
+							max={360}
+							min={-360}
+							name="translatey"
+							label="Translate Y"
+							labelPosition="top"
+							allowReset={true}
+						/>
+					</Dropdown>
+
+					<Dropdown
 						label="Rotate"
 						labelPosition="inline"
 					>
 						<RangeControl
 							max={360}
 							min={-360}
-							name="rotate"
-							label="Rotate (deg)"
+							name="rotatex"
+							label="Rotate X (deg)"
 							labelPosition="top"
-						/>
-					</Dropdown>
-
-					<Dropdown
-						label="Offset"
-						labelPosition="inline"
-					>
-						<RangeControl
-							max={360}
-							min={-360}
-							name="offsetx"
-							label="Offset X"
-							labelPosition="top"
+							allowReset={true}
 						/>
 
 						<RangeControl
 							max={360}
 							min={-360}
-							name="offsety"
-							label="Offset Y"
+							name="rotatey"
+							label="Rotate Y (deg)"
 							labelPosition="top"
+							allowReset={true}
+						/>
+
+						<RangeControl
+							max={360}
+							min={-360}
+							name="rotatez"
+							label="Rotate Z (deg)"
+							labelPosition="top"
+							allowReset={true}
 						/>
 					</Dropdown>
 
@@ -58,11 +80,23 @@ const block = class extends blockType {
 						labelPosition="inline"
 					>
 						<RangeControl
-							max={2}
-							min={0}
-							name="scale"
-							label="Scale"
+							min={ 0.0 }
+							max={ 2.0 }
+							step={ 0.1 }
+							name="scalex"
+							label="Scale X"
 							labelPosition="top"
+							allowReset={true}
+						/>
+
+						<RangeControl
+							min={ 0.0 }
+							max={ 2.0 }
+							step={ 0.1 }
+							name="scaley"
+							label="Scale Y"
+							labelPosition="top"
+							allowReset={true}
 						/>
 					</Dropdown>
 
@@ -76,6 +110,7 @@ const block = class extends blockType {
 							name="skewx"
 							label="Skew X"
 							labelPosition="top"
+							allowReset={true}
 						/>
 						
 						<RangeControl
@@ -84,6 +119,7 @@ const block = class extends blockType {
 							name="skewy"
 							label="Skew Y"
 							labelPosition="top"
+							allowReset={true}
 						/>
 					</Dropdown>
 					
@@ -112,6 +148,8 @@ const block = class extends blockType {
 	// }
 
 	SaveContent = SaveContent;
+
+	StyleSheet = style;
 }
 
 new block().register();
