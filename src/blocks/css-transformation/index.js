@@ -21,28 +21,37 @@ const block = class extends blockType {
 				<Panel title={__('CSS Transformation')}>		
 
 					<Dropdown
-						label="Rotate"
+						label="Translate"
 						labelPosition="inline"
 					>
 						<RangeControl
 							max={360}
 							min={-360}
-							name="rotate"
-							label="Rotate (deg)"
+							name="translatex"
+							label="Translate X"
+							labelPosition="top"
+							allowReset={true}
+						/>
+
+						<RangeControl
+							max={360}
+							min={-360}
+							name="translatey"
+							label="Translate Y"
 							labelPosition="top"
 							allowReset={true}
 						/>
 					</Dropdown>
 
 					<Dropdown
-						label="Offset"
+						label="Rotate"
 						labelPosition="inline"
 					>
 						<RangeControl
 							max={360}
 							min={-360}
-							name="offsetx"
-							label="Offset X"
+							name="rotatex"
+							label="Rotate X (deg)"
 							labelPosition="top"
 							allowReset={true}
 						/>
@@ -50,8 +59,17 @@ const block = class extends blockType {
 						<RangeControl
 							max={360}
 							min={-360}
-							name="offsety"
-							label="Offset Y"
+							name="rotatey"
+							label="Rotate Y (deg)"
+							labelPosition="top"
+							allowReset={true}
+						/>
+
+						<RangeControl
+							max={360}
+							min={-360}
+							name="rotatez"
+							label="Rotate Z (deg)"
 							labelPosition="top"
 							allowReset={true}
 						/>
@@ -65,8 +83,18 @@ const block = class extends blockType {
 							min={ 0.0 }
 							max={ 2.0 }
 							step={ 0.1 }
-							name="scale"
-							label="Scale"
+							name="scalex"
+							label="Scale X"
+							labelPosition="top"
+							allowReset={true}
+						/>
+
+						<RangeControl
+							min={ 0.0 }
+							max={ 2.0 }
+							step={ 0.1 }
+							name="scaley"
+							label="Scale Y"
 							labelPosition="top"
 							allowReset={true}
 						/>
