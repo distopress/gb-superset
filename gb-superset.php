@@ -59,9 +59,17 @@ function debug(...$data) {
 define( 'GBSUPERSET_PLUGIN_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) );
 
 function __block_init() {
+	
 	wp_register_style(
 		'gb-superset/block-emran-1',
 		GBSUPERSET_PLUGIN_URL . 'build/blocks/block-emran-1/style-index.css',
+		array(),
+		"0.1.0"
+	);
+
+	wp_register_style(
+		'gb-superset/css-animation',
+		GBSUPERSET_PLUGIN_URL . 'build/blocks/css-animation/style-index.css',
 		array(),
 		"0.1.0"
 	);
