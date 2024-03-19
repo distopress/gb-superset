@@ -13,8 +13,8 @@ export default (props) => {
         { 
           props?.options?.map( option => 
             <ToggleGroupControlOption 
-              value={option.replace(/\s+/g, '-').toLowerCase()}
-              label={option} 
+              value={option.value}
+              label={option.label} 
             />
           )
         }

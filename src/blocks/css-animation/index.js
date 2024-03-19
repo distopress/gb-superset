@@ -18,6 +18,49 @@ const block = class extends blockType {
 	metadata = metadata;
 
 	InspectorControls = () => {
+
+		const AnimateType = [
+			{ label: 'Default', value: '' },
+			{ label: 'Bounce', value: 'bounce' },
+			{ label: 'Flash', value: 'flash' },
+			{ label: 'Pulse', value: 'pulse' },
+			{ label: 'Shake', value: 'shakeX' },
+			{ label: 'Head Shake', value: 'headShake' },
+			{ label: 'Swing', value: 'swing' },
+			{ label: 'Tada', value: 'tada' },
+			{ label: 'Wobble', value: 'wobble' },
+			{ label: 'Jello', value: 'jello' },
+			{ label: 'Fading', value: '', disabled: true },
+			{ label: 'Fade In', value: 'fadeIn' },
+			{ label: 'Fade In Down', value: 'fadeInDown' },
+			{ label: 'Fade In Left', value: 'fadeInLeft' },
+			{ label: 'Fade In Right', value: 'fadeInRight' },
+			{ label: 'Fade In Up', value: 'fadeInUp' },
+			{ label: 'Zooming', value: '', disabled: true },
+			{ label: 'Zoom In', value: 'zoomIn' },
+			{ label: 'Zoom In Down', value: 'zoomInDown' },
+			{ label: 'Zoom In Left', value: 'zoomInLeft' },
+			{ label: 'Zoom In Right', value: 'zoomInRight' },
+			{ label: 'Zoom In Up', value: 'zoomInUp' },
+			{ label: 'Bouncing', value: '', disabled: true },
+			{ label: 'Bounce In', value: 'bounceIn' },
+			{ label: 'Bounce In Down', value: 'bounceInDown' },
+			{ label: 'Bounce In Left', value: 'bounceInLeft' },
+			{ label: 'Bounce In Right', value: 'bounceInRight' },
+			{ label: 'Bounce In Up', value: 'bounceInUp' },
+			{ label: 'Sliding', value: '', disabled: true },
+			{ label: 'Slide In Down', value: 'slideInDown' },
+			{ label: 'Slide In Left', value: 'slideInLeft' },
+			{ label: 'Slide In Right', value: 'slideInRight' },
+			{ label: 'Slide In Up', value: 'slideInUp' },
+			{ label: 'Rotating', value: '', disabled: true },
+			{ label: 'Rotate In', value: 'rotateIn' },
+			{ label: 'Rotate In Down Left', value: 'rotateInDownLeft' },
+			{ label: 'Rotate In Down Right', value: 'rotateInDownRight' },
+			{ label: 'Rotate In Up Left', value: 'rotateInUpLeft' },
+			{ label: 'Rotate In Up Right', value: 'rotateInUpRight' },
+		];
+
 		return (
 			<>
 				<Panel title={__('CSS Animation')}>
@@ -34,47 +77,7 @@ const block = class extends blockType {
 							label="Type"
 							labelPosition="top"
 							name="animateType"
-							options={[
-								{ label: 'Default', value: '' },
-								{ label: 'Bounce', value: 'bounce' },
-								{ label: 'Flash', value: 'flash' },
-								{ label: 'Pulse', value: 'pulse' },
-								{ label: 'Shake', value: 'shakeX' },
-								{ label: 'Head Shake', value: 'headShake' },
-								{ label: 'Swing', value: 'swing' },
-								{ label: 'Tada', value: 'tada' },
-								{ label: 'Wobble', value: 'wobble' },
-								{ label: 'Jello', value: 'jello' },
-								{ label: 'Fading', value: '', disabled: true },
-								{ label: 'Fade In', value: 'fadeIn' },
-								{ label: 'Fade In Down', value: 'fadeInDown' },
-								{ label: 'Fade In Left', value: 'fadeInLeft' },
-								{ label: 'Fade In Right', value: 'fadeInRight' },
-								{ label: 'Fade In Up', value: 'fadeInUp' },
-								{ label: 'Zooming', value: '', disabled: true },
-								{ label: 'Zoom In', value: 'zoomIn' },
-								{ label: 'Zoom In Down', value: 'zoomInDown' },
-								{ label: 'Zoom In Left', value: 'zoomInLeft' },
-								{ label: 'Zoom In Right', value: 'zoomInRight' },
-								{ label: 'Zoom In Up', value: 'zoomInUp' },
-								{ label: 'Bouncing', value: '', disabled: true },
-								{ label: 'Bounce In', value: 'bounceIn' },
-								{ label: 'Bounce In Down', value: 'bounceInDown' },
-								{ label: 'Bounce In Left', value: 'bounceInLeft' },
-								{ label: 'Bounce In Right', value: 'bounceInRight' },
-								{ label: 'Bounce In Up', value: 'bounceInUp' },
-								{ label: 'Sliding', value: '', disabled: true },
-								{ label: 'Slide In Down', value: 'slideInDown' },
-								{ label: 'Slide In Left', value: 'slideInLeft' },
-								{ label: 'Slide In Right', value: 'slideInRight' },
-								{ label: 'Slide In Up', value: 'slideInUp' },
-								{ label: 'Rotating', value: '', disabled: true },
-								{ label: 'Rotate In', value: 'rotateIn' },
-								{ label: 'Rotate In Down Left', value: 'rotateInDownLeft' },
-								{ label: 'Rotate In Down Right', value: 'rotateInDownRight' },
-								{ label: 'Rotate In Up Left', value: 'rotateInUpLeft' },
-								{ label: 'Rotate In Up Right', value: 'rotateInUpRight' },
-							]}
+							options={AnimateType}
 						/>
           
 						<SelectControl
