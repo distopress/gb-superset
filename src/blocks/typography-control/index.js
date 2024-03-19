@@ -30,7 +30,7 @@ const block = class extends blockType {
 							label="Family"
 							labelPosition="inline"
 							name="fontFamily"
-							loadFont={this.ctx.attributes.fontFamily}
+							loadFont={this.ctx?.attributes?.fontFamily?.desktop}
 						/>
 						<RangeControl
 							min={0}

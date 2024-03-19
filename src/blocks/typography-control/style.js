@@ -5,7 +5,8 @@ export default ({ get, sheet, breakpoints}) => {
   
   sheet.add({ // will add to desktop
     'blockId .gb-suerset-typography-control': {
-      'font-size'       : `${get('fontSize') || 0}px`,
+      'font-family'     : `${get('fontFamily') || ''}`,
+      'font-size'       : `${get('fontSize') || 14}px`,
       'font-style'      : `${get('fontStyle') || 'normal'}`,
       'font-weight'     : `${get('fontWeight') || 400}`,
       'text-decoration' : `${get('textDecoration') || 'none'}`,
