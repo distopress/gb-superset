@@ -13,7 +13,7 @@ export default ({ get, sheet, breakpoints}) => {
       'text-transform'  : `${get('textTransform') || 'none'}`,
       'line-height'     : `${get('lineHeight') || 24}px`,
       'letter-spacing'  : `${get('letterSpacing') || 0.8}px`,
-      'word-spacing'    : `${get('wordSpacing') || 2}px`,
+      'word-spacing'    : `${get('wordSpacing') || 0}px`,
     }      
   });
 
