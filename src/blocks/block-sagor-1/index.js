@@ -121,7 +121,10 @@ const block = class extends blockType {
 					<ToggleGroupControl
 						label="my label"
 						name="toggleGroup"
-						options={[ 'Horizontal', 'Vertical' ]}
+						options={[ 
+							{ label: 'Horizontal', value: 'horizontal' },
+							{ label: 'Vertical', value: 'vertical' }, 
+						]}
 						isBlock
 					/>
 

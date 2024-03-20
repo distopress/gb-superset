@@ -253,7 +253,10 @@ const block = class extends blockType {
 						labelPosition="top"
 						help="Toggle Group Control Help Text."
 						name="toggleGroup"
-						options={[ 'Horizontal', 'Vertical' ]}
+						options={[ 
+							{ label: 'Horizontal', value: 'horizontal' },
+							{ label: 'Vertical', value: 'vertical' },
+						]}
 					/>
 
 					<QueryControls
