@@ -1,12 +1,12 @@
-import { Flex, FlexItem, SearchControl } from '@wordpress/components';
+import { SearchControl } from '@wordpress/components';
 import { useState, useEffect } from '@wordpress/element';
 import React from 'react';
 
-const IconList = ({ icons = [], selectedIcon, setSelectedIcon }) => {
+const IconList = ({ icons = [], type, selectedIcon, setSelectedIcon, strokeWidth }) => {
 
 	const [searchInput, setSearchInput] = useState('');
 	const [filteredIcons, setFilteredIcons] = useState(icons);
-
+	const [size, setSize] = useState(24);
 
 	useEffect(() => {
 		setFilteredIcons(icons);
@@ -23,14 +23,14 @@ const IconList = ({ icons = [], selectedIcon, setSelectedIcon }) => {
 		timer = setTimeout(() => {
 			const keyword = searchInput.toLowerCase();
 			const newFilteredIcons = icons.filter((icon) => {
-				return icon.title.toLowerCase().includes(keyword);
+				return icon.name.toLowerCase().includes(keyword);
 			})
 			setFilteredIcons(newFilteredIcons);
 		}, 500);
 	}, [searchInput]);
+
 	return (
 		<div>
-
 			<SearchControl
 				size="compact"
 				value={searchInput}
@@ -41,8 +41,10 @@ const IconList = ({ icons = [], selectedIcon, setSelectedIcon }) => {
 			<div className="gb-superset-icon-picker-list">
 				{filteredIcons.map((icon, index) => {
 					return (
-						<div className={`gb-superset-icon-picker-icon ${(selectedIcon?.title == icon?.title ? 'gb-superset-icon-picker-icon-selected' : '')} ${icon?.title || ''}`} key={index} onClick={() => setSelectedIcon(icon)}>
-							<div className="gb-superset-icon-picker-icon-content" dangerouslySetInnerHTML={{ __html: icon?.src }} />
+						<div className={`gb-superset-icon-picker-icon ${(selectedIcon?.name == icon?.name ? 'gb-superset-icon-picker-icon-selected' : '')} ${icon?.name || ''}`} key={index} onClick={() => setSelectedIcon(icon)}>
+							<div className="gb-superset-icon-picker-icon-content">
+								<icon.component width={size + 'px'} strokeWidth={strokeWidth} />
+							</div>
 						</div>
 					);
 				})}

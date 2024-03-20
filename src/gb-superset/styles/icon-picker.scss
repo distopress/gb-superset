@@ -1,17 +1,18 @@
 .gb-superset-icon-picker {
-	&-wrapper{
+	&-wrapper {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		width: 100%;
 	}
 	&-actions {
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
-		&-item{
+		&-item {
 			outline: 1px solid #c7c7c7;
 			height: 24px !important;
-			svg{
+			svg {
 				width: 20px;
 				height: 20px;
 			}
@@ -65,7 +66,7 @@
 	}
 	&-list {
 		display: grid;
-		grid-template-columns: repeat(11, minmax(0, 1fr));
+		grid-template-columns: repeat(9, minmax(0, 1fr));
 		text-align: center;
 		gap: 15px;
 		padding: 3px;
@@ -99,20 +100,18 @@
 		overflow: hidden !important;
 		max-width: 70vw !important;
 
-		.components-modal__header{
+		.components-modal__header {
 			height: unset;
 			position: relative;
-			padding: 8px;
-			.components-button{
-				position: absolute;
-				top: -10px;
-				right: -15px;
-				left: unset;
+			padding: 0;
+			&-heading-container{
+				display: initial !important;
 			}
+
 		}
 
-		.components-modal__content{
-			margin-top: 10px;
+		.components-modal__content {
+			margin-top: 0;
 			padding: 10px 1.2rem;
 			overflow: hidden;
 		}
@@ -129,9 +128,16 @@
 			text-align: right;
 		}
 	}
+	&-stroke-width-control{
+		width: 70%;
+		.components-base-control__field{
+			margin-bottom: 0;
+		}
+	}
+	&-category-menu{
+		min-width: 90px !important;
+	}
 	&-search-control {
-		margin-top: 10px;
-
 		width: 100%;
 
 		.components-search-control__input {

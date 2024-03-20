@@ -1,9 +1,10 @@
-import { Button, TabPanel, Modal } from '@wordpress/components';
+import { Button, FlexItem, Modal, Flex, RangeControl } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
 import { list, reset } from '@wordpress/icons';
 import { dispatch, select } from '@wordpress/data';
-import icons from '../../../../assets/icons';
+import { solid, regular } from '../../../../assets/icons';
 import IconList from './IconList';
+
 
 const iconCategories = [
 	{
@@ -11,30 +12,36 @@ const iconCategories = [
 		value: 'all',
 	},
 	{
-		label: 'Font Awesome Solid',
+		label: 'Solid',
 		value: 'solid',
 	},
 	{
-		label: 'Font Awesome Brand',
-		value: 'brands',
-	},
-	{
-		label: 'Font Awesome Regular',
+		label: 'Regular',
 		value: 'regular',
 	}
 ];
 
+const solidIcons = Object.values(solid).map(icon => ({ name: icon.name, component: icon }))
+const regularIcons = Object.values(regular).map(icon => ({ name: icon.name, component: icon }))
 
-const iconsByCategory = Object.groupBy(icons.slice(0, 100), ({ type }) => type);
+
+const iconsByCategory = {
+	solid: solidIcons,
+	regular: regularIcons
+}
+
+const icons = [...solidIcons, ...regularIcons];
 
 const IconControl = ({ label, value, onChange }) => {
 	const [open, setOpen] = useState(false);
 	const defaultIcon = value?.title ? icons.find(icon => icon?.title === value.title) : {};
-	const [selectedIcon, setSelectedIcon] = useState(defaultIcon);
+	const [selectedIcon, setSelectedIcon] = useState();
 	const [scrollToSelected, setScrollToSelected] = useState(false);
+	const [activeType, setActiveType] = useState('all');
+	const [strokeWidth, setStrokeWidth] = useState(1.5);
 
 	useEffect(() => {
-		if (!selectedIcon?.title || !open || !scrollToSelected) {
+		if (!selectedIcon?.name || !open || !scrollToSelected) {
 			return
 		}
 
@@ -64,7 +71,7 @@ const IconControl = ({ label, value, onChange }) => {
 
 	const onOpenModal = () => {
 		setOpen(true);
-		if (Object.keys(selectedIcon).length > 0)
+		if (selectedIcon?.name)
 			setScrollToSelected(true);
 	}
 
@@ -89,10 +96,10 @@ const IconControl = ({ label, value, onChange }) => {
 				<label className='gb-superset-icon-picker-label'>{label || 'Add Icon'}</label>
 
 				<div className='gb-superset-icon-picker-actions'>
-					<Button {...defaultActionProps} label='None' icon={reset} onClick={() => setSelectedIcon({})} />
+					<Button {...defaultActionProps} label='None' icon={reset} onClick={() => setSelectedIcon(null)} />
 					<Button {...defaultActionProps} label="Pick from library" onClick={onOpenModal}>
-						{selectedIcon?.src ?
-							<span dangerouslySetInnerHTML={{ __html: selectedIcon.src }} />
+						{selectedIcon ?
+							<selectedIcon.component strokeWidth={strokeWidth} />
 							:
 							list
 						}
@@ -100,16 +107,39 @@ const IconControl = ({ label, value, onChange }) => {
 				</div>
 			</div>
 
-			{open && <Modal onRequestClose={onCloseModal} className='gb-superset-icon-picker-modal'>
-				<TabPanel
-					tabs={iconCategories.map((category) => { return { name: category?.value, title: category?.label } })}
-				>
-					{
-						(tab) => (
-							<IconList icons={tab.name === 'all' ? icons : iconsByCategory[tab.name]} selectedIcon={selectedIcon} setSelectedIcon={setSelectedIcon} />
-						)
-					}
-				</TabPanel>
+			{open && <Modal onRequestClose={onCloseModal} className='gb-superset-icon-picker-modal' title={
+				<Flex>
+					<h5>Choose Icon</h5>
+					<RangeControl
+						step={0.5}
+						initialPosition={1.5}
+						max={5}
+						min={1}
+						onChange={setStrokeWidth}
+						className='gb-superset-icon-picker-stroke-width-control'
+					/>
+				</Flex>
+			}>
+
+				<Flex align='flex-start'>
+					<FlexItem className='gb-superset-icon-picker-category-menu'>
+						<Flex direction='column' gap="22px">
+							{iconCategories.map((category) =>
+								<Button
+									onClick={() => setActiveType(category.value)}
+									variant={activeType === category.value ? 'primary' : 'secondary'}
+								>
+									{category.label}
+								</Button>
+
+							)}
+						</Flex>
+					</FlexItem>
+
+					<FlexItem>
+						<IconList type={activeType} strokeWidth={strokeWidth} icons={activeType === 'all' ? icons : iconsByCategory[activeType]} selectedIcon={selectedIcon} setSelectedIcon={setSelectedIcon} />
+					</FlexItem>
+				</Flex>
 				<div className="gb-superset-icon-picker-modal-footer">
 					<Button
 						variant="primary"
