@@ -1,5 +1,6 @@
 import metadata from './block.json';
 import SaveContent from './SaveContent';
+import style from './style';
 
 import { Button } from '@wordpress/components';
 // import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
@@ -30,7 +31,7 @@ const block = class extends blockType {
 					<TextControl
 						label="Foo"
 						help="bar"
-						name="content"
+						name="backgroundColor"
 
 						responsive={true}
 						state={['hover', 'focus']}
@@ -75,6 +76,8 @@ const block = class extends blockType {
 	// }
 
 	SaveContent = SaveContent;
+
+	StyleSheet = style
 }
 
 new block().register();

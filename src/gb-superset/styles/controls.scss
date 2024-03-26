@@ -1,6 +1,11 @@
 .gb-superset-inspector-control{
   margin-bottom: 14px;
 
+  .gb-superset-control-responsive-switcher .active{
+    background-color: #007cba;
+    color: #fff;
+  }
+
   .gb-superset-inspector-control__component-container{
 
     .components-base-control{
@@ -24,6 +29,7 @@
 
       label {
         width: 50%;
+        margin-bottom: 0px;
       }
 
       // Hide Default Label Start
@@ -57,4 +63,25 @@
     }
   }
 
+}
+
+.gb-superset-dropdown{
+  .dropdown-button{
+    border: 1px solid #007cba;
+  }
+}
+
+.gb-superset-dropdown-content{
+  .components-popover__content{
+    max-height: none !important;
+    width: 250px;
+    padding: 15px 15px;
+  }
+}
+
+.gb-superset-toggle-group-control{
+  .components-toggle-group-control {
+    width: 100%;
+    border: 1px solid rgb(117, 117, 117);
+  }
 }

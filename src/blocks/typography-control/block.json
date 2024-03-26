@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "gb-superset/typography-control",
+	"version": "0.1.0",
+	"title": "Typography Control",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example block scaffolded with Gutenberg Superset.",
+	"textdomain": "gb-superset",
+	"editorScript": "file:./index.js",
+	"style": "gb-superset/typography-control",
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"blockStyle": {
+			"type": "string"
+		},
+		"fontFamily": {
+			"type": "object"
+		},
+		"fontSize": {
+			"type": "object"
+		},
+		"fontWeight": {
+			"type": "object"
+		},
+		"textTransform": {
+			"type": "object"
+		},
+		"fontStyle": {
+			"type": "object"
+		},
+		"textDecoration": {
+			"type": "object"
+		},
+		"lineHeight": {
+			"type": "object"
+		},
+		"letterSpacing": {
+			"type": "object"
+		},
+		"wordSpacing": {
+			"type": "object"
+		}
+	}
+}

@@ -59,6 +59,7 @@ function debug(...$data) {
 define( 'GBSUPERSET_PLUGIN_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) );
 
 function __block_init() {
+	
 	wp_register_style(
 		'gb-superset/block-emran-1',
 		GBSUPERSET_PLUGIN_URL . 'build/blocks/block-emran-1/style-index.css',
@@ -72,9 +73,19 @@ function __block_init() {
 		"0.1.0"
 	);
 
+	wp_register_style(
+		'gb-superset/css-animation',
+		GBSUPERSET_PLUGIN_URL . 'build/blocks/css-animation/style-index.css',
+		array(),
+		"0.1.0"
+	);
+
 	register_block_type( __DIR__ . '/build/blocks/block-emran-1' );
 	register_block_type( __DIR__ . '/build/blocks/block-sagor-1' );
 	register_block_type( __DIR__ . '/build/blocks/block-sagor-2' );
+	register_block_type( __DIR__ . '/build/blocks/css-animation' );
+	register_block_type( __DIR__ . '/build/blocks/css-transformation' );
+	register_block_type( __DIR__ . '/build/blocks/typography-control' );
 	register_block_type( __DIR__ . '/build/blocks/monster-block' );
 	register_block_type( __DIR__ . '/build/blocks/block-salekin-1' );
 	register_block_type( __DIR__ . '/build/blocks/block-rashed-1' );

@@ -17,7 +17,7 @@
 		"blockStyle": {
 			"type": "string"
 		},
-		"content": {
+		"backgroundColor": {
 			"type": "object"
 		},
 		"groupControl": {

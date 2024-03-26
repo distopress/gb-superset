@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import ControlContext from './ControlContext';
 import getObject from './getObject';
 import setObject from './setObject';
-
+import getDeviceType from '../getDeviceType';
 // This is a functional component that uses the ControlContext to get and set values
 export default (props) => {
 
@@ -28,9 +28,24 @@ export default (props) => {
         setScope(scope);
     }
 
+    console.log(getDeviceType());
+
+
     // Use useEffect to log when the scope changes
     useEffect(() => {
         console.log('scope has changed', scope);
+
+        let deviceType = 'Desktop';
+        switch (scope) {
+            case 'md':
+                deviceType = 'Tablet';
+                break;
+            case 'xs':
+                deviceType = 'Mobile';
+                break;
+        }
+
+        wp.data.dispatch('core/edit-post').__experimentalSetPreviewDeviceType(deviceType);
     }, [scope]);
 
     const childId = 'gb-superset-inspector-control-' + props.name + useId();
@@ -39,11 +54,11 @@ export default (props) => {
     return (
         <div {...props} className={classNames(props.extraClassName, props.className, 'gb-superset-inspector-control')}>
             {props.responsive && (
-                <p>
-                    {/* Links for changing the scope */}
-                    <a onClick={(e) => scopeHandler('desktop', e)}>Desktop</a>
-                    <a onClick={(e) => scopeHandler('tablet', e)}>Tablet</a>
-                    <a onClick={(e) => scopeHandler('mobile', e)}>Mobile</a>
+                <p className='gb-superset-control-responsive-switcher'>
+                    {/* Links for changing the scope, if scope value is == link, add active class */}
+                    <a className={scope === 'desktop' ? 'active' : ''} onClick={(e) => scopeHandler('desktop', e)}>desktop </a>
+                    <a className={scope === 'md' ? 'active' : ''} onClick={(e) => scopeHandler('md', e)}>md </a>
+                    <a className={scope === 'xs' ? 'active' : ''} onClick={(e) => scopeHandler('xs', e)}>xs</a>
                 </p>
             )}
             {/* Map over the children and clone them with additional props */}

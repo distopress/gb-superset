@@ -13,9 +13,11 @@
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
 		"start": "wp-scripts start",
-		"wp-env": "wp-env"
+		"wp-env": "wp-env",
+		"icon:create": "svgr src/assets/svgs -d src/assets/icons --icon"
 	},
 	"devDependencies": {
+		"@svgr/cli": "^8.1.0",
 		"@wordpress/env": "^9.2.0",
 		"@wordpress/scripts": "^27.1.0"
 	},
@@ -23,6 +25,6 @@
 		"@wordpress/icons": "^9.18.0",
 		"classnames": "^2.5.1",
 		"cssx": "^5.2.1",
-		"classnames": "^2.5.1"
+		"webfontloader": "^1.6.28"
 	}
 }
