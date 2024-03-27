@@ -43,7 +43,7 @@ export default class blockType {
         const get = (name, scope) => getObject(name, scope, attributes);
 
         // Context for the block
-        this.ctx = { attributes, setAttributes, set, get };
+        this.ctx = { attributes, setAttributes, set, get, clientId };
 
         // Block properties
         const blockProps = useBlockProps();
@@ -51,7 +51,7 @@ export default class blockType {
         // Content to render
         const RenderContent = this.EditContent ?? this.SaveContent;
         this.sheet = createStyleSheet();
-        this.StyleSheet({ get, sheet: this.sheet, breakpoints});
+        this.StyleSheet({ get, sheet: this.sheet, breakpoints });
 
         // Set blockStyle
         setAttributes({ blockStyle: this.sheet.extractCSS(attributes.blockId) });

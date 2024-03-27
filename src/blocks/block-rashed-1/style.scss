@@ -1,0 +1,82 @@
+.block-editor-block-list__block.wp-block {
+	&.wp-block-gb-superset-block-rashed-1 {
+		width: 100%;
+		padding: 10px;
+
+		.dblock-block__inner {
+			&::before {
+				content: "";
+				height: 100%;
+				width: 100%;
+				border: 1px dashed lightgray;
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+			}
+			.block-editor-inserter {
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+
+			&.dblock-has-children {
+				&::before {
+					border: 0;
+				}
+			}
+		}
+		// .dblock-container-parent {
+		// 	display: flex;
+		// 	justify-content: center;
+		// 	align-items: center;
+
+		// 	.dblock-container-child {
+		// 		flex: 1;
+		// 	}
+		// }
+		.dblock-placeholder {
+			.dblock-placeholder-close {
+				position: absolute;
+				z-index: 9999;
+				right: 10px;
+				svg {
+					height: 16px;
+					width: 16px;
+				}
+			}
+			.components-placeholder {
+				align-items: center;
+				background-color: #fff;
+				border-radius: 2px;
+				/* box-shadow: inset 0 0 0 1px #1e1e1e; */
+				box-shadow: none;
+				box-sizing: border-box;
+				color: #1e1e1e;
+				margin: 0;
+				outline: 1px solid transparent;
+				padding: 1em;
+				position: relative;
+				text-align: left;
+				width: 100%;
+				.block-editor-block-variation-picker__variations {
+					justify-content: center;
+				}
+			}
+		}
+	}
+}
+
+.block-editor-block-list__block.is-selected:focus::after {
+	border-radius: 1px;
+	bottom: 1px;
+	box-shadow: 0 0 0 2px #0073e6;
+	content: "";
+	left: 1px;
+	outline: 2px solid transparent;
+	pointer-events: none;
+	position: absolute;
+	right: 1px;
+	top: 1px;
+	z-index: 1;
+}

@@ -66,6 +66,12 @@ function __block_init() {
 		array(),
 		"0.1.0"
 	);
+	wp_register_style(
+		'gb-superset/block-rashed-1',
+		GBSUPERSET_PLUGIN_URL . 'build/blocks/block-rashed-1/style-index.css',
+		array(),
+		"0.1.0"
+	);
 
 	wp_register_style(
 		'gb-superset/css-animation',
@@ -82,6 +88,7 @@ function __block_init() {
 	register_block_type( __DIR__ . '/build/blocks/typography-control' );
 	register_block_type( __DIR__ . '/build/blocks/monster-block' );
 	register_block_type( __DIR__ . '/build/blocks/block-salekin-1' );
+	register_block_type( __DIR__ . '/build/blocks/block-rashed-1' );
 }
 add_action( 'init', '__block_init' );
 
