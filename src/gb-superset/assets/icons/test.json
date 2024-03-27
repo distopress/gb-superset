@@ -1,0 +1,60 @@
+[
+    {
+      "category": "System",
+      "iconList": [
+        {
+            "iconClass": "fa fa-cog",
+            "iconName": "Settings",
+            "iconSvg": "fa-cog.svg",
+            "iconComponent": "FaCog",
+            "tags": ["settings", "preferences"],
+            "type": "solid"
+        },
+        {
+            "iconClass": "fa fa-cogs",
+            "iconName": "Settings",
+            "iconSvg": "fa-cogs.svg",
+            "iconComponent": "FaCogs",
+            "tags": ["settings", "preferences"],
+            "type": "solid"
+        },
+        {
+            "iconClass": "fa fa-database",
+            "iconName": "Database",
+            "iconSvg": "fa-database.svg",
+            "iconComponent": "FaDatabase",
+            "tags": ["data", "storage"],
+            "type": "solid"
+        }
+      ]
+    },
+    {
+      "category": "User",
+      "iconList": [
+        {
+            "iconClass": "fa fa-user",
+            "iconName": "User",
+            "iconSvg": "fa-user.svg",
+            "iconComponent": "FaUser",
+            "tags": ["person", "profile"],
+            "type": "solid"
+        },
+        {
+            "iconClass": "fa fa-user-circle",
+            "iconName": "User",
+            "iconSvg": "fa-user-circle.svg",
+            "iconComponent": "FaUserCircle",
+            "tags": ["person", "profile"],
+            "type": "solid"
+        },
+        {
+            "iconClass": "fa fa-user-friends",
+            "iconName": "User",
+            "iconSvg": "fa-user-friends.svg",
+            "iconComponent": "FaUserFriends",
+            "tags": ["person", "profile"],
+            "type": "solid"
+        }
+      ]
+    }
+]

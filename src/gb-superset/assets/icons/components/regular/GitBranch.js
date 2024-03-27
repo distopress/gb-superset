@@ -1,0 +1,25 @@
+const SvgGitBranch = (props) => (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="1em"
+		height="1em"
+		fill="none"
+		strokeWidth={1.5}
+		viewBox="0 0 24 24"
+		{...props}
+	>
+		<path
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			d="M18 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4M6 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4M6 16V3"
+		/>
+		<path
+			stroke="currentColor"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			d="M8 18h1c3.5 0 9-2.1 9-8.5V8"
+		/>
+	</svg>
+);
+export default SvgGitBranch;

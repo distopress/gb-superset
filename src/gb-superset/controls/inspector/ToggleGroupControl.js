@@ -3,6 +3,9 @@ import {
   __experimentalToggleGroupControlOption as ToggleGroupControlOption, 
 } from '@wordpress/components';
 
+// rename it to MultiToggleControl
+// do not use Group keyword to any control that are not grouped like our custom testGroupControl. otherwise it will be confusing.
+
 import { ControlContainer } from '@gb-superset/supports/control';
 
 export default (props) => {

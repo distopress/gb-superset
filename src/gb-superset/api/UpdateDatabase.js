@@ -5,6 +5,9 @@ import apiFetch from '@wordpress/api-fetch';
  * @param {*} data is the data to be updated
  * @param {*} dispatch is the dispatch function
  */
+
+
+// not in use? remove it.
 const UpdateDatabase = (endpoint, data, dispatch) => {
 
     apiFetch({

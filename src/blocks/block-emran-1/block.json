@@ -23,6 +23,9 @@
 		"groupControl": {
 			"type": "object"
 		},
+		"color": {
+			"type": "object"
+		},
 		"toggle": {
 			"type": "object"
 		},

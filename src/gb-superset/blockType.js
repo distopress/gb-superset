@@ -7,9 +7,10 @@ import {
 } from '@wordpress/block-editor';
 
 import getDeviceType from './supports/getDeviceType';
-import { createStyleSheet, breakpoints } from '@gb-superset/asset-manager/styleSheet';
+import { createStyleSheet, breakpoints } from '@gb-superset/block-assets-manager/styleSheet';
 import { ControlContext, getObject, setObject } from '@gb-superset/supports/control';
 
+import { useContext, useState, useId, useEffect } from 'react';
 
 // Defining the blockType class
 export default class blockType {
@@ -33,6 +34,8 @@ export default class blockType {
     // Method to edit the block
     edit = ({ attributes, setAttributes, clientId }) => {
 
+        const [prefilledStyles, setPrefilledStyles] = useState({});
+
         // Set blockId
         if ('block-' + clientId != !attributes.blockId) {
             setAttributes({ blockId: 'block-' + clientId });
@@ -42,20 +45,31 @@ export default class blockType {
         const set = (name, value, scope) => setObject(name, value, scope, attributes, setAttributes);
         const get = (name, scope) => getObject(name, scope, attributes);
 
+        // Create a new stylesheet instance
+        const sheet = createStyleSheet();
+        
         // Context for the block
-        this.ctx = { attributes, setAttributes, set, get };
+        this.ctx = { attributes, setAttributes, set, get, setPrefilledStyles };
 
         // Block properties
         const blockProps = useBlockProps();
 
         // Content to render
         const RenderContent = this.EditContent ?? this.SaveContent;
-        this.sheet = createStyleSheet();
-        this.StyleSheet({ get, sheet: this.sheet, breakpoints});
 
-        // Set blockStyle
-        setAttributes({ blockStyle: this.sheet.extractCSS(attributes.blockId) });
+        // Stylesheet
+        this.StyleSheet({ get, sheet, breakpoints });
 
+        // sheet.add({
+        //     'blockId h1.test': {
+        //         color: get('color'),
+        //         padding: '5px'
+        //     }
+        // })
+
+        console.log(prefilledStyles);
+
+        setAttributes({ blockStyle: sheet.extractCSS(attributes.blockId) });
         // Returning the JSX for the block
         return (
             <>
@@ -71,6 +85,7 @@ export default class blockType {
                     </ControlContext.Provider>
                 </BlockControls>
 
+                {/* {setAttributes({ blockStyle: sheet.extractCSS(attributes.blockId) })} */}
                 <div {...blockProps} id={attributes.blockId}>
                     <style>{attributes.blockStyle}</style>
                     <RenderContent {...{ attributes, get, blockProps }} />

@@ -13,24 +13,31 @@ export default ({ get, sheet, breakpoints}) => {
     }
 
     
-    sheet.add({
-        'blockId h1.test': {
-            color: 'red',
-        }
-    });
+    // sheet.add({
+    //     'blockId h1.test': {
+    //         color: get('color'),
+    //     }
+    // });
 
-    sheet.add({ // will add to desktop
-        'blockId h1.test': {
-            'background-color': get('backgroundColor'),
-            'font-size': '30px',
-        },
-        'blockId p': {
-            color: 'blue',
-        }
-    });
+    // sheet.add({
+    //     'blockId .hola': {
+    //         "border-color": '#f00',
+    //     }
+    // });
 
-    sheet.addToMd(tablet);
-    sheet.addToXs(mobile);
+    // sheet.add({ // will add to desktop
+    //     'blockId p': {
+    //         color: 'blue',
+    //     },
+    //     'blockId h1.test': {
+    //         'background-color': get('backgroundColor'),
+    //         'font-size': '30px',
+    //     },
 
-    // console.log(sheet.extractCSS());
+    // });
+
+    // sheet.addToMd(tablet);
+    // sheet.addToXs(mobile);
+
+    // console.log(sheet.extractCSS('blockId'));
 };

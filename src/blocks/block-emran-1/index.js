@@ -10,9 +10,9 @@ import {
 	Panel,
 	TextControl,
 	ToggleControl,
-	TestGroupControl
+	TestGroupControl,
+	ColorPicker
 } from '@gb-superset/controls/inspector';
-import IconPicker from '../../gb-superset/controls/inspector/icon-picker';
 
 import './style.scss';
 
@@ -38,6 +38,13 @@ const block = class extends blockType {
 
 						responsive={false}
 					/>
+					<ColorPicker
+					label="Color"
+					help="Additional help text"
+					name="color"
+
+					responsive={false}
+				/>
 					{/* <TestGroupControl
 						label="My Text Field"
 						help="Additional help text"
