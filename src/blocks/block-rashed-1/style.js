@@ -1,4 +1,4 @@
-export default ({ get, sheet, breakpoints, attributes }) => {
+export default ({ get, sheet, breakpoints }) => {
     // let tablet = {
     //     'blockId h1.test': {
     //         color: 'blue',
@@ -31,13 +31,13 @@ export default ({ get, sheet, breakpoints, attributes }) => {
 
     // sheet.addToMd(tablet);
     // sheet.addToXs(mobile);
-
+    const customWidth = get('customWidth', null)
     sheet.add({
         'blockId': {
             'max-width': 'none',
         },
         '.wp-block-gb-superset-block-rashed-1 > .dblock-block__inner > blockId': {
-            'flex-basis': `${attributes.customWidth.size}${attributes.customWidth.unit}`,
+            'flex-basis': `${customWidth.size}${customWidth.unit}`,
         },
         'blockId .dblock-block__inner': {
             display: 'flex',
