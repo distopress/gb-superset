@@ -20,34 +20,20 @@
 		"blockStyle": {
 			"type": "string"
 		},
-		"containerWidth": {
-			"type": "string",
-			"default": "alignfull"
-		},
-		"customWidthDesktop": {
-			"type": "object",
-			"default": {
-				"size": 60,
-				"unit": "%"
-			}
-		},
-		"customWidthTablet": {
-			"type": "object",
-			"default": {
-				"size": 60,
-				"unit": "%"
-			}
-		},
-		"customWidthMobile": {
-			"type": "object",
-			"default": {
-				"size": 60,
-				"unit": "%"
-			}
-		},
-		"variationSelected": {
+		"isContainerSelected": {
 			"type": "boolean",
 			"default": false
+		},
+		"containerWidth": {
+			"type": "string",
+			"default": "full-width"
+		},
+		"customWidth": {
+			"type": "object",
+			"default": {
+				"size": 60,
+				"unit": "%"
+			}
 		}
 	}
 }

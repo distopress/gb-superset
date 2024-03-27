@@ -51,8 +51,8 @@ export default class blockType {
         // Content to render
         const RenderContent = this.EditContent ?? this.SaveContent;
         this.sheet = createStyleSheet();
-        this.StyleSheet({ get, sheet: this.sheet, breakpoints });
-
+        this.StyleSheet({ get, sheet: this.sheet, breakpoints, attributes });
+        console.log(this.sheet.extractCSS(attributes.blockId))
         // Set blockStyle
         setAttributes({ blockStyle: this.sheet.extractCSS(attributes.blockId) });
 

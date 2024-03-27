@@ -6,7 +6,7 @@ export const variations = [
         title: '100',
         icon: Column100,
         innerBlocks: [
-            ['gb-superset/block-rashed-1', { containerWidth: 'alignfull', variationSelected: true }]
+            ['gb-superset/block-rashed-1', { isContainerSelected: true }]
         ],
         scope: ['block'],
     },
@@ -17,11 +17,11 @@ export const variations = [
         innerBlocks: [
             [
                 'gb-superset/block-rashed-1',
-                { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 50, unit: "%" }, customWidthTablet: { size: 50, unit: "%" }, customWidthMobile: { size: 50, unit: "%" }, variationSelected: true },
+                { customWidth: { size: 50, unit: "%" }, isContainerSelected: true },
             ],
             [
                 'gb-superset/block-rashed-1',
-                { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 50, unit: "%" }, customWidthTablet: { size: 50, unit: "%" }, customWidthMobile: { size: 50, unit: "%" }, variationSelected: true },
+                { customWidth: { size: 50, unit: "%" }, isContainerSelected: true },
             ]
         ],
         scope: ['block'],
@@ -33,11 +33,11 @@ export const variations = [
         innerBlocks: [
             [
                 'gb-superset/block-rashed-1',
-                { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 33, unit: "%" }, customWidthTablet: { size: 33, unit: "%" }, customWidthMobile: { size: 33, unit: "%" }, variationSelected: true },
+                { customWidth: { size: 33, unit: "%" }, isContainerSelected: true },
             ],
             [
                 'gb-superset/block-rashed-1',
-                { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 66, unit: "%" }, customWidthTablet: { size: 66, unit: "%" }, customWidthMobile: { size: 66, unit: "%" }, variationSelected: true },
+                { customWidth: { size: 66, unit: "%" }, isContainerSelected: true },
             ]
         ],
         scope: ['block'],
@@ -49,11 +49,11 @@ export const variations = [
         innerBlocks: [
             [
                 'gb-superset/block-rashed-1',
-                { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 66, unit: "%" }, customWidthTablet: { size: 66, unit: "%" }, customWidthMobile: { size: 66, unit: "%" }, variationSelected: true },
+                { customWidth: { size: 66, unit: "%" }, isContainerSelected: true },
             ],
             [
                 'gb-superset/block-rashed-1',
-                { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 33, unit: "%" }, customWidthTablet: { size: 33, unit: "%" }, customWidthMobile: { size: 33, unit: "%" }, variationSelected: true },
+                { customWidth: { size: 33, unit: "%" }, isContainerSelected: true },
             ]
         ],
         scope: ['block'],
@@ -65,15 +65,15 @@ export const variations = [
         innerBlocks: [
             [
                 'gb-superset/block-rashed-1',
-                { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 33, unit: "%" }, customWidthTablet: { size: 33, unit: "%" }, customWidthMobile: { size: 33, unit: "%" }, variationSelected: true },
+                { customWidth: { size: 33, unit: "%" }, isContainerSelected: true },
             ],
             [
                 'gb-superset/block-rashed-1',
-                { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 33, unit: "%" }, customWidthTablet: { size: 33, unit: "%" }, customWidthMobile: { size: 33, unit: "%" }, variationSelected: true },
+                { customWidth: { size: 33, unit: "%" }, isContainerSelected: true },
             ],
             [
                 'gb-superset/block-rashed-1',
-                { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 33, unit: "%" }, customWidthTablet: { size: 33, unit: "%" }, customWidthMobile: { size: 33, unit: "%" }, variationSelected: true },
+                { customWidth: { size: 33, unit: "%" }, isContainerSelected: true },
             ]
         ],
         scope: ['block'],
@@ -85,15 +85,15 @@ export const variations = [
         innerBlocks: [
             [
                 'gb-superset/block-rashed-1',
-                { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 25, unit: "%" }, customWidthTablet: { size: 25, unit: "%" }, customWidthMobile: { size: 25, unit: "%" }, variationSelected: true },
+                { customWidth: { size: 25, unit: "%" }, isContainerSelected: true },
             ],
             [
                 'gb-superset/block-rashed-1',
-                { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 50, unit: "%" }, customWidthTablet: { size: 50, unit: "%" }, customWidthMobile: { size: 50, unit: "%" }, variationSelected: true },
+                { customWidth: { size: 50, unit: "%" }, isContainerSelected: true },
             ],
             [
                 'gb-superset/block-rashed-1',
-                { containerWidth: 'gkit-block-custom-wide', customWidthDesktop: { size: 25, unit: "%" }, customWidthTablet: { size: 25, unit: "%" }, customWidthMobile: { size: 25, unit: "%" }, variationSelected: true },
+                { customWidth: { size: 25, unit: "%" }, isContainerSelected: true },
             ]
         ],
         scope: ['block'],

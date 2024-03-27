@@ -3,7 +3,7 @@ import SaveContent from './SaveContent';
 
 import { __ } from '@wordpress/i18n';
 import classNames from 'classnames'
-
+import style from './style';
 import blockType from '@gb-superset/blockType';
 import {
 	Panel,
@@ -41,13 +41,13 @@ const block = class extends blockType {
 						responsive={true}
 						state={['hover', 'focus']}
 					/> */}
-					<ToggleControl
+					{/* <ToggleControl
 						label="Text Field"
 						help="Additional help text"
 						name="toggle"
 
 						responsive={false}
-					/>
+					/> */}
 					{/* <TestGroupControl
 						label="My Text Field"
 						help="Additional help text"
@@ -59,34 +59,22 @@ const block = class extends blockType {
 		);
 	}
 
-	EditorControls = () => {
-		return (
-			<>
-				<AlignmentControl
-					value={this.ctx.attributes.align}
-					onChange={(v) => this.ctx.setAttributes({ align: v })}
-				/>
-			</>
-		);
-	}
+	// EditorControls = () => {
+	// 	return (
+	// 		<>
+	// 			<AlignmentControl
+	// 				value={this.ctx.attributes.align}
+	// 				onChange={(v) => this.ctx.setAttributes({ align: v })}
+	// 			/>
+	// 		</>
+	// 	);
+	// }
 
-	EditContent = ({ attributes, blockProps }) => {
-		const { setAttributes, clientId } = this.ctx;
+	EditContent = () => {
+		const { attributes, setAttributes, clientId } = this.ctx;
 		const { replaceInnerBlocks } = useDispatch('core/block-editor');
-		const { hasChildBlocks, hasParent, isParent } = useSelect(
-			(select) => {
-				const { getBlockOrder, getBlockParentsByBlockName } = select(blockEditorStore);
-				return {
-					hasChildBlocks: getBlockOrder(clientId).length > 0,
-					hasParent: getBlockParentsByBlockName(clientId, 'gutenkit/container').length > 0 ? true : false,
-					isParent: getBlockParentsByBlockName(clientId, 'gutenkit/container').length === 0 ? true : false
-				};
-			},
-			[clientId]
-		);
 
 		const createBlocksFromInnerBlocksTemplate = (innerBlocksTemplate) => {
-			console.log("innerBlocksTemplate", innerBlocksTemplate);
 			return innerBlocksTemplate.map(
 				([name, attributes, innerBlocks = []]) =>
 					createBlock(
@@ -96,12 +84,12 @@ const block = class extends blockType {
 					)
 			);
 		};
-		const handleColumn = (variation) => {
-			console.log("nextVariation", variation);
-			// if (variation.attributes) {
-			// 	setAttributes(variation.attributes);
-			// }
 
+		const handleColumn = (variation) => {
+			if (variation.attributes) {
+				setAttributes(variation.attributes);
+			}
+			setAttributes({ isContainerSelected: true })
 			if (variation.innerBlocks && '100' !== variation.name) {
 				replaceInnerBlocks(
 					clientId,
@@ -113,35 +101,52 @@ const block = class extends blockType {
 					createBlocksFromInnerBlocksTemplate([])
 				);
 			}
-			setAttributes({ variationSelected: true })
 		}
+
+
+		const { hasChildblock, hasParent, isParent } = useSelect(
+			(select) => {
+				const { getBlockOrder, getBlockParentsByBlockName } = select(blockEditorStore);
+				return {
+					hasChildblock: getBlockOrder(clientId).length > 0,
+					hasParent: getBlockParentsByBlockName(clientId, 'gb-superset/block-rashed-1').length > 0 ? true : false,
+					isParent: getBlockParentsByBlockName(clientId, 'gb-superset/block-rashed-1').length === 0 ? true : false
+				};
+			},
+			[clientId]
+		);
+
 		const innerBlocksProps = useInnerBlocksProps(
 			{
 				className: classNames(
-					{ 'gkit-container-parent gkit-block__inner': isParent },
-					{ 'gkit-container-child gkit-block__inner': !isParent },
-					{ 'gkit-has-children': hasChildBlocks }
+					{ 'dblock-container-parent dblock-block__inner': isParent },
+					{ 'dblock-container-child dblock-block__inner': !isParent },
+					{ 'dblock-has-children': hasChildblock }
 				)
 			},
 			{
-				renderAppender: hasChildBlocks
+				renderAppender: hasChildblock
 					? undefined
 					: InnerBlocks.ButtonBlockAppender,
 			}
 		);
-		console.log("blockProps", blockProps)
+		// console.log("innerBlocks", InnerBlocks)
+		// console.log("hasChildblock", hasChildblock);
+		// console.log("hasParent", hasParent);
+		// console.log("isParent", isParent);
+
 		return (
 			<>
 				{
-					!attributes?.variationSelected && isParent && <div className="gkit-placeholder">
+					!attributes.isContainerSelected && isParent && <div className="dblock-placeholder">
 						<Button
 							icon={close}
-							className="gkit-placeholder-close"
+							className="dblock-placeholder-close"
 							onClick={() => handleColumn({
 								name: '100',
 								title: 'Skip',
 								innerBlocks: [
-									['gb-superset/container', { containerWidth: 'alignfull', variationSeleted: true }]
+									['gb-superset/block-rashed-1', { isContainerSelected: true }]
 								],
 								scope: ['block'],
 							})}
@@ -158,7 +163,7 @@ const block = class extends blockType {
 					</div>
 				}
 				{
-					attributes?.variationSelected && <div {...innerBlocksProps}></div>
+					attributes?.isContainerSelected && <div {...innerBlocksProps} />
 				}
 				{/* {
 					attributes?.containerWidth == "gkit-block-custom-wide" && (
@@ -179,6 +184,7 @@ const block = class extends blockType {
 	}
 
 	SaveContent = SaveContent;
+	StyleSheet = style
 }
 
 new block().register();
