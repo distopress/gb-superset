@@ -37,7 +37,7 @@ import {
 	TextControl,
 	TextareaControl,
 	TestGroupControl,
-	ToggleGroupControl,
+	MultiToggleControl,
 	Panel,
 	QueryControls,
 } from '@gb-superset/controls/inspector';
@@ -117,8 +117,8 @@ const block = class extends blockType {
 						name="focalPoint"
 					/>
 
-					<h3>ToggleGroupControl:</h3>
-					<ToggleGroupControl
+					<h3>MultiToggleControl:</h3>
+					<MultiToggleControl
 						label="my label"
 						name="toggleGroup"
 						options={[ 

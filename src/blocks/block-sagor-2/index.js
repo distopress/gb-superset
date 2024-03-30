@@ -10,7 +10,7 @@ import {
 	BoxControl,
 	RadioControl,
 	SelectTagsField,
-	ToggleGroupControl,
+	MultiToggleControl,
 	QueryControls,
 	Panel,
 } from '@gb-superset/controls/inspector';

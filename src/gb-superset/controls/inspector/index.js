@@ -33,6 +33,6 @@ export { default as TextControl } from './TextControl';
 export { default as TextareaControl } from './TextareaControl';
 export { default as TestGroupControl } from './TestGroupControl';
 export { default as ToggleControl } from './ToggleControl';
-export { default as ToggleGroupControl } from './ToggleGroupControl';
+export { default as MultiToggleControl } from './MultiToggleControl';
 export { default as Panel } from './Panel';
 export { default as QueryControls } from './QueryControls';

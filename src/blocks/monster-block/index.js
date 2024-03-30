@@ -31,7 +31,7 @@ import {
 	TimePicker,
 	TextControl,
 	TextareaControl,
-	ToggleGroupControl,
+	MultiToggleControl,
 	ToggleControl,
 	QueryControls,
 	Panel,
@@ -248,7 +248,7 @@ const block = class extends blockType {
 						name="textControl"
 					/>
 
-					<ToggleGroupControl
+					<MultiToggleControl
 						label="Toggle Group Control"
 						labelPosition="top"
 						help="Toggle Group Control Help Text."

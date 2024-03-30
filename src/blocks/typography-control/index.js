@@ -12,7 +12,7 @@ import {
 	RangeControl,
 	SelectControl,
 	FontFamilyControl,
-	ToggleGroupControl,
+	MultiToggleControl,
 } from '@gb-superset/controls/inspector';
 
 const block = class extends blockType {
@@ -58,7 +58,7 @@ const block = class extends blockType {
 							]}
 						/>
 
-						<ToggleGroupControl
+						<MultiToggleControl
 							label="Transform"
 							labelPosition="top"
 							name="textTransform"
@@ -70,7 +70,7 @@ const block = class extends blockType {
 							]}
 						/>
 
-						<ToggleGroupControl
+						<MultiToggleControl
 							label="Style"
 							labelPosition="top"
 							name="fontStyle"
@@ -81,7 +81,7 @@ const block = class extends blockType {
 							]}
 						/>
 
-						<ToggleGroupControl
+						<MultiToggleControl
 							label="Decoration"
 							labelPosition="top"
 							name="textDecoration"

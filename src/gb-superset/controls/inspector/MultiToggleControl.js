@@ -1,6 +1,6 @@
 import { 
-  __experimentalToggleGroupControl as ToggleGroupControl,
-  __experimentalToggleGroupControlOption as ToggleGroupControlOption, 
+  __experimentalToggleGroupControl as MultiToggleControl,
+  __experimentalToggleGroupControlOption as MultiToggleControlOption, 
 } from '@wordpress/components';
 
 // rename it to MultiToggleControl
@@ -12,16 +12,16 @@ export default (props) => {
 
   return (
     <ControlContainer {...props} valueProp={'value'} changeProp={'onChange'} className="gb-superset-toggle-group-control">
-      <ToggleGroupControl {...props}>
+      <MultiToggleControl {...props}>
         { 
           props?.options?.map( option => 
-            <ToggleGroupControlOption 
+            <MultiToggleControlOption 
               value={option.value}
               label={option.label} 
             />
           )
         }
-      </ToggleGroupControl>
+      </MultiToggleControl>
     </ControlContainer>
   );
 }
