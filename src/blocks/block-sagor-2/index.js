@@ -6,13 +6,10 @@ import { AlignmentControl } from '@wordpress/block-editor';
 
 import blockType from '@gb-superset/blockType';
 import {
-	AnglePickerControl,
-	BoxControl,
-	RadioControl,
-	SelectTagsField,
-	ToggleGroupControl,
-	QueryControls,
 	Panel,
+	Dropdown,
+	DimensionsGroupControl,
+	MediaUpload
 } from '@gb-superset/controls/inspector';
 
 const block = class extends blockType {
@@ -21,54 +18,32 @@ const block = class extends blockType {
 	InspectorControls = () => {
 		return (
 			<>
-				<Panel title={__('My control')}>					
-					<AnglePickerControl
-						label="AnglePicker Control"
-						labelPosition="top"
-						help="AnglePicker Control Help Text."
-						name="anglePicker"
+				<Panel title={__('My control')}>	
+
+					<MediaUpload
+						name="images"
 					/>
 
-					<BoxControl
-						label="Box Control"
-						labelPosition="top"
-						help="Box Control Help Text."
-						name="box"
-						allowReset={true}
-					/>
+					{/* <Dropdown
+						label="Color 1"
+						labelPosition="inline"
+					>
+						
+					</Dropdown> */}
 
-					<SelectTagsField
-						label="Select Tags Field"
-						labelPosition="top"
-						help="Select Tags Field Help Text."
-						name="selectTagsField"
-						suggestions={[ 'Africa', 'America', 'Antarctica', 'Asia', 'Europe', 'Oceania' ]}
-					/>
+					{/* <DimensionsGroupControl
+						label="Dimensions"
+						labelPosition="inline"
+						name="textGroup"
+					/>	 */}
 
-					<RadioControl
-						label="Radio Control"
-						labelPosition="top"
-						help="Radio Control Help Text."
-						name="radio"
-						options={['Author', 'Editor']}
-					/>
-
-					<QueryControls
-						label="Query Controls Control"
-						labelPosition="top"
-						help="Query Controls Control Help Text."
-						authorList={[
-							{ id: 1, name: 'admin' },
-							{ id: 2, name: 'editor' }
-						]}					
-						categoriesList={[
-							{ id: 1, name: 'Category 1', parent: 0 },
-							{ id: 2, name: 'Category 2', parent: 0 },
-							{ id: 3, name: 'Category 3', parent: 0 },
-						]}			
-						value={this.ctx.attributes.query}
-						setHandler={this.ctx.setAttributes}
-					/>
+					{/* <Dropdown
+						label="Color 2"
+						labelPosition="inline"
+					>
+						
+					</Dropdown> */}
+					
 				</Panel>
 			</>
 		);

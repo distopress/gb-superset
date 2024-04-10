@@ -17,16 +17,10 @@
 		"blockStyle": {
 			"type": "string"
 		},
-		"anglePicker": {
+		"textGroup": {
 			"type": "object"
 		},
-		"box": {
-			"type": "object"
-		},
-		"selectTagsField": {
-			"type": "object"
-		},
-		"radio": {
+		"images": {
 			"type": "object"
 		}
 	}
