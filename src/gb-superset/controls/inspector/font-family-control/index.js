@@ -1,12 +1,14 @@
 import WebFont from "webfontloader";
-import { useEffect, useState } from '@wordpress/element';
+import { useEffect, useState, useContext } from '@wordpress/element';
 import { SelectControl } from '@wordpress/components';
 
-import { ControlContainer } from '@gb-superset/supports/control';
-import fonts from '../../../assets/fonts';
+import { ControlContainer, ControlContext } from '@gb-superset/supports/control';
+import fonts from './webfonts.json';
 
 export default (props) => {
-  const { loadFont } = props;
+  const { get } = useContext(ControlContext);
+  
+  const loadFont = get(props.name);
 
   useEffect(() => {
     if (loadFont) {      

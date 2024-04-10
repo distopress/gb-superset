@@ -16,7 +16,7 @@ export { default as DimensionsGroupControl } from './DimensionsGroupControl';
 export { default as ExternalLink } from './ExternalLink';
 export { default as FontSizePicker } from './FontSizePicker';
 export { default as FocalPointPicker } from './FocalPointPicker';
-export { default as FontFamilyControl } from './FontFamilyControl';
+export { default as FontFamilyControl } from './font-family-control';
 export { default as GradientPicker } from './GradientPicker';
 export { default as IconPicker } from './icon-picker';
 export { default as MediaUpload } from './MediaUpload';
