@@ -12,6 +12,7 @@ export { default as Dropdown } from './Dropdown';
 export { default as DatePicker } from './DatePicker';
 export { default as DuoColorPicker } from './DuoColorPicker';
 export { default as DateTimePicker } from './DateTimePicker';
+export { default as DimensionsGroupControl } from './DimensionsGroupControl';
 export { default as ExternalLink } from './ExternalLink';
 export { default as FontSizePicker } from './FontSizePicker';
 export { default as FocalPointPicker } from './FocalPointPicker';
